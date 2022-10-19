@@ -1,0 +1,77 @@
+create database trevoice;
+
+
+
+use trevoice;
+
+
+
+create table operador(
+nome_oper varchar(255) not null,
+email_oper varchar(255) not null,
+senha varchar(255) not null,
+nivel_acess int(10) not null,
+id_oper int primary key auto_increment
+);
+
+INSERT INTO `operador` VALUES ('thi', ''angu@adm.com.br', ', '123', 2, null);
+INSERT INTO `operador` VALUES ('angu', 'angu@adm.com.br', '123', 1, null);
+
+
+create table cliente(
+nome_cli varchar(255) not null,
+apelido varchar(255) not null,
+nome_empresa varchar(255) not null,
+email_cli varchar(255) not null,
+telefone int not null,
+cpf int not null,
+endereco varchar(255) not null,
+id_cli int primary key auto_increment
+);
+
+
+
+create table venda(
+data date not null,
+total_venda decimal(8,2) not null,
+quant_produtos int not null,
+id_cli int not null,
+id_oper int not null,
+id_prod int not null,
+foreign key (id_prod) references produtos(id_prod) on delete cascade on update cascade,
+foreign key (id_cli) references cliente (id_cli) on delete cascade on update cascade,
+foreign key (id_oper) references operador(id_oper) on delete cascade on update cascade,
+id_venda int primary key auto_increment
+);
+
+
+
+create table produtos(
+sabor varchar(255) not null,
+preco_uni decimal(3,2) not null,
+tipo varchar(255) not null,
+quant_vendida int not null,
+quant_estoque int,
+tamanho_pacote int,
+tamanho_uni varchar(255) not null,
+id_prod int primary key auto_increment
+);
+
+*********create table itens_de_linha(
+quant int not null,
+total int not null,
+id_produto int not null,
+id_fat int not null,
+foreign key (id_produto) references produtos(id_produto) on delete cascade on update cascade,
+foreign key (id_fat) references fatura(id_fat) on delete cascade on update cascade,
+id_itens int primary key auto_increment
+);************
+
+fatura --- (cliente, operador, produtos)
+
+produtos ---
+
+cliente --- 
+
+operador --- 
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
+    <title>Menu</title>
+</head>
+
+<body>
+
+    <!-- Funçao do carrinho de compra -->
+
+   
+<div class="car-scn" id="car-aba"  onmouseleave="fechacar()">
+    
+    <a href="final.html" style="text-decoration: none; color:black;"><div> <img src="../IMG/carrinho.png" class="icones" id="carrinhoPop" > <p class="txt" style="text-align: center; margin-bottom: 20px;">Abrir Venda</p></div></a>    <div class="carpop" >
+       
+    
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t> 
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        </div>
+
+        <div>
+            <p class="total">Total: R$ 123,00</p>
+        </div>
+</div>
+
+    <!--Menu Horizontal-->
+    <div class="header">
+
+        <a href="grafico.html" class="link">
+            <div class="vendidos">
+                <h1 id="titulo">Mais vendidos</h1>
+                <img src="../IMG/grafico.png" class="icones" alt="" id="graf">
+            </div>
+        </a>
+
+        <div id="config">
+            <a><img src="../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
+            <img src="../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
+        </div>
+
+    </div>
+    <!--Conteúdo do Site-->
+    <div class="scroll">
+        <div>
+            <h1 id="teste">Pedidos Pendentes</h1>
+        </div>
+
+
+        <a class="teste2" href="../HTML/pedido.html">
+            <div class="sectionone">
+                <u class="info">ID </u>
+                <u class="info">Variavel </u>
+                <u class="info">java pendentes</u>
+            </div>
+            <div class="vertical"></div>
+
+            <div class="sectiontwo">
+                <u class="info">Quandidade de itens: variavel items </u>
+                <u class="info">Clientes:variavel nome</u>
+            </div>
+            <div class="vertical"></div>
+            <div class="sectionthree">
+                <u class="info">data: variavel data </u>
+                <u class="info">total:variavel valor</u>
+            </div>
+        </a>
+
+
+
+
+
+    </div>
+
+    <!--Menu Vertical-->
+
+    <div id="menuho">
+        <div id="operador">
+            <img src="../IMG/icon.png" id="icon" alt="">
+            <h1 id="nome">Operador: Exemplo</h1>
+
+        </div>
+
+
+
+
+        <a class="sidebtn" href="../HTML/MontarPedido.html"> <img class="imgbtn" src="../IMG/MP.png">
+            <div class="MP"> Montar Pedido</div>
+        </a>
+        <a class="sidebtn" href="../HTML/historico.html"> <img class="imgbtn" src="../IMG/historico.png">
+            <div href="#" class="MP">Histórico de Vendas</div>
+        </a>
+        <a class="sidebtn" href="ProdutosList.html"> <img class="imgbtn" src="../IMG/LP.png">
+            <div href="#" class="MP">Lista de Produtos</div>
+        </a>
+        <a class="sidebtn" href="../HTML/listagemcli.html"> <img class="imgbtn" src="../IMG/LC.png">
+            <div href="#" class="MP">Lista de
+                Clientes</div>
+        </a>
+        <a class="sidebtn" href="../Index.html"> <img class="imgbtn" src="../IMG/EX.png">
+            <div href="#" class="MP">Sair</div>
+            <p id="sairadjustment"></p>
+        </a>
+        <img src="../IMG/trevoice.png" class="logo" alt="">
+
+    </div>
+
+
+    <!-- aba de configurações -->
+
+    <div class="config-scn" id="config-aba" onmouseleave="fechaconf()">
+        <div>
+            <div id="linksconf">
+                <img src="../IMG/conf.png">
+
+                <a onclick="newPopup()" class="lkc">Editar Usuário</a>
+                <a href="../HTML/Cadastroope.html" class="lkc" class="sidebtn">Cadastro Usuário</a>
+                <a href="../HTML/cadcli.html" class="lkc">Cadastro de Cliente</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="../JAVASCRIPT/controle.js"></script>
+</body>
