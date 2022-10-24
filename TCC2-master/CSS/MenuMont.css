@@ -122,6 +122,7 @@ label,
     font-size: 18px;
     width: 40%;
     opacity: 1;
+text-align: left;
 
     transition-property: opacity;
     transition-delay: .7s;
@@ -223,14 +224,13 @@ h1 {
 #icon {
     width: 98px;
     height: 98px;
-    border-radius: 15px;
+    border-radius: 50px;
     display: inline-block;
 
     transition-duration: 1s;
     transition-timing-function: linear;
 
 }
-
 #nome {
 
     display: inline-block;

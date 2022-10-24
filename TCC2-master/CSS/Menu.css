@@ -223,7 +223,18 @@ h1 {
 #icon {
     width: 98px;
     height: 98px;
-    border-radius: 15px;
+    border-radius: 50px;
+    display: inline-block;
+
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
+
+#icon2 {
+    width: 98px;
+    height: 98px;
+    border-radius: 50px;
     display: inline-block;
 
     transition-duration: 1s;
