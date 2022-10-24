@@ -1,24 +1,48 @@
 <?php
 
-if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) && !empty($_POST['senha'])){
-   
-    require 'conexao.php';
-    require 'Operador.class.php';
+require('conexao.php');
 
-    $op = new Operador();
-   
-    $email = addslashes($_POST['email']); 
-    $senha = addslashes($_POST['senha']);
+if (!empty($_POST) and (empty($_POST['email']) or empty($_POST['senha']))) {
+    $alerempty = <<<EOTer
+    <script type="text/javascript">
+    window.location.href = '../index.html';
+    alert("Preencha os campos!");
+    </script>
+    EOTer;
 
-    //executando o método do login
-    if($op->login($email, $senha) == true){
-        if(isset($_SESSION['id_oper'])){
-            header("Location: Menu.php");
-        }else{
-            header("Location: index.html");
-        }
+    echo $alerempty;
+}
 
-        }else{
-            header("Location: ../index.html");
-        }
-    }
+$query = $pdo->prepare("SELECT * FROM operador WHERE email_oper = ? AND senha = ?");
+$query->execute(array($_POST["email"], hash("MD5",  "sha256",  $_POST["senha"])));
+
+$linha = $query->fetch(PDO::FETCH_ASSOC);
+
+if ($query->rowCount() ) {
+    
+    
+    if (!isset($_SESSION)) session_start();
+    
+    $_SESSION['id_session'] = $linha['id_oper'];
+    $_SESSION['email_session'] = $linha['email_oper'];
+    $_SESSION['senha_session'] = $linha['senha'];
+    $_SESSION['nivel_session'] = $linha['nivel_acess'];
+    $_SESSION['avatar_session'] = $linha['avatar'];
+    $_SESSION['nome_session'] = $linha['nome_oper'];
+
+
+    header('location: Menu.php');
+    exit;
+
+} else {
+    $alervazio = <<<EOTe
+    <script type="text/javascript">
+    window.location.href = '../index.html';
+    alert("Login inválido!");
+    </script>
+    EOTe;
+
+    echo $alervazio;
+
+}
+

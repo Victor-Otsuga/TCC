@@ -1,3 +1,7 @@
+<?php
+include ('verificarLogin.php');
+include ('conexao.php'); 
+?>
 
 
 <!DOCTYPE html>
@@ -8,19 +12,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
     <title>Menu</title>
 </head>
 
 <body>
 
+    <!-- Funçao do carrinho de compra -->
+
+   
+<div class="car-scn" id="car-aba"  onmouseleave="fechacar()">
+    
+    <a href="final.php" style="text-decoration: none; color:black;"><div> <img src="../IMG/carrinho.png" class="icones" id="carrinhoPop" > <p class="txt" style="text-align: center; margin-bottom: 20px;">Abrir Venda</p></div></a>    <div class="carpop" >
+       
+    
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t> 
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        </div>
+
+        <div>
+            <p class="total">Total: R$ 123,00</p>
+        </div>
+</div>
+
     <!--Menu Horizontal-->
     <div class="header">
-        <div class="vendidos">
-            <h1 id="titulo">Mais vendidos</h1>
-            <img src="../IMG/grafico.png" class="icones" alt="" id="graf">
-        </div>
+
+        <a href="grafico.php" class="link">
+            <div class="vendidos">
+                <h1 id="titulo">Mais vendidos</h1>
+                <img src="../IMG/grafico.png" class="icones" alt="" id="graf">
+            </div>
+        </a>
+
         <div id="config">
-            <a href="../Index.html"><img src="../IMG/carrinho.png" class="icones" alt="" id="carrinho"></a>
+            <a><img src="../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
             <img src="../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
         </div>
 
@@ -30,25 +69,31 @@
         <div>
             <h1 id="teste">Pedidos Pendentes</h1>
         </div>
-        <div class="conteudo">
-            <div class="teste2">
-                <div class="sectionone">
-                    <a class="info">ID </a>
-                    <a class="info">Variavel </a>
-                    <a class="info">java pendentes</a>
-                </div>
 
-                <div class="sectiontwo">
-                    <a><u class="info">Quandidade de itens: variavel items </u></a>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class="sectiontwo">
-                    <a><u class="info">data: variavel data </u></a>
-                    <u class="info">total:variavel valor</u>
-                </div>
 
+
+        <a class="teste2" href="pedido.php">
+            <div class="sectionone">
+                <u class="info">ID </u>
+                <u class="info">Variavel </u>
+                <u class="info">java pendentes</u>
             </div>
-        </div>
+            <div class="vertical"></div>
+
+            <div class="sectiontwo">
+                <u class="info">Quandidade de itens: variavel items </u>
+                <u class="info">Clientes:variavel nome</u>
+            </div>
+            <div class="vertical"></div>
+            <div class="sectionthree">
+                <u class="info">data: variavel data </u>
+                <u class="info">total:variavel valor</u>
+            </div>
+        </a>
+
+
+
+
 
     </div>
 
@@ -56,63 +101,77 @@
 
     <div id="menuho">
         <div id="operador">
-            <img src="../IMG/icon.png" id="icon" alt="">
+        <!-- <img  id="icon" alt=""> -->
 
-            <h1 id="nome">Operador:  <?php
-            include_once 'session_home.php';
+        <?php 
+        
+        $avatar = $_SESSION['avatar_session']; 
 
-            $nome_oper = $_SESSION['nome_session'];
+        echo '<img id="icon" src="'.$avatar.'">';
+        
+        ?>
             
-            $firstname = explode(" ", $nome_oper);
-            echo "$nome_oper";    ?></h1>
+            <h1 id="nome">Operador: <?php
+               
+                $nome_oper = $_SESSION['nome_session'];           
+                echo $nome_oper ?></h1>
+
         </div>
 
 
 
 
-        <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/MP.png">
-            <div class="MP"> Montar
-                Pedido</div>
+        <a class="sidebtn" href="MontarPedido.php"> <img class="imgbtn" src="../IMG/MP.png">
+            <div class="MP"> Montar Pedido</div>
         </a>
-        <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/historico.png">
+        <a class="sidebtn" href="historico.php"> <img class="imgbtn" src="../IMG/historico.png">
             <div href="#" class="MP">Histórico de Vendas</div>
         </a>
-        <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/LP.png">
-            <div href="#" class="MP">Listar
-                Pedidos</div>
+        <a class="sidebtn" href="ProdutosList.php"> <img class="imgbtn" src="../IMG/LP.png">
+            <div href="#" class="MP">Lista de Produtos</div>
         </a>
-        <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/LC.png">
+        <a class="sidebtn" href="listagemcli.php"> <img class="imgbtn" src="../IMG/LC.png">
             <div href="#" class="MP">Lista de
                 Clientes</div>
         </a>
-        <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/EX.png">
-            <div href="#" class="MP">Sair</div><p id="sairadjustment"></p>
+        <a class="sidebtn" href="logout.php"> <img class="imgbtn" src="../IMG/EX.png">
+            <div href="#" class="MP">Sair</div>
+            <p id="sairadjustment"></p>
         </a>
         <img src="../IMG/trevoice.png" class="logo" alt="">
 
     </div>
 
 
+<?php
+    $alert3 = <<<EOT
+    <script> varWindow = window.open(
+        'editarope.php',
+         'pagina',
+         "width=850, height=655, top=500, left=310, scrollbars=no, menubar=no  my_file.php ', ' null' , ' width = 800, height = 800, toolbar = no , scrollbars = no , location = no, resizable = no ");
+         </script>
+    EOT;
+    
+     
+    ?>
+
+
     <!-- aba de configurações -->
-    <div class="config-scn" id="config-aba"  onmouseleave="fechaconf()">
-        <div >
-            <div id="linksconf" >
-                <img src="../IMG/conf.png" >
-                <a href="../HTML/cadcli.html" class="lkc">Cadastro de Cliente</a>
-                <a href="../HTML/Cadastroope.html" class="lkc" class="sidebtn">Cadastro Usuário</a>
-                <a href="../HTML/#" class="lkc">Editar Pedido</a>
-                <a href="../HTML/#" class="lkc">Editar Usuário</a>
-                <a href="../HTML/#" class="lkc">Editar Cliente</a>
-    
+
+    <div class="config-scn" id="config-aba" onmouseleave="fechaconf()">
+        <div>
+            <div id="linksconf">
+                <img src="../IMG/conf.png">
+
+                <a   href="editarope.php"  class="lkc" > Editar Usuário</a>
+                <a href="Cadastroope.php" class="lkc" class="sidebtn">Cadastro Usuário</a>
+                <a href="cadcli2.php" class="lkc">Cadastro de Cliente</a>
+
             </div>
+        </div>
     </div>
+
+
     
-
-
-
-
-
-
-
-            <script src="../JAVASCRIPT/controle.js"></script>
+    <script src="../JAVASCRIPT/controle.js"></script>
 </body>
