@@ -8,7 +8,6 @@ $nome_oper = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $hash = hash(
-  "MD5",
   "sha256",
   $senha,
 );
@@ -19,7 +18,7 @@ $nivel_acess = $_POST['nivel_acess'];
 
 //avatar
 $extension = strtolower(substr($_FILES['avatar']['name'], -4));
-$nameavatar = $id_oper . $extension;
+$nameavatar = $nome_oper . $extension;
 $avatard = "../avatar/";
 $avatar = $avatard . $nameavatar;
 

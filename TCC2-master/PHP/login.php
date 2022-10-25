@@ -14,7 +14,9 @@ if (!empty($_POST) and (empty($_POST['email']) or empty($_POST['senha']))) {
 }
 
 $query = $pdo->prepare("SELECT * FROM operador WHERE email_oper = ? AND senha = ?");
-$query->execute(array($_POST["email"], hash("MD5",  "sha256",  $_POST["senha"])));
+  $query->execute(array($_POST["email"], hash("sha256",  $_POST["senha"])));
+
+// $query->execute(array($_POST["email"], $_POST["senha"]));
 
 $linha = $query->fetch(PDO::FETCH_ASSOC);
 
