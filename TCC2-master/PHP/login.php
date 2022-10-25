@@ -37,14 +37,16 @@ if ($query->rowCount() ) {
     exit;
 
 } else {
-    $alervazio = <<<EOTe
-    <script type="text/javascript">
-    window.location.href = '../index.html';
-    alert("Login inválido!");
-    </script>
-    EOTe;
+    // $alervazio = <<<EOTe
+    // <script type="text/javascript">
+    // window.location.href = '../index.html';
+    // alert("Login inválido!");
+    // </script>
+    // EOTe;
 
-    echo $alervazio;
+    // echo $alervazio;
+
+    header("Location: erro2.php");
 
 }
 
