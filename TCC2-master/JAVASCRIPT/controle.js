@@ -79,3 +79,14 @@ function goBack() {
     window.history.back()
 }
 
+
+
+//controle do cadastro de produto
+
+
+function selected(){
+if (value.getElementById("tiposvt")=1){
+    Document.getElementById("Semassa").style.display = "none"
+}
+alert("oi")
+}
