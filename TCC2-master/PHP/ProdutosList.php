@@ -192,7 +192,7 @@ include ('conexao.php');
                 <img src="../IMG/conf.png" >
                 
                 <a onclick="newPopup()" id="lkc">Editar Usuário</a>
-                <a href="Cadastroope.php" id="lkc" class="sidebtn">Cadastro Usuário</a>
+                <a href="Cadastroope.php" id="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="cadcli.php" id="lkc">Cadastro de Cliente</a>
 
             </div>

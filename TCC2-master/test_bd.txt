@@ -16,7 +16,7 @@ id_oper int primary key auto_increment
 );
 
 INSERT INTO `operador` VALUES ('thi', 'angu@adm.com.br', '123', 1, 'avatar', null);
-INSERT INTO `operador` VALUES ('angu', 'angu2@adm.com.br', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 1, 'avatar' null);
+INSERT INTO `operador` VALUES ('angu', 'a@adm.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 1, 'avatar', null);
 
 
 create table cliente(

@@ -54,9 +54,9 @@ If ($_SESSION['nivel_session'] != 1){
               <input name="senha" type="password" autocomplete="off" class="input">
               <label >tipo de operador:</label>
                 <div class="rdiv">
-                <label for="tipo_oper" class="radio">Administrador</label><input type="radio" class="input" name="nivel_acess" value="1"> 
-                <label for="tipo_oper" class="radio">Normal</label>
-                <input type="radio"  class="input" name="nivel_acess" value="2">
+                <label for="tipo_oper" class="radio">Administrador <input type="radio" class="input" name="nivel_acess" value="1">  </label>
+                <label for="tipo_oper" class="radio">Normal <input type="radio"  class="input" name="nivel_acess" value="2"></label>
+                
                 </div>
                 
                 <div id="number"> 
