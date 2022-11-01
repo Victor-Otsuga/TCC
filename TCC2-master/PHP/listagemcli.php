@@ -1,6 +1,7 @@
 <?php
 include ('verificarLogin.php');
 include ('conexao.php'); 
+include ('listaclifunc.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ include ('conexao.php');
     <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
     <link rel="stylesheet" type="text/css" href="../CSS/listagem.css">
 
-    <link rel="stylesheet" href="../CSS/bootstrap.min.css" >
+
 
 <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
     <title>listagem de Clientes</title>
@@ -23,9 +24,9 @@ include ('conexao.php');
 
     <!--aba da pesquisa-->
     <div id="abapes" onclick="fechaconf2()">
-        <form action="Menu.php" id="pesf">
-        <input type="text" placeholder="" id="pes">
-        <button type="submit" id="env" ><img src="../IMG/lupa.png" alt=""></button>
+        <form action="clienteespecf.php" id="pesf" method="POST">
+        <input type="text" placeholder="" name="pes" id="pes">
+        <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>
     <!--lista-->
@@ -33,7 +34,7 @@ include ('conexao.php');
 
     <div id="bntliscli">
            
-        <a id="bnt" onclick="novocli()" > 
+        <a id="bnt" onclick="novocli()" href="cadcli2.php"> 
             <div > novo cliente</div>
         </a>
 
@@ -41,52 +42,32 @@ include ('conexao.php');
 
 
     
-    <spam id="lista" onclick="fechaconf2()">
+    <div id="lista" onclick="fechaconf2()">
 
     <?php
-  //seleciona no banco os dados necessarios
-$selectconta="SELECT * FROM cliente ORDER BY id_cli asc";
 
 
-//pega os resultados selecionados
-$result = $pdo->prepare($selectconta);
+while($linhas_cli = $result->fetch(PDO::FETCH_ASSOC)) {  ?>
+   <!-- a variavel id passa pelo o link ao invés de um form -->
+  <a  href="clienteespecf.php?id=<?php echo $linhas_cli["id_cli"];?>" >
+    <div class="clienteex" type="submit">
+    <p class="INFO"><span class="font">Nome do cliente:<?php echo $linhas_cli["nome_cli"];?></span> </p>
+    <p class="INFO"><span class="font">Nome da empresa:<?php echo $linhas_cli["nome_empresa"];?></span> </p>
 
-$result->execute();
-
-while($linhas_cli = $result->fetch(PDO::FETCH_ASSOC)){ ?>
-  <div id="lista" onclick="fechaconf2()">
-  <a class="clienteex" href="histcli.php">
-        <p>Nome do cliente:<?php echo $linhas_cli["nome_cli"]; ?> <span class="font"></span> </p>
-        <p>Apelido:<?php echo $linhas_cli["apelido"]; ?> <span class="font"></span> </p>
-        <p>Nome da empresa:<?php echo $linhas_cli["nome_empresa"]; ?> <span class="font"></span> </p>
-        <p>email: <?php echo $linhas_cli["email_cli"]; ?> <span class="font"></span> </p>
-        <p>Telefone:<?php echo $linhas_cli["telefone"]; ?> <span class="font"></span> </p>
-        <p>CPF:<?php echo $linhas_cli["cpf"]; ?> <span class="font"></span> </p>
-        <p>Endereço: <?php echo $linhas_cli["endereco"]; ?> <span class="font"></span> </p>
-        </a>
-        </div>
-<?php }; ?>  
+    
+</div>
+</a>
+<?php  };?>  
 
 
-
+</div>
 
     <!--Menu Vertical-->
 
-    <div id="operador">
-        <!-- <img  id="icon" alt=""> -->
-
-        <?php 
-        
-        $avatar = $_SESSION['avatar_session']; 
-
-        echo '<img id="icon" src="'.$avatar.'">';
-        
-        ?>
-            
-            <h1 id="nome">Operador: <?php
-               
-                $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+    <div id="menuho" onclick="fechaconf2()">
+        <div id="operador">
+            <img src="../IMG/icon.png" id="icon" alt="">
+            <h1 id="nome">Operador: Exemplo</h1>
 
         </div>
 
@@ -153,10 +134,7 @@ while($linhas_cli = $result->fetch(PDO::FETCH_ASSOC)){ ?>
 
     </div>
     
-
-
-
-
+  
 
 
 
