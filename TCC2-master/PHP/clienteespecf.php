@@ -75,11 +75,11 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
        
  
   <a class="clienteex" href="histcli.php">
-        <p class="INFO  ">apelido:<span class="font"><?php echo $linhas_cli["apelido"];?> </span> </p> 
+        <p class="INFO  ">apelido:<span class="font"><?php echo $linhas_cli["apelido_cli"];?> </span> </p> 
         <p class="INFO  ">email:<span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
-        <p class="INFO  ">telefone:<span class="font"><?php echo $linhas_cli["telefone"];?></span> </p>
+        <p class="INFO  ">telefone:<span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
         <p class="INFO  ">cpf:<span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
-        <p class="INFO  ">endereco:<span class="font"><?php echo $linhas_cli["endereco"];?> </span> </p>
+        <p class="INFO  ">endereco:<span class="font"><?php echo $linhas_cli["endereco_cli"];?> </span> </p>
         </a>
   
 <?php  ?>  

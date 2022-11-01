@@ -52,7 +52,7 @@ while($linhas_cli = $result->fetch(PDO::FETCH_ASSOC)) {  ?>
   <a  href="clienteespecf.php?id=<?php echo $linhas_cli["id_cli"];?>" >
     <div class="clienteex" type="submit">
     <p class="INFO"><span class="font">Nome do cliente:<?php echo $linhas_cli["nome_cli"];?></span> </p>
-    <p class="INFO"><span class="font">Nome da empresa:<?php echo $linhas_cli["nome_empresa"];?></span> </p>
+    <p class="INFO"><span class="font">Nome da empresa:<?php echo $linhas_cli["id_cli"];?></span> </p>
 
     
 </div>

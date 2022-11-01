@@ -21,12 +21,12 @@ INSERT INTO `operador` VALUES ('angu', 'a@adm.com', 'a665a45920422f9d417e4867efd
 
 create table cliente(
 nome_cli varchar(255) not null,
-apelido varchar(255) not null,
-nome_empresa varchar(255) not null,
+apelido_cli varchar(255),
 email_cli varchar(255) not null,
-telefone int not null,
-cpf int not null,
-endereco varchar(255) not null,
+contato_cli int not null,
+cpf int,
+cnpj int,
+endereco_cli varchar(255) not null,
 id_cli int primary key auto_increment
 );
 

@@ -41,21 +41,21 @@ If ($_SESSION['nivel_session'] != 1){
                     <h1 id="titulo2">Cadastro de cliente</h1>
                 </div>
                 <div id="conteudo">
-                    <form action="../PHP/cadcli.php" method="POST" id="form2">
+                    <form action="cadcli.php" method="POST" id="form2">
                         <label>Nome/empresa</label>
-                        <input name="nome_cli" autocomplete="off" class="input">
+                        <input type="text" name="nome_cli" autocomplete="off" class="input" required>
                         <label>endereço</label>
-                        <input name="endereco_cli" autocomplete="off" class="input">
+                        <input type="text" name="endereco_cli" autocomplete="off" class="input" required>
                         <label>contato</label>
-                        <input name="contato_cli" autocomplete="off" class="input">
+                        <input type="text" name="contato_cli" autocomplete="off" class="input" required>
                         <label>E-mail</label>
-                        <input name="email_cli" autocomplete="off" class="input">
+                        <input type="text" name="email_cli" autocomplete="off" class="input" required>
                         <label>CPF</label>
-                        <input name="CPF_cli" autocomplete="off" type="number" class="input">
+                        <input type="text" name="cpf_cli" autocomplete="off" type="number" class="input" required>
                         <label>CNPJ</label>
-                        <input name="CPF_cli" autocomplete="off" type="number" class="input">
+                        <input type="text" name="cnpj_cli" autocomplete="off" type="number" class="input" required>
                         <label>Apelido(Não obrigatório)</label>
-                        <input name="CPF_cli" autocomplete="off" class="input">
+                        <input type="text" name="apelido_cli" autocomplete="off" class="input">
                         <div id="number2">
 
                             <img src="../IMG/1cheio.png" alt="" id="nummargin">
