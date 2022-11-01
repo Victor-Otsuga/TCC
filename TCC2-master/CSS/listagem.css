@@ -6,10 +6,15 @@
     src: url(../fonts/Candal-Regular.ttf);
   }
 
+  
+  @font-face{   font-family: chenla;
+    src: url(../fonts/Chenla-Regular.ttf);}
+
+
   /* lista dos clientes */
 .clienteex{
     width: 35vw;
-    height: 350px;
+    height: auto;
     padding-left: 5px;
     display: grid;
     background: #CABE82;
@@ -30,6 +35,22 @@
    
  
     }
+
+    .INFO{margin-bottom: 25px;}
+
+    .font{
+    border: none;
+     text-decoration: none;
+     color: #000;
+     background-color: #CABE82;
+     font-family: 'chenla';
+     font-style: normal;
+     font-size: 15px;
+    
+        
+       
+     
+        }
 
 .clienteex:hover{  text-decoration: none;}
 #lista{
@@ -55,7 +76,7 @@
     height: auto;
     width: 80%;
     margin-bottom: 20px;
-    background-color: blue;
+    background-color: #CABE82;
     border:none;
     margin-right:15px ;
   }
