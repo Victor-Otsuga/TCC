@@ -13,7 +13,7 @@
     <div id="bg">
     <div id="login-container"> 
         <img src="../IMG/trevoice.png" alt="">
-        <form action="PHP/login.php" method="POST">
+        <form action="login.php" method="POST">
         <label>Usuário</label>
         <input name="email" autocomplete="off">
 

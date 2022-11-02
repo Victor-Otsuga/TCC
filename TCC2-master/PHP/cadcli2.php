@@ -1,5 +1,5 @@
 <?php
-
+include ('conexao.php');
 include ('verificarLogin.php');
   
 
@@ -42,20 +42,29 @@ If ($_SESSION['nivel_session'] != 1){
                 </div>
                 <div id="conteudo">
                     <form action="cadcli.php" method="POST" id="form2">
+
                         <label>Nome/empresa</label>
                         <input type="text" name="nome_cli" autocomplete="off" class="input" required>
+
                         <label>endereço</label>
                         <input type="text" name="endereco_cli" autocomplete="off" class="input" required>
+
                         <label>contato</label>
                         <input type="text" name="contato_cli" autocomplete="off" class="input" required>
+
                         <label>E-mail</label>
                         <input type="text" name="email_cli" autocomplete="off" class="input" required>
+
                         <label>CPF</label>
                         <input type="text" name="cpf_cli" autocomplete="off" type="number" class="input" required>
+
                         <label>CNPJ</label>
                         <input type="text" name="cnpj_cli" autocomplete="off" type="number" class="input" required>
+
                         <label>Apelido(Não obrigatório)</label>
                         <input type="text" name="apelido_cli" autocomplete="off" class="input">
+
+
                         <div id="number2">
 
                             <img src="../IMG/1cheio.png" alt="" id="nummargin">
