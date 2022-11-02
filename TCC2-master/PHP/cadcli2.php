@@ -38,18 +38,23 @@ If ($_SESSION['nivel_session'] != 1){
                         <img onclick="goBack()" src="../IMG/imgseta.png" alt="">
                     </a>
 
-                    <h1 id="titulo2">Cadastro de cliente</h1>
+                    <h1 id="titulo2">Cadastro de Cliente</h1>
+                    <a href="Menu.php"><img src="../IMG/casinha.png" class="homeCad" alt=""></a>
                 </div>
-                <div id="conteudo">
+                
+                    
                     <form action="cadcli.php" method="POST" id="form2">
 
-                        <label>Nome/empresa</label>
+
+                    <div id="conteudo2">
+
+                        <label>Nome da Empresa</label>
                         <input type="text" name="nome_cli" autocomplete="off" class="input" required>
 
-                        <label>endereço</label>
+                        <label>Endereço</label>
                         <input type="text" name="endereco_cli" autocomplete="off" class="input" required>
 
-                        <label>contato</label>
+                        <label>Telefone</label>
                         <input type="text" name="contato_cli" autocomplete="off" class="input" required>
 
                         <label>E-mail</label>
@@ -61,7 +66,7 @@ If ($_SESSION['nivel_session'] != 1){
                         <label>CNPJ</label>
                         <input type="text" name="cnpj_cli" autocomplete="off" type="number" class="input" required>
 
-                        <label>Apelido(Não obrigatório)</label>
+                        <label>Apelido (Não obrigatório)</label>
                         <input type="text" name="apelido_cli" autocomplete="off" class="input">
 
 

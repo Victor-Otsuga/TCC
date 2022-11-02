@@ -35,37 +35,43 @@ If ($_SESSION['nivel_session'] != 1){
               <img onclick="goBack()" src="../IMG/imgseta.png" alt="">
              
            
-              <h1 id="titulo2">Cadastro de usuário</h1>
+              <h1 id="titulo2">Cadastro de Operador</h1>
            
-              
+              <a href="Menu.php"><img src="../IMG/casinha.png" class="homeCad" alt=""></a>
           
                  </div>
-              <div id="conteudo">
+             
               <form action="cadastrando_oper.php" method="POST" enctype="multipart/form-data">
-               
-              <label>Nome do Funcionário</label>
+              <div id="conteudo">
+
+              <label class="label">Nome do Funcionário</label>
               <input name="nome" autocomplete="off" class="input">
-              <label>E-mail</label>
+
+              <label class="label">E-mail</label>
               <input name="email"type="email"  autocomplete="off" class="input">
-              <label for="file" class="input2">
-              <input type="file"  id="file" name="avatar" accept="image/*"/>
-             Escolha a foto de perfil</label>
-              <label>Senha</label>
+
+              <label class="label"  class="input2">Escolha a foto de perfil</label>
+
+              <label class="input4">Clique para selecionar<input type="file"  id="file" name="avatar" accept="image/*"/></label>
+
+             
+              <label class="label">Senha</label>
               <input name="senha" type="password" autocomplete="off" class="input">
-              <label >tipo de operador:</label>
+
+              <label class="label" >Tipo de operador:</label>
                 <div class="rdiv">
-                <label for="tipo_oper" class="radio">Administrador <input type="radio" class="input" name="nivel_acess" value="1">  </label>
-                <label for="tipo_oper" class="radio">Normal <input type="radio"  class="input" name="nivel_acess" value="2"></label>
-                
+                <label for="tipo_oper" class="radio">Adm <input type="radio" class="input3" name="nivel_acess" value="1">  </label>
+                <label for="tipo_oper" class="radio">Normal <input type="radio"  class="input3" name="nivel_acess" value="2"></label>
+                 
                 </div>
                 
                 <div id="number"> 
-                <a href="cadcli.php">
-                <img src="../IMG/1Vazio.png" alt="" id="nummargin" >
-                </a>
+                <a class="imglink" href="..\PHP\cadcli2.php">
+                <img src="../IMG/1Vazio.png" alt="" id="nummargin"></a>
+                
                 <img src="../IMG/2cheio.png" alt="">
                 </div>
-                <input  type="submit" value="Confirmar">
+                <input  type="submit" value="Confirmar" class="input2">
               
                 </form>
               </div>
