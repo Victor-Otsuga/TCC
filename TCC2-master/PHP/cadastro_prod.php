@@ -4,28 +4,30 @@ include ('conexao.php');
 
 
 
-$sabor = $_POST['sabor'];
-$tipo = $_POST['tipo'];
-$tamanho_uni = $_POST['tamanho'];
-$tamanho_pac = $_POST['tamanho_pac'];
-$preco_uni= $_POST['preco_uni'];
-$preco_pac = $_POST['preco_pac'];
+
+$tipo = $_POST['tiposvt'];
+
 $confirm = 1;
 
 
 
-var_dump($tamanho_uni);
+
 
 if ($tipo == 1){
 
-  
+  $tamanho_uni = $_POST['litros'];
+  $tamanho_pac = $_POST['tamanho_pac'];
+  $preco_uni= $_POST['preco_uni'];
+  $preco_pac = $_POST['preco_pac'];
+  $sabor = $_POST['sabor'];
+
   if(empty($sabor) || empty($tipo) || empty($tamanho_uni) || empty($tamanho_pac) || empty($preco_uni) || empty($preco_pac)){
   
   
     $show = <<<SHOW
   <script type="text/javascript">
   window.location.href = 'cadastroproduto.php';
-  alert("Deve-se preencher o formlário.");
+  alert("Deve-se preencher o formulário.");
   </script>
   SHOW;
 
@@ -35,19 +37,28 @@ if ($tipo == 1){
     $confirm = 0;
   }
 
-}elseif($tipo == 2 || 3 || 4){
+}
+
+
+if($tipo == 2 || 3 || 4){
+
+  $sabor = $_POST['sabor'];
+  $preco_uni= $_POST['preco_uni'];
+ 
 
 if(empty($sabor) || empty($tipo) || empty($preco_uni)){
   $show2 = <<<SHOW2
   <script type="text/javascript">
   window.location.href = 'cadastroproduto.php';
-  alert("Deve-se preencher o formlário.");
+  alert("Deve-se preencher o formulário.2");
   </script>
   SHOW2;
 
   
     echo $show2;
     $confirm = 0;
+  }else{
+    $confirm = 2;
   }
 }
 
@@ -56,14 +67,24 @@ if($confirm==1){
   $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, ?, ?, ?, default)";
   $stmt_prod = $pdo->prepare($insert_prod);
   $stmt_prod->execute(array($sabor, $preco_uni, $tipo, $tamanho_pac, $tamanho_uni, $preco_pac));
-  header ("Location: cadadastroproduto.php");
+  header ("Location: cadastroproduto.php");
 
-
+echo"foi1";
   
   }
 
+  if($confirm==2){
+    $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, default, default, default, default)";
+    $stmt_prod = $pdo->prepare($insert_prod);
+    $stmt_prod->execute(array($sabor, $preco_uni, $tipo));
+    header ("Location: cadastroproduto.php");
+  
+    echo"foi1";
+    
+    }
 
-  echo("foi");
+
+ 
 
     // $sql = $pdo->prepare("SELECT * FROM produtos WHERE sabor = ?");
     // $sql -> bindValue(1, $sabor);

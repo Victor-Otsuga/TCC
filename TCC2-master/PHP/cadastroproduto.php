@@ -42,7 +42,7 @@ if ($_SESSION['nivel_session'] != 1) {
 
                 </div>
                 <div id="conteudo">
-                    <form action="cadastrando_prod.php" method="POST" enctype="multipart/form-data">
+                    <form action="cadastro_prod.php" method="POST" enctype="multipart/form-data">
 
                         <label>Sabor</label>
                         <input name="sabor" autocomplete="off" class="input">

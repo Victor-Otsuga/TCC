@@ -133,7 +133,7 @@ include ('conexao.php');
            
                 <div id="bntliscli">
                         <!-- função novoprod n existe ainda -->
-                    <a id="bnt" onclick="novoprod()" >  
+                    <a id="bnt" onclick="novoprod()" href="cadastroproduto.php">  
                         <div > Cadastrar Produto</div>
                     </a>
             
