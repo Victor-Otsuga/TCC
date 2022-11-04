@@ -25,7 +25,7 @@ include ('conexao.php');
                 <div class="headcad">
             
                 
-              <img onclick="noPopup()" src="../IMG/imgseta.png" alt="">
+              <img class="seta" onclick="goBack()" src="../IMG/imgseta.png" alt="">
             
            
               <h1 id="titulo2">Editar de usuário</h1>

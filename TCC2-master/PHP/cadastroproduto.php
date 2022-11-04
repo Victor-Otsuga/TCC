@@ -33,10 +33,10 @@ if ($_SESSION['nivel_session'] != 1) {
                 <div class="headcad">
 
 
-                    <img onclick="goBack()" src="../IMG/imgseta.png" alt="">
+                    <img class="seta" onclick="goBack()" src="../IMG/imgseta.png" alt="">
 
 
-                    <h1 id="titulo2">Cadastro de Produto</h1>
+                    <h1 id="titulo2" >Cadastro de Produto</h1>
 
 
 
@@ -44,29 +44,27 @@ if ($_SESSION['nivel_session'] != 1) {
                 <div id="conteudo">
                     <form action="cadastro_prod.php" method="POST" enctype="multipart/form-data">
 
-                        <label>Sabor</label>
-                        <input name="sabor" autocomplete="off" class="input">
-
                         <label>Tipo</label>
-                        <div class="rdiv" onclick="selected()">
-                            <label for="tipo_sorv" class="radio">Massa <input type="radio" class="input" name="tiposvt" value="1"> </label>
-                            <label for="tipo_sorv" class="radio">Picolé <input type="radio" class="input" name="tiposvt" value="2"></label>
-                            <label for="tipo_sorv" class="radio">Cobertura <input type="radio" class="input" name="tiposvt" value="3"></label>
-                            <label for="tipo_sorv" class="radio">Trevinho <input type="radio" class="input" name="tiposvt" value="4"></label>
+                        <div class="rdiv" >
+                            <label for="tipo_sorv" class="radio">Massa <input  onclick="selectmassa()" type="radio" class="input" name="tiposvt" value="1"> </label>
+                            <label for="tipo_sorv" class="radio">Picolé <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="2"></label>
+                            <label for="tipo_sorv" class="radio">Cobertura <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="3"></label>
+                            <label for="tipo_sorv" class="radio">Trevinho <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="4"></label>
                         </div>
 
+                        <label>Sabor</label>
+                        <input name="sabor" autocomplete="off" class="input">
 
                         <label>Preço Unidade</label>
                         <input name="preco_uni" autocomplete="off" class="input">
 
-                        
-                        <label>Tamanho Unidade</label>
+                        <label>Possui Pacote?</label>
                         <div class="rdiv">
-                            <label for="tamanho_uni" class="radio">1 Litro <input type="radio" class="input" name="litros" value="1"> </label>
-                            <label for="tamanho_uni" class="radio">5 Litros <input type="radio" class="input" name="litros" value="2"></label>
+                            <label for="pacote" class="radio">Sim <input type="radio" class="input" name="tempct" onclick=selectpct1() value="1"> </label>
+                            <label for="pacote" class="radio">Não <input type="radio" class="input" name="tempct" onclick=selectpct0() value="2"></label>
                         </div>
 
-                        <div id="Semassa">
+                        <div id="sepct">
                         <label>Tamanho do Pacote</label>
                         <input name="tamanho_pac" autocomplete="off" class="input">
 
@@ -74,7 +72,13 @@ if ($_SESSION['nivel_session'] != 1) {
                         <input name="preco_pac" autocomplete="off" class="input">
                         </div>
 
-
+                        <div id="semassa">
+                        <label>Tamanho Unidade</label>
+                        <div class="rdiv">
+                            <label for="tamanho_uni" class="radio">1 Litro <input type="radio" class="input" name="litros" value="1"> </label>
+                            <label for="tamanho_uni" class="radio">5 Litros <input type="radio" class="input" name="litros" value="2"></label>
+                        </div>
+                        </div>
 
                        
                         <input type="submit" value="Confirmar">

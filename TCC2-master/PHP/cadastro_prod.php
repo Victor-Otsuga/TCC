@@ -6,6 +6,7 @@ include ('conexao.php');
 
 
 $tipo = $_POST['tiposvt'];
+$tempct = $_POST['tempct'];
 
 $confirm = 1;
 
@@ -21,6 +22,8 @@ if ($tipo == 1){
   $preco_pac = $_POST['preco_pac'];
   $sabor = $_POST['sabor'];
 
+
+  if($tempct==1){
   if(empty($sabor) || empty($tipo) || empty($tamanho_uni) || empty($tamanho_pac) || empty($preco_uni) || empty($preco_pac)){
   
   
@@ -31,10 +34,24 @@ if ($tipo == 1){
   </script>
   SHOW;
 
-    // echo $show;
-    var_dump ($tipo);
-
     $confirm = 0;
+  }
+
+  }elseif($tempct==2){
+    if(empty($sabor) || empty($tipo) || empty($tamanho_uni) || empty($preco_uni)){
+    
+    
+      $show = <<<SHOW
+    <script type="text/javascript">
+    window.location.href = 'cadastroproduto.php';
+    alert("Deve-se preencher o formulário.");
+    </script>
+    SHOW;
+  
+      $confirm = 0;
+    }
+
+
   }
 
 }
@@ -58,28 +75,60 @@ if(empty($sabor) || empty($tipo) || empty($preco_uni)){
     echo $show2;
     $confirm = 0;
   }else{
-    $confirm = 2;
+    
   }
 }
 
+//cadastro de massa
 
 if($confirm==1){
+
+//verificando se tem pacote
+  if($tempct==1){
   $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, ?, ?, ?, default)";
   $stmt_prod = $pdo->prepare($insert_prod);
   $stmt_prod->execute(array($sabor, $preco_uni, $tipo, $tamanho_pac, $tamanho_uni, $preco_pac));
   header ("Location: cadastroproduto.php");
-
-echo"foi1";
-  
   }
+  
+  if($tempct==2){
+    $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, default, ?, default, default)";
+    $stmt_prod = $pdo->prepare($insert_prod);
+    $stmt_prod->execute(array($sabor, $preco_uni, $tipo, $tamanho_uni));
+    header ("Location: cadastroproduto.php");
+    
 
+  
+  }}
+
+
+
+  //cadastro de cobertura picole e trevinho
   if($confirm==2){
+    var_dump($tempct);
     $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, default, default, default, default)";
     $stmt_prod = $pdo->prepare($insert_prod);
     $stmt_prod->execute(array($sabor, $preco_uni, $tipo));
     header ("Location: cadastroproduto.php");
-  
-    echo"foi1";
+
+    //verificando sem tem pacote
+    if($tempct==1){
+      $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, ?, default, ?, default)";
+      $stmt_prod = $pdo->prepare($insert_prod);
+      $stmt_prod->execute(array($sabor, $preco_uni, $tipo, $tamanho_pac, $tamanho_uni, $preco_pac));
+      header ("Location: cadastroproduto.php");
+      }
+      
+      if($tempct==2){
+        $insert_prod = "INSERT INTO produtos (sabor, preco_uni, tipo, tamanho_pacote, tamanho_uni, preco_pacote, id_prod) VALUES (?, ?, ?, default, default, default, default)";
+        $stmt_prod = $pdo->prepare($insert_prod);
+        $stmt_prod->execute(array($sabor, $preco_uni, $tipo, $tamanho_uni));
+        header ("Location: cadastroproduto.php");
+        
+    
+      
+      }
+    
     
     }
 
@@ -101,4 +150,3 @@ echo"foi1";
 
     //     echo $alertshow;
 
-            

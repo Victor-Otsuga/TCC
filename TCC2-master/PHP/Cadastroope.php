@@ -32,7 +32,7 @@ If ($_SESSION['nivel_session'] != 1){
                 <div class="headcad">
              
                 
-              <img onclick="goBack()" src="../IMG/imgseta.png" alt="">
+              <img class="seta" onclick="goBack()" src="../IMG/imgseta.png" alt="">
              
            
               <h1 id="titulo2">Cadastro de Operador</h1>
