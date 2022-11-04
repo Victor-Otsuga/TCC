@@ -84,9 +84,24 @@ function goBack() {
 //controle do cadastro de produto
 
 
-function selected(){
-if (value.getElementById("tiposvt")=1){
-    Document.getElementById("Semassa").style.display = "none"
+function selectmassa(){
+
+    document.getElementById("semassa").style.display = "block";
+
 }
-alert("oi")
+
+function selectpicole(){
+
+    document.getElementById("semassa").style.display = "none";
+
+}
+
+function selectpct1(){
+
+    document.getElementById("sepct").style.display = "block";
+}
+
+function selectpct0(){
+
+    document.getElementById("sepct").style.display = "none";
 }
