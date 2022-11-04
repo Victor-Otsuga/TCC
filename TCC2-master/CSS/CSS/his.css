@@ -1,0 +1,71 @@
+#headerhis {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 10px;
+    font-family: "Candal";
+    font-size: 25px;
+    background-color: #CABE82;
+    color: #000;
+    z-index: 5;
+    box-shadow: 0px 5px 10px #82805e;
+    width: auto;
+    /* margin-left: 285px; */
+    padding-left: 190px;
+    text-align: right;
+
+
+}
+
+/* pesquisa */
+
+#pes {
+    float: right;
+    padding: 6px;
+    font-size: 17px;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    height: auto;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: #CABE82;
+    border:none;
+    margin-right:45px ;
+  }
+
+    
+#env{
+    background-color: #CABE82;
+    border:none;
+    margin-top: 6px;
+    margin-left:10px;
+    cursor: pointer;
+}
+
+#pesf{ border: 3px solid #000;
+    border-radius: 15px;
+    display: inline-block;
+    height: 50px;
+    width: 455px;
+    margin-left: 45px;
+
+}
+
+#abapes {
+    position: sticky;
+    top: 0;
+    /* display: flex; */
+    text-align: center;
+    padding: 10px;
+    font-family: "Candal";
+    font-size: 25px;
+    background-color: #CABE82;
+    color: #000;
+    box-shadow: 0px 5px 10px #82805e;
+    width: auto;
+    /* margin-left: 285px; */
+    padding-left: 190px;
+}
