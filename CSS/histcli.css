@@ -1,0 +1,100 @@
+.headerhis {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 30px;
+}
+
+.vertical{
+    border-left: 3px solid black;
+            height: 100%;
+            margin-left: 1rem;
+            margin-right: 1rem;
+}
+
+.info{
+    text-decoration: underline; 
+}
+
+#bntliscli{
+    text-align: right;
+    height: auto;
+    margin-left: 70%;
+    border: red 1px solid;
+    position: fixed;
+    top: 0;
+    margin-top: 15px;
+    width: fit-content;
+    
+    }
+    #bntliscli2{
+        text-align: right;
+        height: auto;
+        margin-left: 60%;
+        border: red 1px solid;
+        position: fixed;
+        top: 0;
+        margin-top: 15px;
+        width: fit-content;
+        
+        }
+
+    #bnt{
+        cursor: pointer;
+        display: inline-block;
+        color: black;
+        font-weight: bold;
+        font-size: 19px;
+        font-family: "Candal";
+        text-align: center;
+        text-decoration: none;
+        width: 200px;
+        height: 40px;
+        padding-top: 5px;
+        background-color: #CABE82;
+        color: #000;
+        border: 2px solid #000000;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    #bnt2{
+        cursor: pointer;
+        display: inline-block;
+        color: black;
+        font-weight: bold;
+        font-size: 19px;
+        font-family: "Candal";
+        text-align: center;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        padding-top: 5px;
+        background-color: #CABE82;
+        color: #000;
+        border: 2px solid #000000;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    #headerclihis {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        padding: 15px;
+        font-family: "Candal";
+        font-size: 25px;
+        background-color: #CABE82;
+        color: #000;
+        z-index: 5;
+        box-shadow: 0px 5px 10px #82805e;
+        width: auto;
+        /* margin-left: 285px; */
+        padding-left: 190px;
+    
+    }
+
+    .sectionone{
+        text-align: center;
+    }

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/MenuMont.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
+ 
+    <title>Montar Pedido</title>
+</head>
+
+<body>
+
+    <!--Menu Horizontal-->
+    <div class="headerPedido">
+
+
+        <div class="SorveteTipo" class="cursor" id="massabtn" onclick="opnMassas()">
+            <h1 class="noclick" >Massas</h1>
+        </div>
+
+        <div class="SorveteTipo" class="cursor" id="picolebtn" onclick="opnPicoles()">
+            <h1 class="noclick">Picolés</h1>
+        </div>
+
+        <div class="SorveteTipo" class="cursor" id="coberturabtn" onclick="opnCoberturas()">
+            <h1 class="noclick">Coberturas</h1>
+        </div>
+
+        <div class="SorveteTipo" class="cursor" id="trevinhobtn" onclick="opnTrevinho()">
+            <h1 class="noclick">Trevinho</h1>
+        </div>
+
+        <img src="../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinhoPedido">
+
+    </div>
+
+
+<!-- aba de carrinho -->
+ 
+
+
+
+
+
+<div class="car-scn" id="car-aba"  onmouseleave="fechacar()">
+    
+    <a href="final.html" style="text-decoration: none; color:black;"><div> <img src="../IMG/carrinho.png" class="icones" id="carrinhoPop" > <p class="txt" style="text-align: center; margin-bottom: 20px;">Abrir Venda</p></div></a>    <div class="carpop" >
+       
+    
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t> 
+            <t><button  class="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button class="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        </div>
+
+        <div>
+            <p class="total">Total: R$ 123,00</p>
+        </div>
+</div>
+    <!--Conteúdo do Site-->
+
+    <div class="conteudo">
+
+
+        <!--Tabela de Massas-->
+        <div class="tabelaMontagem" style="margin-bottom: 100px;" id="tableM">
+
+
+            <div class="itemTab" id="tabelatxt">
+                <t>Morango</t>
+                <t><button  class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button></t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>chocolate</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>uva</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>pessego</t>
+                <t>1L 5L P</t>
+            </div>
+
+
+        </div>
+
+        <!--Tabela de Picolés-->
+        <div class="tabelaMontagem" id="tableP">
+
+
+            <div class="itemTab" id="tabelatxt">
+                <t>Teste</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Teste</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Teste</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Teste</t>
+                <t>1L 5L P</t>
+            </div>
+
+
+        </div>
+
+
+        <!--Tabela de coberturas-->
+        <div class="tabelaMontagem" id="tableC">
+
+
+            <div class="itemTab" id="tabelatxt">
+                <t>Coberturas</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Coberturas</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Coberturas</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>Coberturas</t>
+                <t>1L 5L P</t>
+            </div>
+
+
+        </div>
+
+        <!--Tabela de trevinho-->
+        <div class="tabelaMontagem" id="tableT">
+
+
+            <div class="itemTab" id="tabelatxt">
+                <t>trevinho</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>trevinho</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>trevinho</t>
+                <t>1L 5L P</t>
+            </div>
+            <div class="itemTab" id="tabelatxt">
+                <t>trevinho</t>
+                <t>1L 5L P</t>
+            </div>
+
+
+            
+
+        </div>
+
+       
+
+
+    </div>
+    <div id="bntliscli">
+
+        <a href="final.html" class="bntFim" onclick="">
+            <div> Finalizar pedido</div>
+        </a>
+   
+
+    <!--Menu Vertical-->
+
+    <div id="menuho">
+        <div id="operador">
+            <img src="../IMG/icon.png" id="icon" alt="">
+            <h1 id="nome">Operador: Exemplo</h1>
+
+        </div>
+
+        <div id="menuho">
+            <div id="operador">
+                <img src="../IMG/icon.png" id="icon" alt="">
+                <h1 id="nome">Operador: Exemplo</h1>
+
+            </div>
+
+
+
+
+            <a class="sidebtn" href="../HTML/Menu.html"> <img class="imgbtn" src="../IMG/casinha.png">
+                <div href="#" class="MP">Menu</div><p class="sairadjustment"></p>
+            </a>
+            <a class="sidebtn" href="historico.html"> <img class="imgbtn" src="../IMG/historico.png">
+                <div href="#" class="MP">Histórico de Vendas</div>
+            </a>
+            <a class="sidebtn" href="ProdutosList.html"> <img class="imgbtn" src="../IMG/LP.png">
+                <div href="#" class="MP">Lista de Produtos</div>
+            </a>
+            <a class="sidebtn" href="../HTML/listagemcli.html"> <img class="imgbtn" src="../IMG/LC.png">
+                <div href="#" class="MP">Lista de
+                    Clientes</div>
+            </a>
+            <a class="sidebtn" href="../Index.html"> <img class="imgbtn" src="../IMG/EX.png">
+                <div href="#" class="MP">Sair</div>
+                <p id="sairadjustment"></p>
+            </a>
+            <img src="../IMG/trevoice.png" class="logo" alt="">
+
+        </div>
+
+
+
+        <script src="../JAVASCRIPT/controle.js"></script>
+            <script src="../JAVASCRIPT/Montagem.js"></script>
+</body>

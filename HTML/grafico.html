@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/pedido.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/grafico.css">
+  <title>Mais Vendidos</title>
+</head>
+
+<body>
+
+  <!--Menu Horizontal-->
+  <div class="header">
+    <div class="vendidos">
+      <h1 id="titulo1">Mais vendidos</h1>
+    </div>
+    <div id="config">
+      <a href="Menu.html"><img src="../IMG/casinha.png" class="icones" alt="" id="carrinho"></a>
+    </div>
+
+  </div>
+  <!--Conteúdo do Site-->
+  <div class="pedidoex">
+
+
+    <!--Inserir Gráfico Aqui-->
+
+
+
+    <div class="chartBox">
+      <canvas id="myChart"></canvas>
+    </div>
+
+
+    <script type="text/javascript" src="../JAVASCRIPT/grafico.js"></script>
+    <script>
+      // setup 
+      const data = {
+        labels: ['Morango', 'Blueberry', 'Abacaxi', 'Limão', 'Uva', 'Laranja', 'Petróleo', 'Petróleo', 'Petróleo', 'Petróleo'],
+        datasets: [{
+          label: 'Vendas esse mês',
+          data: [100, 80, 10, 7, 5, 3, 1, 1 , 10, 20,],
+          backgroundColor: [
+            'rgba(255, 26, 104, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+            'rgba(0, 0, 0, 0.5)'
+          ],
+          borderColor: [
+            'rgba(255, 26, 104, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(0, 0, 0, 1)'
+          ],
+          borderWidth: 1
+
+        }]
+      };
+
+      // config 
+      const config = {
+        type: 'bar',
+        data,
+        options: {
+          indexAxis: 'y',
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      };
+
+      // render init block
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+    </script>
+
+
+
+
+
+
+
+
+  </div>
+
+
+  </div>
+
+  </div>
+
+  <!--Menu Vertical-->
+
+  <div id="menuho">
+    <div id="operador">
+      <img src="../IMG/icon.png" id="icon" alt="">
+      <h1 id="nome">Operador: Exemplo</h1>
+
+    </div>
+
+
+
+
+    <a class="sidebtn" href="MontarPedido.html"> <img class="imgbtn" src="../IMG/MP.png">
+      <div class="MP"> Montar Pedido</div>
+    </a>
+    <a class="sidebtn" href="historico.html"> <img class="imgbtn" src="../IMG/historico.png">
+      <div href="#" class="MP">Histórico de Vendas</div>
+    </a>
+    <a class="sidebtn" href="ProdutosList.html"> <img class="imgbtn" src="../IMG/LP.png">
+      <div href="#" class="MP">Lista de Produtos</div>
+  </a>
+    <a class="sidebtn" href="../HTML/listagemcli.html"> <img class="imgbtn" src="../IMG/LC.png">
+      <div href="#" class="MP">Lista de Clientes</div>
+    </a>
+    <a class="sidebtn" href="../Index.html"> <img class="imgbtn" src="../IMG/EX.png">
+      <div href="#" class="MP">Sair</div>
+      <p id="sairadjustment"></p>
+    </a>
+    <img src="../IMG/trevoice.png" class="logo" alt="">
+
+  </div>
+
+
+  <script src="../JAVASCRIPT/grafico.js"></script>
+</body>
