@@ -17,6 +17,11 @@
 
 }
 
+.seta {
+
+    cursor: pointer
+}
+
 
 div ::selection{background-color: transparent;}
 
