@@ -14,7 +14,7 @@
   /* lista dos clientes */
 .clienteex{
     width: 35vw;
-    height: 120px;
+    height: 110px;
     padding-left: 30px;
     padding-top: 10px;
     display: grid;
@@ -81,6 +81,22 @@
     border:none;
     margin-right:15px ;
   }
+
+  
+#pes2 {
+    float: right;
+    padding: 10px;
+    font-size: 17px;
+    margin-top: 5px;
+    font-size: 1rem;
+    height: auto;
+    width: 70%;
+    margin-bottom: 20px;
+    background-color: #CABE82;
+    border:none;
+    margin-right:15px ;
+  }
+
 
 
 #env{
