@@ -26,7 +26,7 @@ include('listaclifunc.php');
     <!--aba da pesquisa-->
     <div id="abapes" onclick="fechaconf2()">
         <form action="clienteespecf.php" id="pesf" method="POST">
-            <input type="text" placeholder="" name="pes" id="pes">
+            <input type="text" placeholder="" name="pes" id="pes2">
             <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>

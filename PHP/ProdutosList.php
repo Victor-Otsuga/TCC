@@ -1,6 +1,7 @@
 <?php
 include ('verificarLogin.php');
-include ('conexao.php'); 
+include ('conexao.php');
+include ('listaprod.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,8 @@ include ('conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css" >
-
+    <link rel="stylesheet" type="text/css" href="../CSS/listagem.css">
+    <script src="../jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
     <title>Menu</title>
 </head>
@@ -23,14 +25,8 @@ include ('conexao.php');
 
 
 <div class="car-scn" id="car-aba"  onmouseleave="fechacar()">
-    
+
     <a href="final.php" style="text-decoration: none; color:black;"><div> <img src="../IMG/carrinho.png" class="icones" id="carrinhoPop" > <p class="txt" style="text-align: center; margin-bottom: 20px;">Abrir Venda</p></div></a>    <div class="carpop" >
-       
-    
-        <div class="itemCar" id="cartxt">
-            <t>Morango</t>
-            <t><button  id="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button id="carBtn" onclick="addqtd()">+</button></t>
-        </div>
 
         <div class="itemCar" id="cartxt">
             <t>Morango</t>
@@ -38,7 +34,12 @@ include ('conexao.php');
         </div>
 
         <div class="itemCar" id="cartxt">
-            <t>Morango</t> 
+            <t>Morango</t>
+            <t><button  id="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button id="carBtn" onclick="addqtd()">+</button></t>
+        </div>
+
+        <div class="itemCar" id="cartxt">
+            <t>Morango</t>
             <t><button  id="carBtn" onclick="removeqtd()">-</button> <div class="carQtd" id="qtd1"> 1 </div>  <button id="carBtn" onclick="addqtd()">+</button></t>
         </div>
 
@@ -71,72 +72,67 @@ include ('conexao.php');
         <div class="pesq">
             <h1 id="teste" style="border: 1px solid red;">Lista de Produtos</h1>
 
-
-            <form action="Menu.php" id="pesf">
-                <input type="text" placeholder="" id="pes">
-                <button type="submit" id="env" ><img src="../IMG/lupa.png" alt=""></button>
-                </form>
-    
-        </div>
+        <form action="clienteespecf.php" id="pesf" method="POST">
+            <input type="text" placeholder="" name="pes" id="pes">
+            <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
+        </form>
+    </div>
 
 
-      
+        <script>
+        $("#pesprod").keyup(function() {
+            var pes2 = $("#pesprod").val();
+            $.post('listaprodbusca.php', {
+                pes2: pes2
+            }, function(data2) {
+                $("#table").html(data2);
+            });
+        });
+    </script>
 
-      
+
+
             <div   style="margin-left: 10%; "  href="pedido.php">
-                <table  class="table">
+                <table  class="table" id="table">
                     <thead>
-                      <tr >
+                      <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Sabor</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Tamanho</th>
                         <th scope="col">Preços</th>
                         <th scope="col">Editar</th>
-                        
+
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th   scope="row">1</th>
-                        <td>Morango</td>
-                        <td>Massa</td>
-                        <td>1L/5L</td>
-                        <td>R$10,00</td>
-                        <td ><Button class="btn">Editar</Button></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Pamonha</td>
-                        <td>Massa</td>
-                        <td>1L/5L</td>
-                        <td>R$10,00</td>
-                        <td ><Button class="btn">Editar</Button></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Chocolate</td>
-                        <td>Massa</td>
-                        <td>1L/5L</td>
-                        <td>R$10,00</td>
-                        <td ><Button class="btn">Editar</Button></td>
-                      </tr>
 
-                      
+                    <?php
+                        while ($linhas_prod = $resultprod->fetch(PDO::FETCH_ASSOC)) {  ?>
+                      <tr>
+                        <td><?php echo $linhas_prod["id_prod"]; ?></td>
+                        <td><?php echo $linhas_prod["sabor"]; ?></td>
+                        <td><?php echo $linhas_prod["tipo"]; ?></td>
+                        <td><?php echo $linhas_prod["tamanho_uni"]; ?></td>
+                        <td><?php echo $linhas_prod["preco_uni"]; ?></td>
+                        <td ><Button class="btn">Editar</Button></td>
+                      </tr>
+                      <?php  }; ?>
                     </tbody>
+
                   </table>
                 </div>
-            
-            
-       
-     
-           
+
+
+
+
+
                 <div id="bntliscli">
                         <!-- função novoprod n existe ainda -->
-                    <a id="bnt" onclick="novoprod()" href="cadastroproduto.php">  
+                    <a id="bnt" onclick="novoprod()" href="cadastroproduto.php">
                         <div > Cadastrar Produto</div>
                     </a>
-            
+
                 </div>
     </div>
 
@@ -145,17 +141,17 @@ include ('conexao.php');
     <div id="operador">
         <!-- <img  id="icon" alt=""> -->
 
-        <?php 
-        
-        $avatar = $_SESSION['avatar_session']; 
+        <?php
+
+        $avatar = $_SESSION['avatar_session'];
 
         echo '<img id="icon" src="'.$avatar.'">';
-        
+
         ?>
-            
+
             <h1 id="nome">Operador: <?php
-               
-                $nome_oper = $_SESSION['nome_session'];           
+
+                $nome_oper = $_SESSION['nome_session'];
                 echo $nome_oper ?></h1>
 
         </div>
@@ -185,12 +181,12 @@ include ('conexao.php');
 
 
     <!-- aba de configurações -->
- 
+
     <div class="config-scn" id="config-aba"  onmouseleave="fechaconf()">
         <div >
             <div id="linksconf" >
                 <img src="../IMG/conf.png" >
-                
+
                 <a onclick="newPopup()" id="lkc">Editar Usuário</a>
                 <a href="Cadastroope.php" id="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="cadcli.php" id="lkc">Cadastro de Cliente</a>
@@ -198,7 +194,7 @@ include ('conexao.php');
             </div>
     </div>
 </div>
-    
+
 
 
 
