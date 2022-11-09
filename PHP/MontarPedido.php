@@ -154,22 +154,17 @@ include('listaprodfunc.php');
                 <div class="tabelaMontagem" id="tableC">
 
 
-                    <div class="itemTab" id="tabelatxt">
-                        <t>Coberturas</t>
-                        <t>1L 5L P</t>
-                    </div>
-                    <div class="itemTab" id="tabelatxt">
-                        <t>Coberturas</t>
-                        <t>1L 5L P</t>
-                    </div>
-                    <div class="itemTab" id="tabelatxt">
-                        <t>Coberturas</t>
-                        <t>1L 5L P</t>
-                    </div>
-                    <div class="itemTab" id="tabelatxt">
-                        <t>Coberturas</t>
-                        <t>1L 5L P</t>
-                    </div>
+                <?php while ($linhas_prod = $resultado3->fetch(PDO::FETCH_ASSOC)) {  ?>
+                        <div class="itemTab" id="tabelatxt">
+                        <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
+
+                        <?php if ($linhas_prod["preco_pacote"] == NULL) {
+                        echo '<t><button  class="carBtn">+</button></div>';
+                        }else{
+                            echo '<t><button  class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
+                        }
+                    };
+                    ?>
 
 
                 </div>

@@ -70,18 +70,18 @@ include ('listaprod.php');
     <!--Conteúdo do Site-->
     <div class="scroll">
         <div class="pesq">
-            <h1 id="teste" style="border: 1px solid red;">Lista de Produtos</h1>
+            <h1 id="teste">Lista de Produtos</h1>
 
-        <form action="clienteespecf.php" id="pesf" method="POST">
-            <input type="text" placeholder="" name="pes" id="pes">
+        <form id="pesf" method="POST">
+            <input autocomplete="off" type="text" placeholder="" name="pes" id="pes">
             <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>
 
 
         <script>
-        $("#pesprod").keyup(function() {
-            var pes2 = $("#pesprod").val();
+        $("#pes").keyup(function() {
+            var pes2 = $("#pes").val();
             $.post('listaprodbusca.php', {
                 pes2: pes2
             }, function(data2) {

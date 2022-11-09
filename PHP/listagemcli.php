@@ -34,8 +34,8 @@ include('listaclifunc.php');
     <!--lista-->
 
     <script>
-        $("#pes").keyup(function() {
-            var pes = $("#pes").val();
+        $("#pes2").keyup(function() {
+            var pes = $("#pes2").val();
             $.post('listagemcli2.php', {
                 pes: pes
             }, function(data) {
@@ -78,11 +78,24 @@ include('listaclifunc.php');
     <!--Menu Vertical-->
 
     <div id="menuho" onclick="fechaconf2()">
-        <div id="operador">
-            <img src="../IMG/icon.png" id="icon" alt="">
-            <h1 id="nome">Operador: Exemplo</h1>
+    <div id="operador">
+        <!-- <img  id="icon" alt=""> -->
+
+        <?php 
+        
+        $avatar = $_SESSION['avatar_session']; 
+
+        echo '<img id="icon" src="'.$avatar.'">';
+        
+        ?>
+            
+            <h1 id="nome">Operador: <?php
+               
+                $nome_oper = $_SESSION['nome_session'];           
+                echo $nome_oper ?></h1>
 
         </div>
+
 
 
 

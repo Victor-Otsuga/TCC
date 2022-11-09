@@ -132,3 +132,6 @@ If ($_SESSION['nivel_session'] != 1){
     
     <script src="../JAVASCRIPT/controle.js"></script>
 </body>
+
+
+

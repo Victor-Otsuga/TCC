@@ -48,8 +48,7 @@ if ($_SESSION['nivel_session'] != 1) {
                         <div class="rdiv" >
                             <label for="tipo_sorv" class="radio">Massa <input  onclick="selectmassa()" type="radio" class="input" name="tiposvt" value="1"> </label>
                             <label for="tipo_sorv" class="radio">Picolé <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="2"></label>
-                            <label for="tipo_sorv" class="radio">Cobertura <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="3"></label>
-                            <label for="tipo_sorv" class="radio">Trevinho <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="4"></label>
+                            <label for="tipo_sorv" class="radio">Diversos <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="3"></label>
                         </div>
 
                         <label>Sabor</label>
@@ -77,7 +76,7 @@ if ($_SESSION['nivel_session'] != 1) {
                         <div class="rdiv">
                             <label for="tamanho_uni" class="radio">1 Litro <input type="radio" class="input" name="litros" value="1"> </label>
                             <label for="tamanho_uni" class="radio">5 Litros <input type="radio" class="input" name="litros" value="2"></label>
-                            <label for="tamanho_uni" class="radio">1 e 5 Litros <input type="radio" class="input" name="litros" value="3"></label>
+                            
                         </div>
                         </div>
 

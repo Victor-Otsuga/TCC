@@ -47,6 +47,8 @@ if ($num > 0) {
                 >
                 <?php
     
+
+    
 } else {
     echo "Esta Pessoa Não Existe!";
 }

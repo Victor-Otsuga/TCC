@@ -62,7 +62,17 @@ EOT;
      $insert = "INSERT INTO operador (nome_oper, email_oper, senha, nivel_acess, avatar, id_oper) VALUES (?, ?, ?, ?, ?, default)";
      $stmt= $pdo->prepare($insert);
      $stmt->execute(array($nome_oper, $email, $hash, $nivel_acess, $avatar));
-     header ("Location: Cadastroope.php");
 
+     $confirmação = <<<CONF
+     <script type="text/javascript">
+     window.location.href = 'Cadastroope.php';
+     alert("Operador Cadastrado!");
+     </script>
+     CONF;
+ 
+    
+    
+     echo $confirmação;
+     
     }
 

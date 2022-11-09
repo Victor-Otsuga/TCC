@@ -17,8 +17,14 @@ $name = $_POST['pes'];
 $query  = $pdo->prepare("SELECT * FROM cliente WHERE nome_cli=:id OR id_cli=:id  ");
 $query  -> bindParam(':id', $name);
 $query ->execute();
+if ($query->rowCount() == 0){
+    
+    header('location: listagemcli.php');
+
+    } 
 
 }
+
 else
 {
 header('location: listagemcli.php');
