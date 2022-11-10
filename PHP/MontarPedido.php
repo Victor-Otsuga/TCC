@@ -93,10 +93,10 @@ include('listaprodfunc.php');
         <!--Tabela de Massas-->
         <div class="tabelaMontagem" style="margin-bottom: 100px;" id="tableM">
 
-            <?php while ($linhas_prod = $resultado1->fetch(PDO::FETCH_ASSOC)) {  ?>
+            <?php while ($linhas_prod = $resultado1->fetch(PDO::FETCH_ASSOC)) {   $id=$linhas_prod["id_prod"]; ?>
 
                 <div class="itemTab" id="tabelatxt">
-                    <t><?php echo $linhas_prod["sabor"]; ?></t>
+                    <t <?php echo "id='$id'" ?>><?php echo $linhas_prod["sabor"];   ?></t>
 
 
                     <?php if ($linhas_prod["preco_pacote"] == NULL) {

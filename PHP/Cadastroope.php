@@ -52,9 +52,9 @@ If ($_SESSION['nivel_session'] != 1){
               <label class="label">E-mail:</label>
               <input name="email"type="email"  autocomplete="off" class="input" required>
 
-              <label class="label"  class="input2">Escolha a foto de perfil:</label>
+              <label class="label" id="imagem" class="input2">Escolha a foto de perfil:</label>
 
-              <label class="input4">Clique para selecionar<input type="file"  id="file" name="avatar" accept="image/*"/></label>
+              <label class="input4"><img src="../IMG/icon.png" id="preview-img" class="imgpreview" ><input type="file" id="image" class="imagemm" name="avatar" accept="image/*"/></label>
 
              
               <label class="label">Senha:</label>
@@ -131,7 +131,5 @@ If ($_SESSION['nivel_session'] != 1){
 
     
     <script src="../JAVASCRIPT/controle.js"></script>
+    <script src="../JAVASCRIPT/img_view.js"></script>
 </body>
-
-
-
