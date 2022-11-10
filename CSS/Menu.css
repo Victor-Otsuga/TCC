@@ -233,6 +233,7 @@ h1 {
 
     transition-duration: 1s;
     transition-timing-function: linear;
+    object-fit: cover; 
 
 }
 
