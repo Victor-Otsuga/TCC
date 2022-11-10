@@ -1,0 +1,21 @@
+aaaaaaaaaaaaaaaaaaaa
+
+echo "# TCC2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Gabriel123456cry/TCC2.git
+git push -u origin main
+
+teste
+
+
+$ git init
+$ git status
+$ git add .
+$ git config --global user.email ""
+ git remote add origin https://github.com/Gabriel123456cry/TCC2.git
+$ git commit -m "primeiro commit"
+$ git push
+$ git push --set-upstream origin master
