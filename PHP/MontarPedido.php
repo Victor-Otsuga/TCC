@@ -2,6 +2,7 @@
 include('verificarLogin.php');
 include('conexao.php');
 include('listaprodfunc.php');
+include('carrinho.php');
 ?>
 
 
@@ -42,7 +43,6 @@ include('listaprodfunc.php');
 
 
     <!-- aba de carrinho -->
-
 
 
 
@@ -95,34 +95,35 @@ include('listaprodfunc.php');
 
             <?php while ($linhas_prod = $resultado1->fetch(PDO::FETCH_ASSOC)) {   $id=$linhas_prod["id_prod"]; ?>
 
-                <div class="itemTab" id="tabelatxt">
-                    <t <?php echo "id='$id'" ?>><?php echo $linhas_prod["sabor"];   ?></t>
+                <div class="itemTab" id="tabelatxt"> 
+                    <t  > <?php echo $linhas_prod["sabor"];   ?></t>
+                    
 
 
                     <?php if ($linhas_prod["preco_pacote"] == NULL) {
 
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<t><button class="carBtn">1L</button></t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button></t></div>';
                         }
                         if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button class="carBtn">5L</button></t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button></t></div>';
                         }
                         if ($linhas_prod["tamanho_uni"] == 3) {
-                            echo '<t><button  class="carBtn">1L</button> <button  class="carBtn">5L</button> </t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> </t></div>';
                         }
                     }
 
 
                     if ($linhas_prod["preco_pacote"] <> NULL) {
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<t><button  class="carBtn">1L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></div>';
                         }
 
                         if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
                         }
                         if ($linhas_prod["tamanho_uni"] == 3) {
-                            echo '<t><button  class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
                         }
                     };
                     ?> <?php
@@ -133,16 +134,19 @@ include('listaprodfunc.php');
                 <!--Tabela de Picolés-->
                 <div class="tabelaMontagem" id="tableP">
 
-                    <?php while ($linhas_prod = $resultado2->fetch(PDO::FETCH_ASSOC)) {  ?>
+                    <?php while ($linhas_prod = $resultado2->fetch(PDO::FETCH_ASSOC)) {   $id=$linhas_prod["id_prod"];  ?>
                         <div class="itemTab" id="tabelatxt">
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<t><button  class="carBtn">+</button></div>';
+                        echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button></div>';
                         }else{
-                            echo '<t><button  class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
                     };
+
+                            
+
                     ?>
 
 
@@ -154,14 +158,14 @@ include('listaprodfunc.php');
                 <div class="tabelaMontagem" id="tableC">
 
 
-                <?php while ($linhas_prod = $resultado3->fetch(PDO::FETCH_ASSOC)) {  ?>
+                <?php while ($linhas_prod = $resultado3->fetch(PDO::FETCH_ASSOC)){ $id=$linhas_prod["id_prod"]; ?>
                         <div class="itemTab" id="tabelatxt">
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<t><button  class="carBtn">+</button></div>';
+                        echo '<t><button   value="', $id, '"class="carBtn">+</button></div>';
                         }else{
-                            echo '<t><button  class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button   value="', $id, '"class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
                     };
                     ?>
@@ -230,4 +234,12 @@ include('listaprodfunc.php');
 
             <script src="../JAVASCRIPT/controle.js"></script>
             <script src="../JAVASCRIPT/Montagem.js"></script>
+            <script src="../JAVASCRIPT/carrinho.js"></script>
+
+            <?php print_r($items); 
+            
+            // echo "<script> var item = '".$items."';</script>";
+            ?>
+
+
 </body>

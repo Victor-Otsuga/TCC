@@ -1,7 +1,6 @@
 <?php
 include ('verificarLogin.php');
 include ('conexao.php');
-include ('listaprod.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +13,10 @@ include ('listaprod.php');
     <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../CSS/listagem.css">
-    <script src="../jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
+
+    <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../bootstrap.min.js"></script>
     <title>Menu</title>
 </head>
 
@@ -70,63 +71,21 @@ include ('listaprod.php');
     <!--Conteúdo do Site-->
     <div class="scroll">
         <div class="pesq">
-            <h1 id="teste">Lista de Produtos</h1>
+            <h1 id="teste" style="border: 1px solid red;">Lista de Produtos</h1>
 
-        <form id="pesf" method="POST">
-            <input autocomplete="off" type="text" placeholder="" name="pes" id="pes">
+        <form action="" id="pesf">
+            <input type="text" name="buscar" id="pes">
             <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>
 
 
-        <script>
-        $("#pes").keyup(function() {
-            var pes2 = $("#pes").val();
-            $.post('listaprodbusca.php', {
-                pes2: pes2
-            }, function(data2) {
-                $("#table").html(data2);
-            });
-        });
-    </script>
+    <div>
+			<div id="resultado"></div>
+		</div>
 
 
-
-            <div   style="margin-left: 10%; "  href="pedido.php">
-                <table  class="table" id="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Sabor</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Tamanho</th>
-                        <th scope="col">Preços</th>
-                        <th scope="col">Editar</th>
-
-                      </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                        while ($linhas_prod = $resultprod->fetch(PDO::FETCH_ASSOC)) {  ?>
-                      <tr>
-                        <td><?php echo $linhas_prod["id_prod"]; ?></td>
-                        <td><?php echo $linhas_prod["sabor"]; ?></td>
-                        <td><?php echo $linhas_prod["tipo"]; ?></td>
-                        <td><?php echo $linhas_prod["tamanho_uni"]; ?></td>
-                        <td><?php echo $linhas_prod["preco_uni"]; ?></td>
-                        <td ><Button class="btn">Editar</Button></td>
-                      </tr>
-                      <?php  }; ?>
-                    </tbody>
-
-                  </table>
-                </div>
-
-
-
-
-
+        
                 <div id="bntliscli">
                         <!-- função novoprod n existe ainda -->
                     <a id="bnt" onclick="novoprod()" href="cadastroproduto.php">
@@ -204,8 +163,39 @@ include ('listaprod.php');
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
             <script src="../JAVASCRIPT/controle.js"></script>
 </body>
+
+<script type="text/javascript">
+
+	function buscarNome(nome) {
+		$.ajax({
+			url: "search.php",
+			method: "POST",
+			data: {nome:nome},
+			success: function(data){
+				$('#resultado').html(data);
+			}
+		});
+	}
+
+	$(document).ready(function(){
+		buscarNome();
+
+		$('#pes').keyup(function(){
+			var nome = $(this).val();
+			if (nome != ''){
+				buscarNome(nome);
+			}
+			else
+			{
+				buscarNome();
+			}
+		});
+	});
+
+
+</script>

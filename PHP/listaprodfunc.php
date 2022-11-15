@@ -27,3 +27,8 @@ $resultado3 = $pdo->prepare($selectdiversos);
 
 $resultado3->execute();
 
+
+$selecttodos="SELECT * FROM produtos  ORDER BY id_prod asc";
+
+$resultadototal = $pdo->prepare($selecttodos);
+$resultadototal->execute();
