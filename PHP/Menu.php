@@ -1,6 +1,7 @@
 <?php
 include ('verificarLogin.php');
 include ('conexao.php'); 
+include ('listaclipedfunc.php'); 
 ?>
 
 
@@ -71,27 +72,38 @@ include ('conexao.php');
         </div>
 
 
+        <?php
+
+
+
+        while ($linhas_ped = $resultped->fetch(PDO::FETCH_ASSOC)) {  ?>
+            <!-- a variavel id passa pelo o link ao invés de um form -->
+       
+          
+           
+
+
 
         <a class="teste2" href="pedido.php">
             <div class="sectionone">
-                <u class="info">ID </u>
-                <u class="info">Variavel </u>
-                <u class="info">java pendentes</u>
+                <u class="info">ID: <?php echo $linhas_ped["id_venda"]; ?> </u>
+                <u class="info">Operador registrante: <?php echo $linhas_ped["nome_oper"]; ?> </u>
+
             </div>
             <div class="vertical"></div>
 
             <div class="sectiontwo">
-                <u class="info">Quandidade de itens: variavel items </u>
-                <u class="info">Clientes:variavel nome</u>
+                <u class="info">Quandidade de itens:<?php echo $linhas_ped["quant_produtos"]; ?> </u>
+                <u class="info">Clientes:<?php echo $linhas_ped["nome_cli"]; ?></u>
             </div>
             <div class="vertical"></div>
             <div class="sectionthree">
-                <u class="info">data: variavel data </u>
-                <u class="info">total:variavel valor</u>
+                <u class="info">data:<?php echo $linhas_ped["data"]; ?> </u>
+                <u class="info">total:<?php echo $linhas_ped["total_venda"]; ?> </u>
             </div>
         </a>
 
-
+        <?php  }; ?>
 
 
 
@@ -105,16 +117,16 @@ include ('conexao.php');
 
         <?php 
         
-        $avatar = $_SESSION['avatar_session']; 
+        // $avatar = $_SESSION['avatar_session']; 
 
-        echo '<img id="icon" src="'.$avatar.'">';
+        // echo '<img id="icon" src="'.$avatar.'">';
         
         ?>
             
             <h1 id="nome">Operador: <?php
                
-                $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                // $nome_oper = $_SESSION['nome_session'];           
+                // echo $nome_oper ?></h1>
 
         </div>
 
