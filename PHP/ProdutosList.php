@@ -15,8 +15,8 @@ include ('conexao.php');
     <link rel="stylesheet" type="text/css" href="../CSS/listagem.css">
   <link rel="stylesheet" type="text/css" href="../CSS/montarPedido.css">
 
-    <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../bootstrap.min.js"></script>
+    <script type="text/javascript" src="../JAVASCRIPT/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../JAVASCRIPT/bootstrap.min.js"></script>
     <title>Menu</title>
 </head>
 
@@ -80,7 +80,8 @@ include ('conexao.php');
     </div>
 
 
-    <div>
+        <!-- listagem de produtos (link search.php no codigo js/ feito de uma forma diferente do listagemcli) -->
+        <div>
 			<div id="resultado"></div>
 		</div>
 
@@ -148,7 +149,7 @@ include ('conexao.php');
 
                 <a onclick="newPopup()" id="lkc">Editar Usuário</a>
                 <a href="Cadastroope.php" id="lkc" class="sidebtn">Cadastrar Operador</a>
-                <a href="cadcli.php" id="lkc">Cadastro de Cliente</a>
+                <a href="cadcli2.php" id="lkc">Cadastro de Cliente</a>
 
             </div>
     </div>

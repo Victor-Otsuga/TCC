@@ -1,7 +1,7 @@
 <?php
 include('verificarLogin.php');
 include('conexao.php');
-include('listaclifunc.php');
+include('listaclipedfunc.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include('listaclifunc.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
     <link rel="stylesheet" type="text/css" href="../CSS/listagem.css">
-    <script src="../jquery.min.js"></script>
+    <script src="../JAVASCRIPT/jquery.min.js"></script>
 
 
 

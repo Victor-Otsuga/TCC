@@ -5,6 +5,7 @@ $passw = "";
 $banco = "trevoice";
 $pdo = new PDO("mysql:dbname=".$banco."; host=".$localhost, $user, $passw);
 
+//listagem de produtos e consulta
 
 if (isset($_POST["nome"])) {
 	$busca = $_POST["nome"];
@@ -23,6 +24,7 @@ if ($rowCount > 0) {
 	<table  class="table" id="table">
 	<thead>
 		<tr>
+			<th scope="col">ID</th>
 			<th scope="col">Sabor</th>
 			<th scope="col">Tipo</th>
 			<th scope="col">Tamanho</th>
@@ -36,13 +38,14 @@ if ($rowCount > 0) {
 	foreach($result as $row) {
 		$data .= '<tbody>
 			<tr>
+				<td>'.$row["id_prod"].'</td>
 				<td>'.$row["sabor"].'</td>
 				<td>'.$row["tipo"].'</td>
 				<td>'.$row["tamanho_uni"].'</td>
 				<td>'.$row["preco_uni"].'</td>
 				<td>'.$row["preco_pacote"].'</td>
 				<td>'.$row["tamanho_pacote"].'</td>
-				<td><Button class="btn">Editar</Button></td>
+				<td><a href="editarprod.php?id='.$row["id_prod"].'"><Button class="btn">Editar</Button></a></td>
 				
 			</tr>
 		';
