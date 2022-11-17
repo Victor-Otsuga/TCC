@@ -96,6 +96,11 @@ function selectpicole(){
 
 }
 
+
+document.getElementById("tpct").addEventListener(focus, selectpct1());
+
+
+
 function selectpct1(){
 
     document.getElementById("sepct").style.display = "block";
