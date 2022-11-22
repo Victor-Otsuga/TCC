@@ -116,7 +116,7 @@ include('carrinho.php');
                     <?php if ($linhas_prod["preco_pacote"] == NULL) {
 
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                            echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button>  </t></a></div>';
                         }
                         else if ($linhas_prod["tamanho_uni"] == 2) {
                             echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button></t></div>';
@@ -129,7 +129,7 @@ include('carrinho.php');
 
                     if ($linhas_prod["preco_pacote"] <> NULL) {
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                            echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
                         }
 
                         if ($linhas_prod["tamanho_uni"] == 2) {
@@ -152,7 +152,7 @@ include('carrinho.php');
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<a href="montarpedido.php?id_prod=',$id,'"><button  value="', $id, '"id="carBtn" class="carBtn">+</button></a></div>';
+                        echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button  value="', $id, '"id="carBtn" class="carBtn">+</button></a></div>';
                         }else{
                             echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
@@ -176,7 +176,7 @@ include('carrinho.php');
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                         echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
                         }else{
                             echo '<t><button   value="', $id, '"class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
