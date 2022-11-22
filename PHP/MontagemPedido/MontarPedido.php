@@ -3,6 +3,7 @@ include('../verificarLogin.php');
 include('../conexao.php');
 include('../Produtos/listaprodfunc.php');
 include('carrinho.php');
+
 ?>
 
 
@@ -55,29 +56,41 @@ include('carrinho.php');
                 <p class="txt" style="text-align: center; margin-bottom: 20px;">Abrir Venda</p>
             </div>
         </a>
-        <div class="carpop">
+        <div class="carpop"><?php
 
+        if(empty ($_SESSION['carrinho'])){
+            $_SESSION['carrinho'] = array();
+        } 
+        if(isset($_GET['id_prod']))
+{
 
-            <div class="itemCar" id="cartxt">
-                <t>Morango</t>
-                <t><button class="carBtn" onclick="removeqtd()">-</button>
-                    <div class="carQtd" id="qtd1"> 1 </div> <button class="carBtn" onclick="addqtd()">+</button>
-                </t>
-            </div>
+    array_push ($_SESSION['carrinho'], ($_GET['id_prod']));
 
-            <div class="itemCar" id="cartxt">
-                <t>Morango</t>
-                <t><button class="carBtn" onclick="removeqtd()">-</button>
-                    <div class="carQtd" id="qtd1"> 1 </div> <button class="carBtn" onclick="addqtd()">+</button>
-                </t>
-            </div>
-
-            <div class="itemCar" id="cartxt">
-                <t>Morango</t>
-                <t><button class="carBtn" onclick="removeqtd()">-</button>
-                    <div class="carQtd" id="qtd1"> 1 </div> <button class="carBtn" onclick="addqtd()">+</button>
-                </t>
-            </div>
+   
+    $select = implode(',', $_SESSION['carrinho'] );
+    // echo $select;
+    $query="SELECT * FROM produtos WHERE id_prod in ($select)";
+    $resultadototal = $pdo->prepare($query);
+    $resultadototal->execute();
+    
+    while ($linhas_car = $resultadototal->fetch(PDO::FETCH_ASSOC)){ ?>
+     <!-- a variavel id passa pelo o link ao invés de um form -->
+    <div class="itemCar" id="cartxt">
+    <t>
+        <?php 
+    echo $linhas_car["sabor"];
+     ?>
+    </t>
+    <t><button class="carBtn" >-</button>
+    <div class="carQtd" id="qtd1"> 1 </div> <button class="carBtn" >+</button>
+    </t>
+    </div>
+    
+    
+      <?php  
+     }; 
+    }
+    ?>
 
         </div>
 
@@ -103,12 +116,12 @@ include('carrinho.php');
                     <?php if ($linhas_prod["preco_pacote"] == NULL) {
 
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button></t></div>';
+                            echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
                         }
-                        if ($linhas_prod["tamanho_uni"] == 2) {
+                        else if ($linhas_prod["tamanho_uni"] == 2) {
                             echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button></t></div>';
                         }
-                        if ($linhas_prod["tamanho_uni"] == 3) {
+                        else if ($linhas_prod["tamanho_uni"] == 3) {
                             echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> </t></div>';
                         }
                     }
@@ -116,14 +129,14 @@ include('carrinho.php');
 
                     if ($linhas_prod["preco_pacote"] <> NULL) {
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
                         }
 
                         if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button id="carBtn" class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
                         }
                         if ($linhas_prod["tamanho_uni"] == 3) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
                         }
                     };
                     ?> <?php
@@ -139,7 +152,7 @@ include('carrinho.php');
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button></div>';
+                        echo '<a href="montarpedido.php?id_prod=',$id,'"><button  value="', $id, '"id="carBtn" class="carBtn">+</button></a></div>';
                         }else{
                             echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
@@ -163,7 +176,7 @@ include('carrinho.php');
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<t><button   value="', $id, '"class="carBtn">+</button></div>';
+                         echo '<a href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></div>';
                         }else{
                             echo '<t><button   value="', $id, '"class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
