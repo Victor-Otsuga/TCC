@@ -302,3 +302,8 @@ position: fixed;
     border-radius: 15px;
     
 }
+
+.txtdeco{
+    
+    text-decoration: none;
+}
