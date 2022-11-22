@@ -19,7 +19,7 @@ include('carrinho.php');
     <title>Montar Pedido</title>
 </head>
 
-<body>
+<body onload="abrirAba()">
 
     <!--Menu Horizontal-->
     <div class="headerPedido">
