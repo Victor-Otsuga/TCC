@@ -57,6 +57,16 @@
 
 }
 
+#invisible{
+    display: none;
+}
+
+#visible{
+display: grid;
+
+}
+
+
 t{
     min-width: 70px;
 }
