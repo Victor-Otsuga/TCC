@@ -1,6 +1,26 @@
 <?php
+include('../conexao.php');
 include ('../verificarLogin.php');
-include ('../conexao.php'); 
+  
+
+$avatar = $_SESSION['avatar_session']; 
+$id_oper = $_SESSION['id_session'];
+
+    $query  = $pdo->prepare("SELECT * FROM operador WHERE id_oper=?");
+    $query  -> bindParam(1, $id_oper);
+    $query ->execute();
+    $rowCount = $query->rowCount();
+
+    if($rowCount > 0){
+
+    while($linhas_oper = $query->fetch(PDO::FETCH_ASSOC)){
+        $nome_oper = $linhas_oper['nome_oper'];
+        $email = $linhas_oper['email_oper'];
+        $senha= $linhas_oper['senha'];
+        $nivel_acess = $linhas_oper['nivel_acess'];
+        $avatar = $linhas_oper['avatar'];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +30,9 @@ include ('../conexao.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../CSS/editarcad_ope.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/CaUs2.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/Menu.css">
-    <title>Cadastro operador </title>
+    <title>Editar operador </title>
 </head>
 
 <body>
@@ -21,69 +41,108 @@ include ('../conexao.php');
 
         <!--Conteúdo do Site-->
   
+  
             <div class="cad">
                 <div class="headcad">
-            
+             
                 
-              <img class="seta" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
-            
+              <img class="seta" onclick="goBack()" src="../IMG/imgseta.png" alt="">
+             
            
-              <h1 id="titulo2">Editar de usuário</h1>
-
-              <h1 class="Xbutton">X</h1>
-            </div>
+              <h1 id="titulo2">Editar Operador</h1>
+           
+              <a href="Menu.php"><img src="../IMG/casinha.png" class="homeCad" alt=""></a>
+          
+                 </div>
+             
+                 <form action="saveEditOper.php" method="POST" enctype="multipart/form-data">
               <div id="conteudo">
-              <form action="../Cliente/cadcli.php" >
-              <label>Nome do Funcionário</label>
-              <input name="nome" autocomplete="off" class="input">
-              <label for="file" class="input2">
-              <input type="file"  id="file" accept="image/*"/>
-             Escolha a foto de perfil</label>
-              <input  type="submit" value="Confirmar"  onclick="noPopup()">
-              </form>
+              <input type="hidden" value="<?php echo $id_oper ?>">
+                <label></label><label></label>
 
+              <label class="label">Nome do Funcionário:</label>
+              <input name="nome" autocomplete="off" class="input" value="<?php echo $nome_oper ?>" required>
+
+              <label class="label">E-mail:</label>
+              <input name="email" type="email"  autocomplete="off" class="input" value="<?php echo $email ?>" required>
+
+              <label class="label" id="imagem" class="input2">Escolha a foto de perfil:</label>
+
+              <label class="input4"><?php echo '<img src="'.$avatar.'" id="preview-img" class="imgpreview" ><input type="file" id="image" class="imagemm" name="avatar" accept="image/*"/>'?></label>
+
+             
+              <label class="label">Senha:</label>
+              <input name="senha" type="password" autocomplete="off" class="input" value="<?php echo $senha ?>" required>
+
+              <label class="label" >Tipo de operador:</label>
+                <div class="rdiv">
+                <label for="tipo_oper" class="radio">Adm <input required type="radio" class="input3" name="nivel_acess" value="1" <?php echo $nivel_acess == '1' ? 'checked' : ''?>>  </label>
+                <label for="tipo_oper" class="radio">Normal <input required type="radio"  class="input3" name="nivel_acess" value="2" <?php echo $nivel_acess == '2' ? 'checked' : ''?>></label>
+                 
+                </div>
+                
+                <div id="number"> 
+                <a class="imglink" href="..\PHP\cadcli2.php">
+                <img src="../IMG/1Vazio.png" alt="" id="nummargin"></a>
+                
+                <img src="../IMG/2cheio.png" alt="">
+                </div>
+                <input  type="submit" value="Confirmar" id="update" name="update" class="input2">
+              
+                </form>
               </div>
           </div>
   
 
    <!--Menu Vertical-->
-<!-- 
-   <div id="menuho">
-    <div id="operador">
-        <img src="../IMG/icon.png" id="icon" alt="">
-        <h1 id="nome">Operador: Exemplo</h1>
 
-    </div>
+   <div id="menuho">
+   <div id="operador">
+        <!-- <img  id="icon" alt=""> -->
+
+        <?php 
+        
+
+        echo '<img id="icon" src="'.$avatar.'">';
+        
+        ?>
+            
+            <h1 id="nome">Operador: <?php
+               
+                $nome_oper = $_SESSION['nome_session'];           
+                echo $nome_oper ?></h1>
+
+        </div>
 
 
     
 
 
 
-    <a class="sidebtn" href="../HTML/MontarPedido.html"> <img class="imgbtn" src="../IMG/MP.png">
+    <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
         <div class="MP"> Montar Pedido</div>
     </a>
-    <a class="sidebtn" href="../HTML/grafico.html"> <img class="imgbtn" src="../IMG/historico.png">
+    <a class="sidebtn" href="../grafico.php"> <img class="imgbtn" src="../../IMG/historico.png">
         <div href="#" class="MP">Histórico de Vendas</div>
     </a>
-    <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/LP.png">
-        <div href="#" class="MP">Listar
-            Pedidos</div>
+    <a class="sidebtn" href="../ProdutosList.php"> <img class="imgbtn" src="../../IMG/LP.png">
+        <div href="#" class="MP">Lista de Produtos</div>
     </a>
-    <a class="sidebtn" href="../HTML/listagemcli.html"> <img class="imgbtn" src="../IMG/LC.png">
+    </a>
+    <a class="sidebtn" href="../listagemcli.php"> <img class="imgbtn" src="../../IMG/LC.png">
         <div href="#" class="MP">Lista de
             Clientes</div>
     </a>
-    <a class="sidebtn" href="#"> <img class="imgbtn" src="../IMG/EX.png">
+    <a class="sidebtn" href="../logout.php"> <img class="imgbtn" src="../../IMG/EX.png">
         <div href="#" class="MP">Sair</div><p id="sairadjustment"></p>
     </a>
-    <img src="../IMG/trevoice.png" class="logo" alt="">
+    <img src="../../IMG/trevoice.png" class="logo" alt="">
 
-</div> -->
-
-
+</div>
 
     </div>
 
+    
     <script src="../../JAVASCRIPT/controle.js"></script>
+    <script src="../../JAVASCRIPT/img_view.js"></script>
 </body>

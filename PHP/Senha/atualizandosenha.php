@@ -26,7 +26,7 @@ $select -> execute();
 if (($select)  AND  ($select->rowCount() !=0) ){}
 else{
 
-    $_SESSION['msg'] = "Erro link invalido, solicite um novo link"
+    $_SESSION['msg'] = "Erro link invalido, solicite um novo link";
     header("Location: recuperarsenha.php");
 }
 ?>

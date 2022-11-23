@@ -221,7 +221,7 @@ include('carrinho.php');
 
 
 
-                <a class="sidebtn" href="../Menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
+                <a class="sidebtn" href="../Menu/menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
                     <div href="#" class="MP">Menu</div>
                     <p class="sairadjustment"></p>
                 </a>

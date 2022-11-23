@@ -1,5 +1,7 @@
 <?php
 
+
+
 require('conexao.php');
 
 if (!empty($_POST) and (empty($_POST['email']) or empty($_POST['senha']))) {
@@ -33,7 +35,7 @@ if ($query->rowCount() ) {
     $_SESSION['nome_session'] = $linha['nome_oper'];
 
 
-    header('location: Menu.php');
+    header('location: Menu/Menu.php');
     exit;
 
 } else {

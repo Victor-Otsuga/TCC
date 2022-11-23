@@ -58,7 +58,7 @@ include ('../conexao.php');
         <div  class="vendidos">
             <h1 id="titulo">Histórico de vendas</h1>
 
-            <form action="../Menu.php" id="pesf">
+            <form action="../Menu/menu.php" id="pesf">
                 <input type="text" placeholder="" id="pes">
                 <button type="submit" id="env" ><img src="../../IMG/lupa.png" alt=""></button>
                 </form>
@@ -251,7 +251,7 @@ include ('../conexao.php');
         <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
             <div class="MP"> Montar Pedido</div>
         </a>
-        <a class="sidebtn" href="../Menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
+        <a class="sidebtn" href="../Menu/menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
             <div href="#" class="MP">Menu</div><p class="sairadjustment"></p>
         </a>
         <a class="sidebtn" href="../Produtos/ProdutosList.php"> <img class="imgbtn" src="../../IMG/LP.png">

@@ -7,7 +7,7 @@ include ('../conexao.php');
 $nome_oper = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$hash = hash(
+$encrypted = hash(
   "sha256",
   $senha,
 );
@@ -18,8 +18,15 @@ $nivel_acess = $_POST['nivel_acess'];
 
 //avatar
 $extension = strtolower(substr($_FILES['avatar']['name'], -4));
+
+
+if($extension<> ""){
 $nameavatar = $nome_oper . $extension;
-$avatard = "../avatar/";
+}else{
+  $nameavatar = "default.png";
+}
+
+$avatard = "../../avatar/";
 $avatar = $avatard . $nameavatar;
 
 

@@ -39,7 +39,7 @@ If ($_SESSION['nivel_session'] != 1){
                     </a>
 
                     <h1 id="titulo2">Cadastro de Cliente</h1>
-                    <a href="../Menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
+                    <a href="../Menu/menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
                 </div>
                 
                     

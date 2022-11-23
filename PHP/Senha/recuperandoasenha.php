@@ -10,7 +10,7 @@ $select -> execute();
 
 if (($select)  AND  ($select->rowCount() !=0) ){
 $rows = $select -> fetch(PDO::FETCH_ASSOC);
-$chave = password_hash($row_usuario['id_oper'], PASWORD_DEFAULT);
+$chave = password_hash($row_usuario['id_oper'], PASSWORD_DEFAULT);
 echo"chave =  $chave";
 } 
 else{

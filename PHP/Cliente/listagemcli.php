@@ -109,7 +109,7 @@ include('listaclipedfunc.php');
         <a class="sidebtn" href="../Produtos/ProdutosList.php"> <img class="imgbtn" src="../../IMG/LP.png">
             <div href="#" class="MP">Lista de Produtos</div>
         </a>
-        <a class="sidebtn" href="../Menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
+        <a class="sidebtn" href="../Menu/menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">
             <div href="#" class="MP">Menu</div>
             <p class="sairadjustment"></p>
         </a>

@@ -24,7 +24,7 @@ include ('../conexao.php');
       <h1 id="titulo1">Mais vendidos</h1>
     </div>
     <div id="config">
-      <a href="../Menu.php"><img src="../../IMG/casinha.png" class="icones" alt="" id="carrinho"></a>
+      <a href="../Menu/menu.php"><img src="../../IMG/casinha.png" class="icones" alt="" id="carrinho"></a>
     </div>
 
   </div>

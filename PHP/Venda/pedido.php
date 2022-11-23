@@ -24,7 +24,7 @@ include ('../conexao.php');
   
         <div class="pedidoex">
           <div class="headerp">
-            <a href="../Menu.php"id="seta" > 
+            <a href="../Menu/menu.php"id="seta" > 
             <img src="../../IMG/imgseta.png" alt="">
             </a>
             <div class="headerpedido">   
