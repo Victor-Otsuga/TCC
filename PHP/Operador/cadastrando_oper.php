@@ -7,7 +7,7 @@ include ('../conexao.php');
 $nome_oper = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$encrypted = hash(
+$hash = hash(
   "sha256",
   $senha,
 );

@@ -71,15 +71,17 @@ $id_oper = $_SESSION['id_session'];
               <label class="input4"><?php echo '<img src="'.$avatar.'" id="preview-img" class="imgpreview" ><input type="file" id="image" class="imagemm" name="avatar" accept="image/*"/>'?></label>
 
              
-              <label class="label">Senha:</label>
-              <input name="senha" type="password" autocomplete="off" class="input" value="<?php echo $senha ?>" required>
+              <label class="label">Senha Atual:</label>
+              <input name="senhaatual" type="password" autocomplete="off" class="input">
 
-              <label class="label" >Tipo de operador:</label>
-                <div class="rdiv">
-                <label for="tipo_oper" class="radio">Adm <input required type="radio" class="input3" name="nivel_acess" value="1" <?php echo $nivel_acess == '1' ? 'checked' : ''?>>  </label>
-                <label for="tipo_oper" class="radio">Normal <input required type="radio"  class="input3" name="nivel_acess" value="2" <?php echo $nivel_acess == '2' ? 'checked' : ''?>></label>
-                 
-                </div>
+              <label class="label">Senha Nova:</label>
+              <input name="senhanova" type="text" autocomplete="off" class="input">
+
+              <input name="senha" type="hidden" autocomplete="off" class="input" value="<?php echo $senha ?>" required>
+
+                <input required type="hidden" class="input3" name="nivel_acess" value="1" <?php echo $nivel_acess == '1' ? 'checked' : ''?>>  
+                <input required type="hidden"  class="input3" name="nivel_acess" value="2" <?php echo $nivel_acess == '2' ? 'checked' : ''?>>
+                
                 
                 <div id="number"> 
                 <a class="imglink" href="..\PHP\cadcli2.php">
