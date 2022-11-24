@@ -176,7 +176,7 @@ include('carrinho.php');
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> </t></a></div>';
                         }else{
                             echo '<t><button   value="', $id, '"class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
                         }
@@ -193,7 +193,7 @@ include('carrinho.php');
             <a href="final.php" class="bntFim" onclick="">
                 <div> Finalizar pedido</div>
             </a>
-
+        </div>
 
             <!--Menu Vertical-->
 

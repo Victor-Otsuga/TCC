@@ -37,7 +37,7 @@ If ($_SESSION['nivel_session'] != 1){
            
               <h1 id="titulo2">Cadastro de Operador</h1>
            
-              <a href="../Menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
+              <a href="../Menu/Menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
           
                  </div>
              

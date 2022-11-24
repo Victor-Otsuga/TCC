@@ -1,6 +1,6 @@
 <?php
-include ('../verificarLogin.php');
-include ('../conexao.php'); 
+include('../verificarLogin.php');
+include('../conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,17 +20,21 @@ include ('../conexao.php');
 
 
     <!--Conteúdo do Site-->
-    <div>
-        <h1 style="margin-left: 250px;" id="teste">Finalizar pedido</h1>
+    
+    <div style="margin-left: 250px;" id="teste">
+    <a id="seta">
+                <img src="../../IMG/imgseta.png" alt="" onclick="goBack()">
+            </a>
+            
+        <h1 style="margin-left: 10px;" >Finalizar pedido</h1>
     </div>
 
     <div class="pedidoex">
-
-
+    
+            
+    <div class="tabelafinal">
         <div class="headerp">
-            <a id="seta">
-                <img src="../../IMG/imgseta.png" alt="" onclick="goBack()">
-            </a>
+            
             <div class="headerpedido">
 
                 <p class="txt">Cliente:&nbsp;&nbsp;
@@ -45,7 +49,7 @@ include ('../conexao.php');
         <div id="conteudo">
 
 
-            <div class="tabelafinal" href="../Venda/pedido.php">
+            
                 <table class="table">
                     <thead>
                         <tr>
@@ -67,34 +71,6 @@ include ('../conexao.php');
                             <td> R$100,00</td>
                         </tr>
 
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
 
                         <tr>
                             <th scope="row">2</th>
@@ -112,407 +88,8 @@ include ('../conexao.php');
                             <td>10</td>
                             <td>R$10,00</td>
                             <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
                         </tr>
-
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
-                            <th scope="row">1</th>
-                            <td>Morango</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>Massa 1L</td>
-                            <td>10</td>
-                            <td>R$9,00</td>
-                            <td> R$90,00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Limão</td>
-                            <td>Massa 5L</td>
-                            <td>10</td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr><tr>
                             <th scope="row">1</th>
                             <td>Morango</td>
                             <td>Massa 5L</td>
@@ -556,7 +133,7 @@ include ('../conexao.php');
 
 
 
-            
+
 
 
 
@@ -564,7 +141,7 @@ include ('../conexao.php');
         </div>
 
 
-      
+
 
 
     </div>
@@ -574,9 +151,9 @@ include ('../conexao.php');
 
     <div id="bntliscli">
 
-        <a id="bnt" onclick="">
-            <div> Finalizar pedido</div>
-        </a>
+        <button style="width: 250px;" class="bntFim" onclick="download()">
+            Finalizar pedido
+        </button>
 
     </div>
 
@@ -587,21 +164,21 @@ include ('../conexao.php');
 
     <!--Menu Vertical-->
     <div id="menuho">
-    <div id="operador">
-        <!-- <img  id="icon" alt=""> -->
+        <div id="operador">
+            <!-- <img  id="icon" alt=""> -->
 
-        <?php 
-        
-        $avatar = $_SESSION['avatar_session']; 
+            <?php
 
-        echo '<img id="icon" src="'.$avatar.'">';
-        
-        ?>
-            
+            $avatar = $_SESSION['avatar_session'];
+
+            echo '<img id="icon" src="' . $avatar . '">';
+
+            ?>
+
             <h1 id="nome">Operador: <?php
-               
-                $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+
+                                    $nome_oper = $_SESSION['nome_session'];
+                                    echo $nome_oper ?></h1>
 
         </div>
 
@@ -631,7 +208,7 @@ include ('../conexao.php');
 
     </div>
 
-
-
+    <script src="../../JAVASCRIPT/controlepdf.js"></script>
+    <script src="../../JAVASCRIPT/pdfconfig.js"></script>
     <script src="../../JAVASCRIPT/controle.js"></script>
 </body>

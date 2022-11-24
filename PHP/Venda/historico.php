@@ -75,7 +75,7 @@ include ('../conexao.php');
     <div class="scroll">
         
       
-            <a class="teste2" href="pedido.php">
+            <a  class="teste2" href="pedido.php">
                 <div class="sectionone">
                     <u class="info">ID </u>
                     <u class="info">Variavel </u>
@@ -277,7 +277,7 @@ include ('../conexao.php');
             <div id="linksconf" >
                 <img src="../../IMG/conf.png" >
                 
-                <a  href="../Operador/editarope.php" onclick="Popup()" class="lkc">Editar Usuário</a>
+                <a href="../Operador/editarope.php" id="lkc">Editar Usuário</a>
                 <a href="../Operador/Cadastroope.php" class="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="../Cliente/cadcli2.php" class="lkc">Cadastro de Cliente</a>
 

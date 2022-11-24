@@ -46,12 +46,12 @@ $id_oper = $_SESSION['id_session'];
                 <div class="headcad">
              
                 
-              <img class="seta" onclick="goBack()" src="../IMG/imgseta.png" alt="">
+              <img class="seta" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
              
            
-              <h1 id="titulo2">Editar Operador</h1>
+              <h1 id="titulo2">Editar Operador </h1>
            
-              <a href="Menu.php"><img src="../IMG/casinha.png" class="homeCad" alt=""></a>
+              <a href="../Menu/Menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
           
                  </div>
              

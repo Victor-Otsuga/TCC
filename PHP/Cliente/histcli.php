@@ -125,7 +125,7 @@ include ('../conexao.php');
             <div id="linksconf" >
                 <img src="../../IMG/conf.png" >
                 
-                <a class="lkc">Editar Usuário</a>
+                <a href="../Operador/editarope.php" id="lkc">Editar Usuário</a>
                 <a href="../Operador/Cadastroope.php" class="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="cadcli.php" class="lkc">Cadastro de Cliente</a>
 

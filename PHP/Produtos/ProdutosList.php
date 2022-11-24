@@ -71,7 +71,7 @@ include ('../conexao.php');
     <!--Conteúdo do Site-->
     <div class="scroll">
         <div class="pesq">
-            <h1 id="teste" style="border: 1px solid red;">Lista de Produtos</h1>
+            <h1 id="teste" >Lista de Produtos</h1>
 
         <form action="" id="pesf">
             <input type="text" name="buscar" id="pes">

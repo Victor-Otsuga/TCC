@@ -186,7 +186,7 @@ include('../Cliente/listaclipedfunc.php');
             <div id="linksconf">
                 <img src="../../IMG/conf.png">
 
-                <a href="../Operador/editarope.php" class="lkc"> Editar Usuário</a>
+                <a href="../Operador/editarope.php" id="lkc">Editar Usuário</a>
                 <a href="../Operador/Cadastroope.php" class="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="../Cliente/cadcli2.php" class="lkc">Cadastro de Cliente</a>
 
