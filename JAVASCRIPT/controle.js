@@ -97,7 +97,7 @@ function selectpicole(){
 }
 
 
-document.getElementById("tpct").addEventListener(focus, selectpct1());
+
 
 
 

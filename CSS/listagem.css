@@ -32,7 +32,7 @@
         /* font-family: 'Candal';
         font-style: normal;
         font-size: 15px; */
-
+        transition: all .2s ease-in-out;
 
 
 
@@ -50,7 +50,11 @@
      font-size: 25px;
     }
 
-.clienteex:hover{  text-decoration: none;}
+.clienteex:hover{ 
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
 #lista{
 
     

@@ -25,7 +25,8 @@
         font-family: 'Candal';
         font-style: normal;
         font-size: 25px;
-
+        transition: all .2s ease-in-out;
+   
     
    
  
@@ -49,8 +50,14 @@
      
         }
 
-.clienteex:hover{  text-decoration: none;}
-#lista{
+.clienteex:hover{  
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+
+    #lista{
     border: #000 1px solid;
 
     margin-left: 14rem;

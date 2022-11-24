@@ -226,10 +226,14 @@ h1 {
 }
 
 #icon {
-    width: 98px;
-    height: 98px;
+    width: 100px;
+    height: 100px;
     border-radius: 50px;
     display: inline-block;
+    
+    
+border: 3px solid black;
+padding: 1px;
 
     transition-duration: 1s;
     transition-timing-function: linear;
@@ -320,8 +324,9 @@ margin-left: 15px;
 #teste {
     margin-left: 12rem;
     margin-top: 1rem;
-    display: inline-block;
+    display: flex;
     font-size: 48px;
+    align-items: baseline;
 
 
 
@@ -343,9 +348,13 @@ margin-left: 15px;
     color: #000;
     display: flex;
     justify-content: space-evenly;
+   
+    transition: all .2s ease-in-out;
 }
 
-
+.teste2:hover{
+    transform: scale(1.05);
+}
 
 
 .info {
@@ -518,7 +527,7 @@ font-size: 18px;
     text-decoration: none;
     margin-top: 25px;
     cursor: pointer;
-
+    transition: all .2s ease-in-out;
 
 }
 
@@ -543,9 +552,16 @@ font-size: 18px;
     text-decoration: none;
     margin-top: 25px;
     cursor: pointer;
-
+    transition: all .2s ease-in-out;
 }
 
+.lkc:hover{
+    transform: scale(1.05);
+}
+
+#lkc:hover{
+    transform: scale(1.05);
+}
 
 
 .car-scn {
@@ -597,10 +613,11 @@ font-size: 18px;
     text-decoration: none;
     width: 190px;
     height: 50px;
-    padding-top: 10px;
+
     background-color: #CABE82;
-    border: 2px solid #000000; 
+    border: 3px solid #000000; 
      box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25); 
     border-radius: 15px;
     
 }
+
