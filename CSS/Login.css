@@ -43,6 +43,7 @@ label{
     font-size: 15px;
     font-weight: bold;
     font-family: "Candal";
+    color: #fffff0bb;
 }
 
 /* Container Login */
@@ -80,6 +81,7 @@ label, input{
     display: block;
     width: 100%;
     text-align: left;
+    
 }
 
 input{
@@ -111,7 +113,7 @@ font-family: "Candal";
 }
 
 #forgotpass{
-    color: #000000;
+    color: #fffff0bb;
     font-weight: bold;
     font-size: 12px;
     font-family: "Candal";
@@ -119,9 +121,9 @@ font-family: "Candal";
 /* Container Login */
 
 #login-container {
-
-    background-color: #CABE82;
-    border-bottom: 2px solid #000000;
+    box-shadow:  8px 8px 8px #82805e;
+    background-color: transparent;
+  
     width: 473px;
     height: 500px;
     margin-left: auto;
@@ -129,7 +131,11 @@ font-family: "Candal";
     padding: 20px 30px;
     border-radius: 10px;
     text-align: center;
-    border: 3px solid #000;
+    
+}
+
+#white{
+    color: black;
 }
 
 img{
