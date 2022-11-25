@@ -26,6 +26,27 @@ foreach($fetch as $dados) {
     $nivel_acess = $_POST['nivel_acess'];
 
 
+    //count recebe sql que tá selecionando o campo email_oper do banco
+    $sql =  $pdo->prepare("SELECT * FROM operador WHERE email_oper = ?");
+    $sql -> bindValue(1, $email);
+    $sql ->execute();
+    $count = $sql->rowCount();
+
+    //if para verificar se o email já existe. Caso exista vai dar um alert
+    if($count > 0){
+    $alert = <<<EOT
+    <script type="text/javascript">
+    window.location.href = 'editarope.php';
+    alert("Desculpa, esse email já existe!");
+    </script>
+    EOT;
+
+    echo $alert;
+    $senhacorreta=0;
+    }
+
+    
+
     if($senhaatual <> ""){
         $query = $pdo->prepare("SELECT * FROM operador WHERE id_oper = ? AND senha = ?");
         $query->execute(array($_SESSION['id_session'], hash("sha256",  $_POST["senhaatual"])));
@@ -75,7 +96,7 @@ foreach($fetch as $dados) {
                         }
 
                      
-      
+
                         
 
 if($senhacorreta <> 0){
