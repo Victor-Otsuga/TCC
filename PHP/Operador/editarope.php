@@ -72,7 +72,7 @@ $id_oper = $_SESSION['id_session'];
 
              
               <label class="label">Senha Atual:</label>
-              <input name="senhaatual" type="password" autocomplete="off" class="input">
+              <input name="senhaatual" type="password" autocomplete="off" class="input" required>
 
               <label class="label">Senha Nova:</label>
               <input name="senhanova" type="text" autocomplete="off" class="input">

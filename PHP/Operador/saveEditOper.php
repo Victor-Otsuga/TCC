@@ -26,21 +26,23 @@ foreach($fetch as $dados) {
     $nivel_acess = $_POST['nivel_acess'];
 
 
-    if($_POST['senhaatual'] <> ""){
+    if($senhaatual <> ""){
         $query = $pdo->prepare("SELECT * FROM operador WHERE id_oper = ? AND senha = ?");
         $query->execute(array($_SESSION['id_session'], hash("sha256",  $_POST["senhaatual"])));
 
     $linha = $query->fetch(PDO::FETCH_ASSOC);
    
 
-
     
     if ($query->rowCount()  ) {
+        
+
+        if($senhanova <> ""){
         $hash = hash("sha256",  $_POST["senhanova"]);
 
 
         $senhacorreta=1;
-
+    }
 
         }else{
             $alervazio2 = <<<EOTin
@@ -78,9 +80,13 @@ foreach($fetch as $dados) {
 
 if($senhacorreta <> 0){
 
-if($avatar <> NULL){
 
-    if($hash<>NULL){
+
+
+
+if($avatar <> ""){
+
+    if($senhanova<>""){
 
     $sqlUpdate  = $pdo->prepare("UPDATE operador SET nome_oper= ?, email_oper= ?, senha= ?, nivel_acess= ?, avatar= ? WHERE id_oper=?");
     $sqlUpdate->bindParam(1, $nome_oper, PDO::PARAM_STR);
