@@ -14,7 +14,7 @@
     <div id="login-container"> 
         <img src="../IMG/trevoice.png" alt="">
         <form action="login.php" method="POST">
-        <label>Usuário</label>
+        <label>E-mail</label>
         <input name="email" autocomplete="off">
 
         <label>Senha</label>
