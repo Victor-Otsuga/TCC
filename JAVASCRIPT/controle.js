@@ -110,3 +110,8 @@ function selectpct0(){
 
     document.getElementById("sepct").style.display = "none";
 }
+
+
+function deuerro(){
+    alert("sexo")
+}
