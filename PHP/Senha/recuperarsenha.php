@@ -3,9 +3,9 @@ ob_start();
 session_start();
 include_once '../conexao.php';
 
-require '../../JAVASCRIPT\vendor\phpmailer\phpmailer\src\Exception.php';
-require '../../JAVASCRIPT\vendor\phpmailer\phpmailer\src\PHPMailer.php';
-require '../../JAVASCRIPT/vendor/phpmailer/phpmailer\src/SMTP.php';
+require '../../JAVASCRIPT/vendor/phpmailer/phpmailer/src/Exception.php';
+require '../../JAVASCRIPT/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require '../../JAVASCRIPT/vendor/phpmailer/phpmailer/src/SMTP.php';
 
 
 
@@ -29,12 +29,20 @@ $mail = new PHPMailer(true);
 </head>
 <body id="lateral">
 
+<!-- <div class="header-recup"><img src="../../IMG/perigo.png" class="img-recup"> <p class="errorecup">Usuário não encontrado.</p></div> -->
 
     <div id="bg">
     <div id="login-container">
         <img src="../../IMG/trevoice.png" alt="">
 
 <?php
+
+//Gerar Senha aleatória 
+
+
+
+
+
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if(!empty($dados['SendRecupSenha'])){
@@ -45,17 +53,19 @@ if(!empty($dados['SendRecupSenha'])){
 
     if (($select)  AND  ($select->rowCount() !=0) ){
         $rows = $select -> fetch(PDO::FETCH_ASSOC);
-        $chave = hash("sha256", $rows['id_oper']);
+        $aleatorio = rand(1000, 9999);
+        $senharand = "trevo".$aleatorio;
+        $hash = hash("sha256",  $senharand);
         // $chave = password_hash($rows['id_oper'], PASSWORD_DEFAULT);
 
 
-        $up_senha = "UPDATE operador SET recuperar_senha =:recuperar_senha WHERE id_oper =:id LIMIT 1";
+        $up_senha = "UPDATE operador SET senha =:senha WHERE id_oper =:id LIMIT 1";
         $result_up_senha = $pdo->prepare($up_senha);
-        $result_up_senha -> bindParam(':recuperar_senha', $chave, PDO::PARAM_STR);
+        $result_up_senha -> bindParam(':senha', $hash, PDO::PARAM_STR);
         $result_up_senha -> bindParam(':id', $rows['id_oper'], PDO::PARAM_INT);
 
         if($result_up_senha ->execute()){
-           $link = "http://localhost/TCC-main/PHP/Senha/atualizandosenha.php?chave=$chave";
+        //    $link = "http://localhost/TCC-main/PHP/Senha/atualizandosenha.php?chave=$chave";
            
 
            try{
@@ -78,12 +88,20 @@ if(!empty($dados['SendRecupSenha'])){
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Recuperar senha';
             $mail->Body    = 'Prezado(a),' .$rows['nome_oper']. "<br><br> Você solicitou a alteração de senha. 
-            Para continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador:<br><br><a href='" . $link . "'
-            >" . $link . "</a><br><br>Se você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.<br><br>";
+            </a><br><br> Sua nova senha é $senharand ";
+            
+            
+            
             $mail->AltBody = 'Prezado(a),' .$rows['nome_oper']. "\n\nVocê solicitou a alteração de senha. 
-            Para continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador:\n\n" . $link . "\n\nSe você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.\n\n";
+            Sua nova senha é $senharand:\n\n";
             
             $mail->send();
+
+            //mudando senha no banco
+           
+
+
+
             // $_SESSION['msg'] = "Enviado e-mail com as instruções para recuperar a senha. Acesse sua caixa de e-mail para recuperar a senha!";
             // header("Location: ../../index.html");
             $alervazio2 = <<<EOTin
@@ -96,15 +114,15 @@ if(!empty($dados['SendRecupSenha'])){
               echo $alervazio2;
 
            }catch (Exception $e) {
-                echo "Email não enviado. Erro: {$mail->ErrorInfo}";
+                echo "<p class='errorecup'> Email não enviado. Erro: {$mail->ErrorInfo}</p>";
 
            }
         }else{
-        echo "<p margin-top: '30x'> Tente novamente</p>";
+        echo "<p class='errorecup'> Tente novamente</p>";
         }
 
     }else{
-        echo "<p margin-top: '30x'> Usuário não encontrado</p>";
+        ?>  <script>  function deuerro(){ document.getElementById("deuerro").style.display = "flex"} deuerro() </script>     <?php
 
         }
     }
@@ -140,5 +158,7 @@ if(!empty($dados['SendRecupSenha'])){
 
 ?>
 </div>
+
+ <script src="../../JAVASCRIPT/controle.js"></script>
 </body>
 </html>
