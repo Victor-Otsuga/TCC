@@ -3,7 +3,8 @@ include('../verificarLogin.php');
 include('../conexao.php');
 include('../Produtos/listaprodfunc.php');
 include('carrinho.php');
-
+$precofinal= 0;
+$qtn =0;
 ?>
 
 
@@ -61,6 +62,16 @@ include('carrinho.php');
         if(empty ($_SESSION['carrinho'])){
             $_SESSION['carrinho'] = array();
         } 
+
+        if(isset($_GET['id_cli']))
+        {  $_SESSION['id_climont'] = $_GET['id_cli'];
+            
+          
+        }        
+        // else{
+        //     
+        // }
+        
         if(isset($_GET['id_prod']))
 {
 
@@ -81,13 +92,22 @@ include('carrinho.php');
     echo $linhas_car["sabor"];
      ?>
     </t>
-    <t><button class="carBtn" >-</button>
-    <div class="carQtd" id="qtd1"> 1 </div> <button class="carBtn" >+</button>
+    <t>
+    <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
+    <div class="carQtd" value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>"> 1 </div> 
+    <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
+
     </t>
     </div>
-    
+  
+    </script>
     
       <?php  
+
+     
+      $precofinal += ($linhas_car["preco_uni"]);
+
+
      }; 
     }
     ?>
@@ -95,7 +115,7 @@ include('carrinho.php');
         </div>
 
         <div>
-            <p class="total">Total: R$ 123,00</p>
+            <p class="total"> Total:  R$ <?php echo  $precofinal ?> </p>
         </div>
     </div>
     <!--Conteúdo do Site-->

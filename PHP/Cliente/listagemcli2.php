@@ -6,7 +6,7 @@ include('../conexao.php');
 $pes =  $_POST['pes'];
 
 $query = $pdo->prepare("SELECT * FROM cliente WHERE nome_cli LIKE '%$pes%' ORDER BY nome_cli");
-$query->execute(array($pes));
+$query-> execute();
 
 $num = $query->rowCount();
 if ($num > 0) {

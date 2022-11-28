@@ -49,7 +49,7 @@ include('listaclipedfunc.php');
         <a id="bnt" onclick="novocli()" href="cadcli2.php">
             <div> novo cliente</div>
         </a>
-
+        
     </div>
 
 
@@ -64,8 +64,8 @@ include('listaclipedfunc.php');
             <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="clienteespecf.php?id=<?php echo $linhas_cli["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome do cliente:<?php echo $linhas_cli["nome_cli"]; ?></span> </p>
-                    <p class="INFO"><span class="font">Nome da empresa:<?php echo $linhas_cli["id_cli"]; ?></span> </p>
+                    <p class="INFO"><span class="font">Nome:<?php echo $linhas_cli["nome_cli"]; ?></span> </p>
+                    <p class="INFO"><span class="font">id:<?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
                 </div>
@@ -99,8 +99,7 @@ include('listaclipedfunc.php');
 
 
 
-
-        <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
             <div class="MP"> Montar Pedido</div>
         </a>
         <a class="sidebtn" href="../Venda/historico.php"> <img class="imgbtn" src="../../IMG/historico.png">

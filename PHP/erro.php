@@ -24,7 +24,7 @@
 
        <input  type="submit" value="Entrar">
 
-       <a href="Senha/recuperarsenha.php" style="text-decoration:none" id="forgotpass">Esqueci minha senha</a>
+       <a href="#" style="text-decoration:none" id="forgotpass">Esqueci minha senha</a>
     </form>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 include ('../verificarLogin.php');
 include ('../conexao.php'); 
+include('../Cliente/listaclipedfunc.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,8 @@ include ('../conexao.php');
     <link rel="stylesheet" type="text/css" href="../../CSS/Menu.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/his.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/montarPedido.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/listagem.css">
+    <script src="../../JAVASCRIPT/jquery.min.js"></script>
     <title></title>
 </head>
 
@@ -58,10 +61,22 @@ include ('../conexao.php');
         <div  class="vendidos">
             <h1 id="titulo">Histórico de vendas</h1>
 
-            <form action="../Menu/menu.php" id="pesf">
-                <input type="text" placeholder="" id="pes">
-                <button type="submit" id="env" ><img src="../../IMG/lupa.png" alt=""></button>
-                </form>
+    
+        <form action="clienteespecf.php" id="pesf" method="POST">
+            <input type="text" placeholder="" name="pes" id="pes2">
+            <button type="submit" id="env" name="env" value="scr"><img src="../../IMG/lupa.png" alt=""></button>
+        </form>
+        <script>
+        $("#pes2").keyup(function() {
+            var pes = $("#pes2").val();
+            $.post('peshis.php', {
+                pes: pes
+            }, function(data) {
+                $("#his").html(data);
+            });
+        });
+    </script>
+
         </div>
 
 
@@ -72,153 +87,42 @@ include ('../conexao.php');
 
     </div>
     <!--Conteúdo do Site-->
-    <div class="scroll">
+    <div id="his">
         
-      
-            <a  class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
+    <?php
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
+while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
+    <!-- a variavel id passa pelo o link ao invés de um form -->
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
+    <a class="teste2" href="pedido.php?id_ven=<?php echo $linhas_his["id_venda"]; ?>">
+        <div class="sectionone">
+            <u class="info">ID: <?php echo $linhas_his["id_venda"]; ?> </u> <br>
+            <u class="info"><?php echo $linhas_his["nome_oper"]; ?> </u>
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
+        </div>
+        <div class="vertical"></div>
 
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
+        <div class="sectiontwo">
+            <u class="info">Quandidade de itens:<?php 
+            echo $linhas_his["quant_produtos"]; 
+            ?> </u>
+            <u class="info">Clientes:<?php echo $linhas_his["nome_cli"]; ?></u>
+        </div>
+        <div class="vertical"></div>
+        <div class="sectionthree">
+            <u class="info">data:<?php echo $linhas_his["datas"]; ?> </u>
+            <u class="info">total:<?php echo $linhas_his["total_venda"]; ?> </u>
+        </div>
+    </a>
 
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>
-                </div>
-                <div class = "vertical"></div>
-
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
-
-            <a class="teste2" href="pedido.php">
-                <div class="sectionone">
-                    <u class="info">ID </u>
-                    <u class="info">Variavel </u>
-                    <u class="info">java pendentes</u>  
-                </div>
-                <div class = "vertical"></div>
-
-                <div class="sectiontwo">
-                    <u class="info">Quandidade de itens: variavel items </u>
-                    <u class="info">Clientes:variavel nome</u>
-                </div>
-                <div class = "vertical"></div>
-                <div class="sectionthree">
-                    <u class="info">data: variavel data </u>
-                </div>
-            </a>
-
+<?php  }; ?>
             
           
            
@@ -247,8 +151,7 @@ include ('../conexao.php');
 
 
 
-
-        <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
             <div class="MP"> Montar Pedido</div>
         </a>
         <a class="sidebtn" href="../Menu/menu.php"> <img class="imgbtn" src="../../IMG/casinha.png">

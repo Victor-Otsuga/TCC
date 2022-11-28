@@ -117,10 +117,9 @@ If ($_SESSION['nivel_session'] != 1){
 
 
 
-
-                <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
-                    <div class="MP"> Montar Pedido</div>
-                </a>
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
+            <div class="MP"> Montar Pedido</div>
+        </a>
                 <a class="sidebtn" href="../Grafico/grafico.php"> <img class="imgbtn" src="../../IMG/historico.png">
                     <div href="#" class="MP">Histórico de Vendas</div>
                 </a>

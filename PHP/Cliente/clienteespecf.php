@@ -1,7 +1,7 @@
 <?php
 
 require_once '../conexao.php';
- 
+include ('../verificarLogin.php');
 
 if(isset($_GET['id'])) 
 {
@@ -59,17 +59,20 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
         </a>
+  
         <div id="bntliscli">
            
-            <a id="bnt" onclick=""> 
+            <a id="bnt" href="../Venda/histcli.php?id=<?php echo $linhas_cli["id_cli"]; ?>" > 
                 <div >pedidos do cliente</div>
             </a>
     
         </div>
         <div id="bntliscli2" >
-           
-            <a id="bnt2" onclick=""> 
+        <a id="bnt2" href="DeletarCliente.php?id=<?php echo $linhas_cli["id_cli"]; ?>"> 
                 <div>Deletar</div>
+            </a> 
+            <a id="bnt2" href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>"> 
+                <div>Montar Pedido</div>
             </a>
     
         </div>
@@ -100,16 +103,27 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
 <!--     Menu Vertical-->
 
     <div id="menuho">
-        <div id="operador">
-            <img src="../../IMG/icon.png" id="icon" alt="">
-            <h1 id="nome">Operador: Exemplo</h1>
+    <div id="operador">
+            <!-- <img  id="icon" alt=""> -->
+
+            <?php
+
+            $avatar = $_SESSION['avatar_session'];
+
+            echo '<img id="icon" src="' . $avatar . '">';
+
+            ?>
+
+            <h1 id="nome">Operador: <?php
+
+                                    $nome_oper = $_SESSION['nome_session'];
+                                    echo $nome_oper ?></h1>
 
         </div>
 
 
 
-
-        <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
             <div class="MP"> Montar Pedido</div>
         </a>
         <a class="sidebtn" href="../Venda/historico.php"> <img class="imgbtn" src="../../IMG/historico.png">

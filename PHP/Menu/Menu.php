@@ -19,7 +19,6 @@ include('../Cliente/listaclipedfunc.php');
 
 <body>
 
-
     <!-- Funçao do carrinho de compra -->
 
 
@@ -96,21 +95,23 @@ include('../Cliente/listaclipedfunc.php');
 
 
 
-            <a class="teste2" href="../Venda/pedido.php">
+            <a class="teste2" href="../Venda/pedido.php?id_ven=<?php echo $linhas_ped["id_venda"]; ?>">
                 <div class="sectionone">
-                    <u class="info">ID: <?php echo $linhas_ped["id_venda"]; ?> </u>
-                    <u class="info">Operador registrante: <?php echo $linhas_ped["nome_oper"]; ?> </u>
+                    <u class="info">ID: <?php echo $linhas_ped["id_venda"]; ?> </u> <br>
+                    <u class="info">Ope: <?php echo $linhas_ped["nome_oper"]; ?> </u>
 
                 </div>
                 <div class="vertical"></div>
 
                 <div class="sectiontwo">
-                    <u class="info">Quandidade de itens:<?php echo $linhas_ped["quant_produtos"]; ?> </u>
+                    <u class="info">Quandidade de itens:<?php 
+                    echo $linhas_ped["quant_produtos"]; 
+                    ?> </u>
                     <u class="info">Clientes:<?php echo $linhas_ped["nome_cli"]; ?></u>
                 </div>
                 <div class="vertical"></div>
                 <div class="sectionthree">
-                    <u class="info">data:<?php echo $linhas_ped["data"]; ?> </u>
+                    <u class="info">data:<?php echo $linhas_ped["datas"]; ?> </u>
                     <u class="info">total:<?php echo $linhas_ped["total_venda"]; ?> </u>
                 </div>
             </a>
@@ -145,7 +146,8 @@ include('../Cliente/listaclipedfunc.php');
 
 
 
-        <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
+        
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
             <div class="MP"> Montar Pedido</div>
         </a>
         <a class="sidebtn" href="../Venda/historico.php"> <img class="imgbtn" src="../../IMG/historico.png">

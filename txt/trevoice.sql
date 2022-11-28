@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.5.62
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
@@ -103,6 +103,7 @@ CREATE TABLE `produtos` (
   `id_prod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 --
 -- Extraindo dados da tabela `produtos`
 --
@@ -111,6 +112,7 @@ INSERT INTO `produtos` (`sabor`, `preco_uni`, `tipo`, `tamanho_pacote`, `tamanho
 ('111111', '111111.00', '1', 1111111, '1', '11111111.00', 1),
 ('Morango', '12312.00', '2', NULL, NULL, NULL, 2),
 ('mentos', '123.00', '3', NULL, NULL, NULL, 3);
+
 
 --
 -- Índices para tabelas despejadas
@@ -157,6 +159,10 @@ ALTER TABLE `produtos`
   MODIFY `id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+trevoice

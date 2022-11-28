@@ -84,10 +84,10 @@ $id_oper = $_SESSION['id_session'];
                 
                 
                 <div id="number"> 
-                <a class="imglink" href="..\PHP\cadcli2.php">
-                <img src="../IMG/1Vazio.png" alt="" id="nummargin"></a>
+               
                 
-                <img src="../IMG/2cheio.png" alt="">
+                
+                
                 </div>
                 <input  type="submit" value="Confirmar" id="update" name="update" class="input2">
               
@@ -120,10 +120,9 @@ $id_oper = $_SESSION['id_session'];
     
 
 
-
-    <a class="sidebtn" href="../MontagemPedido/MontarPedido.php"> <img class="imgbtn" src="../../IMG/MP.png">
-        <div class="MP"> Montar Pedido</div>
-    </a>
+        <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
+            <div class="MP"> Montar Pedido</div>
+        </a>
     <a class="sidebtn" href="../grafico.php"> <img class="imgbtn" src="../../IMG/historico.png">
         <div href="#" class="MP">Histórico de Vendas</div>
     </a>
