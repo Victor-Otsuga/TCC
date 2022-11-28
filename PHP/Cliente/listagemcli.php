@@ -47,7 +47,7 @@ include('listaclipedfunc.php');
     <div id="bntliscli">
 
         <a id="bnt" onclick="novocli()" href="cadcli2.php">
-            <div> novo cliente</div>
+            <div> Cadastrar Cliente</div>
         </a>
         
     </div>
@@ -89,7 +89,7 @@ include('listaclipedfunc.php');
         
         ?>
             
-            <h1 id="nome">Operador: <?php
+            <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
                 echo $nome_oper ?></h1>

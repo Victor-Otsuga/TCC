@@ -94,7 +94,7 @@ $qtn =0;
     </t>
     <t>
     <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
-    <div class="carQtd" value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>"> 1 </div> 
+    <input class="carQtd" value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>">  </input> 
     <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
 
     </t>
@@ -231,7 +231,7 @@ $qtn =0;
 
                     ?>
 
-                    <h1 id="nome">Operador: <?php
+                    <h1 id="nome"> <?php
 
                                             $nome_oper = $_SESSION['nome_session'];
                                             echo $nome_oper ?></h1>

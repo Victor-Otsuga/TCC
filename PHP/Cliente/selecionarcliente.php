@@ -92,7 +92,7 @@ include('listaclipedfunc.php');
         
         ?>
             
-            <h1 id="nome">Operador: <?php
+            <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
                 echo $nome_oper ?></h1>

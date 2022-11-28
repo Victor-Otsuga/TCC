@@ -102,7 +102,7 @@ if ($_SESSION['nivel_session'] != 1) {
 
                     ?>
 
-                    <h1 id="nome">Operador: <?php
+                    <h1 id="nome"> <?php
 
                                             $nome_oper = $_SESSION['nome_session'];
                                             echo $nome_oper ?></h1>
