@@ -21,7 +21,7 @@
     margin-left: 10px;
     display: inline-block;
     width: fit-content;
-
+    user-select: none;
 }
 
 .headcad {
@@ -56,7 +56,7 @@ body {
 
 #number {
 
-
+    user-select: none;
     width: auto;
     height: fit-content;
     text-align: center;
@@ -68,7 +68,7 @@ body {
 
 #number2 {
 
-
+    user-select: none;
     width: auto;
     height: fit-content;
     text-align: center;
@@ -187,7 +187,7 @@ input[type="submit"] {
 }
 
 .seta {
-
+    user-select: none;
     cursor: pointer
 }
 

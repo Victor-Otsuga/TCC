@@ -49,6 +49,7 @@
      font-family: 'chenla';
      font-style: normal;
      font-size: 25px;
+     user-select: none;
     }
 
 .clienteex:hover{ 
@@ -152,6 +153,7 @@ position: fixed;
 }
 
 #bnt{
+    user-select: none;
     cursor: pointer;
     display: inline-block;
     color: black;

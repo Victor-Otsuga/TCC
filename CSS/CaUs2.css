@@ -21,7 +21,7 @@
     margin-left: 20px;
     margin-top: 10px;
     align-items: center;
-
+    user-select: none;
 
 
 
@@ -63,7 +63,7 @@ body {
 
 #number {
 
-
+    user-select: none;
     width: auto;
     height: fit-content;
     text-align: center;
@@ -75,7 +75,7 @@ body {
 
 #number2 {
 
-
+    user-select: none;
     width: auto;
     height: fit-content;
     text-align: center;
@@ -214,7 +214,7 @@ input[type="radio"] {
 }
 
 .seta {
-
+    user-select: none;
     cursor: pointer
 }
 
@@ -293,6 +293,7 @@ input[type="file"] {
     right: 15px;
     top: 10px;
     position: fixed;
+    user-select: none;
 }
 
 .imgpreview{
@@ -301,5 +302,8 @@ input[type="file"] {
     height: 100%;
     object-fit: cover; 
     object-position: center;
- 
+    user-select: none;
+
 }
+
+

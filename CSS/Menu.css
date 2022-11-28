@@ -17,14 +17,14 @@
 
 }
 
-.seta {
-
-    cursor: pointer
+#config{
+    user-select: none;
 }
 
-
-div ::selection{background-color: transparent;}
-
+.seta {
+    user-select: none;
+    cursor: pointer
+}
 
 
 a.link{
@@ -66,6 +66,7 @@ label,
     font-size: 15px;
     font-weight: bold;
     font-family: "Candal";
+    user-select: none;
 }
 
 /* Menu Vertical */
@@ -127,6 +128,7 @@ label,
     font-size: 18px;
     width: 40%;
     opacity: 1;
+    margin-left: 10px;
 
     transition-property: opacity;
     transition-delay: .7s;
@@ -187,7 +189,7 @@ label,
 
     width: 140px;
     height: auto;
-
+    user-select: none;
 }
 
 
@@ -218,6 +220,7 @@ label,
 
 .imgbtn {
     width: 55px;
+    user-select: none;
 }
 
 h1 {
@@ -230,7 +233,7 @@ h1 {
     height: 100px;
     border-radius: 50px;
     display: inline-block;
-    
+    user-select: none;
     
 border: 3px solid black;
 padding: 1px;
@@ -249,7 +252,7 @@ padding: 1px;
 
     transition-duration: 1s;
     transition-timing-function: linear;
-
+    user-select: none;
 }
 
 #nome {
@@ -289,7 +292,7 @@ padding: 1px;
 }
 
 #titulo {
-
+    user-select: none;
     display: inline-block;
 color: #000;
 
@@ -299,6 +302,7 @@ color: #000;
     cursor: pointer;
     height: 56px;
     width: 56px;
+    user-select: none;
 
 
 }
@@ -327,7 +331,7 @@ margin-left: 15px;
     display: flex;
     font-size: 48px;
     align-items: baseline;
-
+    user-select: none;
 
 
 }
@@ -382,6 +386,7 @@ margin-left: 15px;
     margin-top: 0px;
     width: 20%;
     margin-left: 20px;
+    user-select: none;
 
 
 
@@ -394,10 +399,22 @@ margin-left: 15px;
     display: inline-block;
     margin-left: 10px;
     border-right:black 3px solid;
+    user-select: none;
 
 
 
+}
 
+td{
+    user-select: none;
+}
+
+th{
+    user-select: none;
+}
+
+img{
+    user-select: none;
 }
 
 
@@ -405,7 +422,7 @@ margin-left: 15px;
     width: 30%;
     display: inline-block;
     margin-left: 10px;
-
+    user-select: none;
 
 
 

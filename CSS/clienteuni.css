@@ -38,7 +38,7 @@
     
 
     .font{
-       
+        user-select: none;
         text-decoration: none;
         color: #000;
         font-family: 'Candal';
@@ -107,6 +107,7 @@
         }
 
     #bnt{
+        user-select: none;
         cursor: pointer;
         display: inline-block;
         color: black;
@@ -174,5 +175,6 @@
     }
 
     .sectionone{
+        user-select: none;
         text-align: center;
     }
