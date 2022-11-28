@@ -112,6 +112,3 @@ function selectpct0(){
 }
 
 
-function deuerro(){
-    alert("sexo")
-}

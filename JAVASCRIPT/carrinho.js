@@ -1,22 +1,53 @@
-var item
+// var item
 
 
 
 
-document.querySelectorAll("button").forEach( function(button) {
-    
-    button.addEventListener("click", function(event) {
+// document.querySelectorAll("button").forEach( function(button) {
 
-    const el = event.target || event.srcElement;
+//     button.addEventListener("click", function(event) {
 
-    const value = el.value;
+//     const el = event.target || event.srcElement;
 
-    console.log(value);
+//     const value = el.value;
 
-    console.log(item);
+//     console.log(value);
 
-    
-    alert(passedArray);
-  });
-  
-});
+//     console.log(item);
+
+
+//     alert(passedArray);
+//   });
+
+// });
+
+var id = 0
+var qtn = 0
+
+
+
+function maisum(id) {
+
+  var convert = document.getElementById("qtn".concat(id)).textContent
+  var qtn = parseInt(convert)
+
+  qtn += 1
+
+  document.getElementById("qtn".concat(id)).textContent = qtn
+  document.getElementById("qtn".concat(id)).value = qtn
+}
+
+function menosum(id) {
+
+  var convert = document.getElementById("qtn".concat(id)).textContent
+  var qtn = parseInt(convert)
+  qtn -= 1
+
+  if (qtn <= 0) {
+    qtn = 0
+  }
+
+  document.getElementById("qtn".concat(id)).textContent = qtn
+  document.getElementById("qtn".concat(id)).value = qtn
+
+}
