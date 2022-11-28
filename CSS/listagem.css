@@ -38,7 +38,8 @@
 
     }
 
-    .INFO{padding-bottom: 2px;}
+    .INFO{margin-top: 15px;
+        padding-bottom: 2px;}
 
     .font{
     border: none;
