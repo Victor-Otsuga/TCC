@@ -28,26 +28,24 @@ var qtn = 0
 
 function maisum(id) {
 
-  var convert = document.getElementById("qtn".concat(id)).textContent
+  var convert = document.getElementById("qtn".concat(id)).value
   var qtn = parseInt(convert)
 
   qtn += 1
 
-  document.getElementById("qtn".concat(id)).textContent = qtn
   document.getElementById("qtn".concat(id)).value = qtn
 }
 
 function menosum(id) {
 
-  var convert = document.getElementById("qtn".concat(id)).textContent
+  var convert = document.getElementById("qtn".concat(id)).value
   var qtn = parseInt(convert)
   qtn -= 1
 
   if (qtn <= 0) {
     qtn = 0
   }
-
-  document.getElementById("qtn".concat(id)).textContent = qtn
+  
   document.getElementById("qtn".concat(id)).value = qtn
 
 }
