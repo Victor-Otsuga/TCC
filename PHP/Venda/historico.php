@@ -15,6 +15,7 @@ include('../Cliente/listaclipedfunc.php');
     <link rel="stylesheet" type="text/css" href="../../CSS/his.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/montarPedido.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/listagem.css">
+    
     <script src="../../JAVASCRIPT/jquery.min.js"></script>
     <title></title>
 </head>
@@ -68,9 +69,9 @@ include('../Cliente/listaclipedfunc.php');
         </form>
         <script>
         $("#pes2").keyup(function() {
-            var pes = $("#pes2").val();
-            $.post('peshis.php', {
-                pes: pes
+            var pes2 = $("#pes2").val();
+            $.post('peshist.php', {
+                pes2: pes2
             }, function(data) {
                 $("#his").html(data);
             });
@@ -142,7 +143,7 @@ while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
         
         ?>
             
-            <h1 id="nome"> <?php
+            <h1 id="nome">Operador: <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
                 echo $nome_oper ?></h1>
@@ -199,3 +200,4 @@ while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
 
             <script src="../../JAVASCRIPT/controle.js"></script>
 </body>
+
