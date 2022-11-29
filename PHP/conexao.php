@@ -2,7 +2,7 @@
 
 $localhost = "localhost";
 $user = "root";
-$passw = "";
+$passw = "root";
 $banco = "trevoice";
 
 try{

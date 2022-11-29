@@ -4,7 +4,7 @@ include('../conexao.php');
 include('../Produtos/listaprodfunc.php');
 include('carrinho.php');
 $precofinal= 0;
-$qtn =0;
+$qtn =0 ;
 ?>
 
 
@@ -94,7 +94,8 @@ $qtn =0;
     </t>
     <t>
     <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
-    <input class="carQtd" value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>">  </input> 
+    <input value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>" onchange="mudouPreco(id)"  class="carQtd" >  </input> 
+    <input class="carQtd"  value=<?php echo $linhas_car["preco_uni"];?> type="hidden" name="qtnfunc" id="valor<?php echo $linhas_car["id_prod"];?>">  </input> 
     <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
 
     </t>
@@ -105,7 +106,7 @@ $qtn =0;
       <?php  
 
      
-      $precofinal += ($linhas_car["preco_uni"]);
+      
 
 
      }; 
@@ -115,7 +116,7 @@ $qtn =0;
         </div>
 
         <div>
-            <p class="total"> Total:  R$ <?php echo  $precofinal ?> </p>
+            <p class="total" id="valorTotal"> Total:  R$ 0 </p>
         </div>
     </div>
     <!--Conteúdo do Site-->
