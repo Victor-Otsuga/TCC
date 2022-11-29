@@ -21,7 +21,7 @@
     margin-left: 20px;
     margin-top: 10px;
     align-items: center;
-    user-select: none;
+
 
 
 
@@ -63,7 +63,7 @@ body {
 
 #number {
 
-    user-select: none;
+
     width: auto;
     height: fit-content;
     text-align: center;
@@ -75,7 +75,7 @@ body {
 
 #number2 {
 
-    user-select: none;
+
     width: auto;
     height: fit-content;
     text-align: center;
@@ -158,6 +158,13 @@ body {
     border-radius: 15px;
     background-color: #a6a378;
     position: relative;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2)
+}
+
+input:focus{
+    background: #918f61;
+    border: 3px solid  #3a3232;
+    box-shadow: 4px 4px 4px #302c25;
 }
 
 .input2 {
@@ -214,7 +221,7 @@ input[type="radio"] {
 }
 
 .seta {
-    user-select: none;
+
     cursor: pointer
 }
 
@@ -293,7 +300,6 @@ input[type="file"] {
     right: 15px;
     top: 10px;
     position: fixed;
-    user-select: none;
 }
 
 .imgpreview{
@@ -302,8 +308,5 @@ input[type="file"] {
     height: 100%;
     object-fit: cover; 
     object-position: center;
-    user-select: none;
-
+ 
 }
-
-
