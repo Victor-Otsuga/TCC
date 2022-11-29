@@ -22,72 +22,189 @@
 // });
 
 var id = 0
-var qtn = 0
-var total = 0
-var valorUni =0
-var TotalDoProduto = 0
-var valorMudando = 0
+var qtn = 0.0
+var total = 0.0
+var valorUni =0.0
+var totalProd = 0.0
+var tampct = 0
+var prepct = 0
+var desconto = 0
+var verificar = 0
+var aplicar = 1
+
+
 
 function maisum(id) {
 
-  var convert = document.getElementById("qtn".concat(id)).value
-  var qtn = parseInt(convert)
+  convert = document.getElementById("qtn".concat(id)).value
+  qtn = parseInt(convert)
+
 
   qtn += 1
 
   document.getElementById("qtn".concat(id)).value = qtn
 
-  valorUni = document.getElementById("valor".concat(id)).value
+  convert = document.getElementById("valor".concat(id)).value
+  valorUni = parseFloat(convert)
+  valorUni.toFixed(2)
+
+  total += valorUni
+   
+
+  tampct = document.getElementById("tpct".concat(id)).value
+  prepct = document.getElementById("ppct".concat(id)).value
 
 
 
-   total = total - valorUni + (valorUni * 2)
+  //aplicando desconto do pacote
 
+    desconto = prepct - (valorUni*tampct) 
+
+    verificar = qtn/tampct
+
+    if(Number.isInteger(verificar)){
+
+
+   
+    
+    total+= desconto
+  }
+
+ 
+  document.getElementById("valorTotal").textContent = "Total: R$ ".concat( total.toFixed(2))
   
-  
-  document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total)
 }
 
 function menosum(id) {
 
-  var convert = document.getElementById("qtn".concat(id)).value
-  var qtn = parseInt(convert)
+  convert = document.getElementById("qtn".concat(id)).value
+  qtn = parseInt(convert)
   qtn -= 1
 
-  if (qtn <= 0) {
+  if (qtn < 0) {
     qtn = 0
-  }
+  }else{
+
+
   
   document.getElementById("qtn".concat(id)).value = qtn
-
+  tampct = document.getElementById("tpct".concat(id)).value
+  prepct = document.getElementById("ppct".concat(id)).value
 
   valorUni = document.getElementById("valor".concat(id)).value
 
+  total -= valorUni
 
-  total = total - valorUni 
 
-  if (total <= 0){
-    total =0
+
+  desconto = prepct - (valorUni*tampct) 
+
+  verificar = qtn/tampct
+
+  if(Number.isInteger(verificar+0.1) && verificar != 0){
+
+
+  
+  total -= desconto
   }
 
-  document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total)
+  document.getElementById("valorTotal").textContent = "Total: R$ ".concat( total.toFixed(2))
 
+}
 }
 
 
-function mudouPreco(id){
+
+
+function salvarPreco(id){
+  
+
+
+  var id = id.replace(/[^0-9]/g,'')
 
 
 
   convert = document.getElementById("qtn".concat(id)).value
   qtn = parseInt(convert)
 
- alert(qtn);
+  if (qtn == null){
+    qtn =  0
+  }
+  
+  convert = document.getElementById("valor".concat(id)).value
+  valorUni = parseFloat(convert)
+  valorUni.toFixed(2)
+  
 
+  diferenca = qtn 
+
+  document.getElementById("diferenca".concat(id)).value = diferenca
+
+  
+
+}
+
+
+function mudouPreco(id){
+
+ var id = id.replace(/[^0-9]/g,'')
+
+
+ diferenca = document.getElementById("diferenca".concat(id)).value
+ tampct = document.getElementById("tpct".concat(id)).value
+ prepct = document.getElementById("ppct".concat(id)).value
 
 
  
+  
+
+  
+
+  convert = document.getElementById("qtn".concat(id)).value
+
+  if (convert ==""){
+  convert =  0
+  document.getElementById("qtn".concat(id)).value = convert
+  total = total - diferenca
+  total.toFixed(2)
+  document.getElementById("valorTotal").textContent = "Total: R$ ".concat( total.toFixed(2))
+  }else{
+
+
+  qtn = parseInt(convert)
+  
+
+  total = total + (valorUni * qtn)
+  total = total - (diferenca * valorUni)
+
+  total.toFixed(2)
+
+
+
+  desconto = prepct - (valorUni*tampct) 
+
+  verificar = qtn/tampct
+
+  if( verificar >= 1){
+
+verificar =parseInt(verificar)
+
+desconto = (desconto * verificar)
+  
+  total += desconto
+  }
+
+  document.getElementById("valorTotal").textContent = "Total: R$ ".concat( total.toFixed(2))
 
 }
+
+
+  
+  document.getElementById("valorTotal").textContent = "Total: R$ ".concat( total.toFixed(2))
+
+}
+
+
+
 
 

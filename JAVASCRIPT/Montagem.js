@@ -2,11 +2,6 @@ var massas = localStorage.getItem('massav');
 var picole = localStorage.getItem('picolev');
 var coberturas = localStorage.getItem('coberturav');
 
-var item1 = 0
-document.getElementById("qtd1").textContent = item1; 
-
-
-
 
 
 function abrirAba(){

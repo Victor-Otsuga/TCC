@@ -60,6 +60,22 @@ function fechacar() {
 
 }
 
+function abrecar2() {
+
+    document.getElementById("car-aba").style.width = "450px";
+    document.getElementById("car-aba").style.borderLeft = "1px solid black";
+    document.getElementById("car-aba").style.borderBottom = "1px solid black";
+
+}
+
+function fechacar2() {
+    document.getElementById("car-aba").style.width = "0px";
+    document.getElementById("car-aba").style.borderLeft = "0px";
+    document.getElementById("car-aba").style.borderBottom = "0px solid black";
+ 
+
+}
+
 
 function newPopup() {
     varWindow = window.open(
