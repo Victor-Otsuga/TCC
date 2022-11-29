@@ -39,7 +39,7 @@ $qtn =0 ;
             <h1 class="noclick">Diversos</h1>
         </div>
 
-        <img src="../../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinhoPedido">
+        <img src="../../IMG/carrinho.png" class="icones" onclick="abrecar2()" id="carrinhoPedido">
 
     </div>
 
@@ -50,7 +50,7 @@ $qtn =0 ;
 
 
 
-    <div class="car-scn" id="car-aba" onmouseleave="fechacar()">
+    <div class="car-scn" id="car-aba" onmouseleave="fechacar2()">
 
         <a href="final.php" style="text-decoration: none; color:black;">
             <div> <img src="../../IMG/carrinho.png" class="icones" id="carrinhoPop">
@@ -94,8 +94,17 @@ $qtn =0 ;
     </t>
     <t>
     <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
-    <input value=0 name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>" onchange="mudouPreco(id)"  class="carQtd" >  </input> 
-    <input class="carQtd"  value=<?php echo $linhas_car["preco_uni"];?> type="hidden" name="qtnfunc" id="valor<?php echo $linhas_car["id_prod"];?>">  </input> 
+
+    <input value="0" name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>" onchange="mudouPreco(id)" onclick="salvarPreco(id)" class="carQtd" >  </input> 
+
+    <input class="carQtd"  value=<?php echo $linhas_car["preco_uni"];?> type="hidden" name="qtnfunc" id="valor<?php echo $linhas_car["id_prod"];?>">  </input>
+
+    <input class="carQtd"  value=0 type="hidden" name="dife" id="diferenca<?php echo $linhas_car["id_prod"];?>">  </input>
+
+    <input class="carQtd"  value=<?php echo $linhas_car["preco_pacote"];?>  name="tmnpct" type="hidden" id="ppct<?php echo $linhas_car["id_prod"];?>">  </input>
+    
+    <input class="carQtd"  value=<?php echo $linhas_car["tamanho_pacote"];?>  name="ppct" type="hidden" id="tpct<?php echo $linhas_car["id_prod"];?>">  </input>
+
     <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
 
     </t>
