@@ -11,20 +11,22 @@ $qtn =0 ;
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<head >
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../CSS/MenuMont.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/montarPedido.css">
 
-    <title>Montar Pedido</title>
+    <title >Montar Pedido</title>
 </head>
 
-<body onload="abrirAba()">
+<body   onload="abrirAba();" >
 
     <!--Menu Horizontal-->
-    <div class="headerPedido">
+    <div  class="headerPedido" >
+
+    
 
 
         <div class="SorveteTipo" class="cursor" id="massabtn" onclick="opnMassas()">
@@ -50,7 +52,7 @@ $qtn =0 ;
 
 
 
-    <div class="car-scn" id="car-aba" onmouseleave="fechacar2()">
+    <div class="car-scn" id="car-aba" onmouseleave="fechacar2()" >
 
         <a href="final.php" style="text-decoration: none; color:black;">
             <div> <img src="../../IMG/carrinho.png" class="icones" id="carrinhoPop">
@@ -92,10 +94,15 @@ $qtn =0 ;
     echo $linhas_car["sabor"];
      ?>
     </t>
-    <t>
-    <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
+    <t id="<?php echo $linhas_car["id_prod"];?>"  >
 
-    <input value="0" name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>" onchange="mudouPreco(id)" onclick="salvarPreco(id)" class="carQtd" >  </input> 
+   
+    
+    <button  onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
+
+    <input value="1" name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>"  onchange="mudouPreco(id)" onfocus="salvarPreco(id)" class="carQtd" >  </input > 
+
+    <input id="<?php echo $linhas_car["id_prod"];?>" value="10" class="carQtd" type="hidden" >  </input > 
 
     <input class="carQtd"  value=<?php echo $linhas_car["preco_uni"];?> type="hidden" name="qtnfunc" id="valor<?php echo $linhas_car["id_prod"];?>">  </input>
 
@@ -108,6 +115,9 @@ $qtn =0 ;
     <input class="carQtd"  value=<?php echo $linhas_car["tamanho_pacote"];?> null name="ppct" type="hidden" id="tpct<?php echo $linhas_car["id_prod"];?>">  </input>
 
     <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
+
+    
+
 
     </t>
     </div>
@@ -148,20 +158,20 @@ $qtn =0 ;
                     <?php if ($linhas_prod["preco_pacote"] == NULL) {
 
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button>  </t></a></div>';
+                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button>  </t></a></div>';
                         }
                         else if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">5L</button></t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">5L</button></t></div>';
                         }
                         else if ($linhas_prod["tamanho_uni"] == 3) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> </t></div>';
+                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">1L</button> <button  class="carBtn">5L</button> </t></div>';
                         }
                     }
 
 
                     if ($linhas_prod["preco_pacote"] <> NULL) {
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
                         }
 
                         if ($linhas_prod["tamanho_uni"] == 2) {
@@ -184,9 +194,9 @@ $qtn =0 ;
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                        echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button  value="', $id, '"id="carBtn" class="carBtn">+</button></a></div>';
+                        echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'" onclick="adicionou(id)"><button  value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">+</button></a></div>';
                         }else{
-                            echo '<t><button  value="', $id, '"id="carBtn" class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button  value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">+</button> <button  class="carBtn" onclick="adicionou(id)">P</button> </t></div>';
                         }
                     };
 
@@ -208,9 +218,9 @@ $qtn =0 ;
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
                         <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> </t></a></div>';
+                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'" onclick="adicionou(id)"><button id="carBtn" class="carBtn" onclick="adicionou(id)">1L</button> </t></a></div>';
                         }else{
-                            echo '<t><button   value="', $id, '"class="carBtn">+</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button   value="', $id, '"class="carBtn" onclick="adicionou(id)">+</button> <button  class="carBtn" onclick="adicionou(id)">P</button> </t></div>';
                         }
                     };
                     ?>
@@ -281,7 +291,7 @@ $qtn =0 ;
             <script src="../../JAVASCRIPT/Montagem.js"></script>
             <script src="../../JAVASCRIPT/carrinho.js"></script>
 
-            
+            <div  onload="teste()" >
 
 
 </body>
