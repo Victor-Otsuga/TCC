@@ -23,7 +23,7 @@
 
     display: flex;
     align-items: center;
-    font-family: "Candal";
+    font-family: "garet";
     width: auto;
     margin-right: 0;
     
@@ -88,7 +88,7 @@ body{
     #conteudo{
    
             width: auto;
-            font-family: "Candal";
+            font-family: "garet";
             position: relative;
             font-size: 15px;
             height: 90%;
@@ -169,7 +169,7 @@ body{
             position: absolute;
             right:    0;
             bottom:   0; 
-            font-family: "Candal";
+            font-family: "garet";
             }
 
     #form1{

@@ -9356,7 +9356,7 @@ a.text-dark:hover {
     /* display: flex; */
     text-align: center;
     padding: 10px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 25px;
     background-color: #CABE82;
     color: #000;
@@ -9390,7 +9390,7 @@ a.text-dark:hover {
         color: black;
         font-weight: bold;
         font-size: 19px;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: center;
         text-decoration: none;
         width: 240px;

@@ -5,7 +5,7 @@
     justify-content: space-between;
     flex-flow: row wrap;
     padding: 10px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 25px;
     background-color: #CABE82;
     color: #000;
@@ -60,7 +60,7 @@
     /* display: flex; */
     text-align: center;
     padding: 10px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 25px;
     background-color: #CABE82;
     color: #000;

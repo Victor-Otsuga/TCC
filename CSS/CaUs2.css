@@ -16,7 +16,7 @@
 
     display: flex;
     align-items: center;
-    font-family: "Candal";
+    font-family: "garet";
     width: 98%;
     margin-left: 20px;
     margin-top: 10px;
@@ -96,7 +96,7 @@ body {
 #conteudo {
 
     width: 1000px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 35px;
     height: 27rem;
     padding:1rem;
@@ -117,7 +117,7 @@ body {
 #conteudo2 {
 
     width: 1000px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 35px;
     height: 30rem;
     padding:1rem;;
@@ -191,7 +191,7 @@ input:focus{
     position: relative;
     margin-top: 30px;
 
-    font-family: "Candal";
+    font-family: "garet";
     
 }
 
@@ -291,7 +291,7 @@ input[type="file"] {
     position: relative;
     margin-top: 10px;
 
-    font-family: "Candal";
+    font-family: "garet";
 
 }
 

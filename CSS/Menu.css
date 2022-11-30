@@ -1,7 +1,8 @@
 /* Geral */
-@font-face {
-    font-family: candal;
-    src: url(../fonts/Candal-Regular.ttf);
+
+  @font-face {
+    font-family: garet;
+    src: url(../fonts/garet.book.ttf);
   }
 
 
@@ -23,7 +24,8 @@
 
 .seta {
     user-select: none;
-    cursor: pointer
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 
@@ -31,6 +33,7 @@ a.link{
     display: inline-block;
     text-decoration: none;
     color: black;
+    
 }
 
 * {
@@ -65,7 +68,7 @@ label,
 #teste {
     font-size: 15px;
     font-weight: bold;
-    font-family: "Candal";
+    font-family: "garet";
     user-select: none;
 }
 
@@ -108,7 +111,7 @@ label,
     color: black;
     font-weight: bold;
     font-size: 19px;
-    font-family: "Candal";
+    font-family: "garet";
     text-align: center;
     text-decoration: none;
     opacity: 1;
@@ -124,7 +127,7 @@ label,
 
 #menuho:hover #nome {
     
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 18px;
     width: 40%;
     opacity: 1;
@@ -142,7 +145,7 @@ label,
     /* color: black;
         font-weight: bold;
         font-size: 19px;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: center;
         text-decoration: none; */
 
@@ -266,7 +269,7 @@ padding: 1px;
     transition-duration: .5s;
     transition-timing-function: linear;
     /* display: inline-block;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 18px;
     width: 40%; */
 }
@@ -279,7 +282,7 @@ padding: 1px;
     justify-content: space-between;
     flex-flow: row wrap;
     padding: 10px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 25px;
     background-color: #CABE82;
     color: #000;
@@ -293,10 +296,32 @@ padding: 1px;
 
 #titulo {
     user-select: none;
-    display: inline-block;
-color: #000;
+    display: flex;
+    color: #000;
+
 
 }
+
+#titulo2 {
+    user-select: none;
+    display: flex;
+    color: #000;
+    margin: 0px;
+
+
+}
+
+#titulo3 {
+    user-select: none;
+    display: flex;
+    color: #000;
+    margin: 0px;
+    font-size: 40px;
+    font-weight: 500;
+
+
+}
+
 
 .icones {
     cursor: pointer;
@@ -313,7 +338,9 @@ color: #000;
 #graf {
     display: inline-block;
     position: sticky;
-margin-left: 15px;
+    height: 45px;
+    width: 45px;
+    margin-right: 2px;
 }
 
 #carrinho {
@@ -337,7 +364,7 @@ margin-left: 15px;
 }
 
 .teste2 {
-    padding: 5px;
+    padding-top: 10px;
     margin-left: 15rem;
     margin-top: 1rem;
     background: #CABE82;
@@ -346,13 +373,13 @@ margin-left: 15px;
     border-radius: 15px;
     width: 80%;
     height: 135px;
-    font-size: 50px;
+    font-size: 40px;
     text-decoration: none;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     color: #000;
     display: flex;
     justify-content: space-evenly;
-   
+   align-items: center;
     transition: all .2s ease-in-out;
 }
 
@@ -362,16 +389,16 @@ margin-left: 15px;
 
 
 .info {
-    font-family: 'Candal';
+    font-family: 'garet';
     font-style: normal;
     font-size: 20px;
     text-decoration: none;
-   
+   overflow: hidden;
     
 }
 
 .pen {
-    font-family: 'Candal';
+    font-family: 'garet';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -383,10 +410,11 @@ margin-left: 15px;
 
 .sectionone {
     border-right:black 3px solid;
-    margin-top: 0px;
-    width: 20%;
+    width: 25%;
+    height: 100%;
     margin-left: 20px;
     user-select: none;
+    
 
 
 
@@ -395,12 +423,12 @@ margin-left: 15px;
 }
 
 .sectiontwo {
-    width: 30%;
+    width: 40%;
     display: inline-block;
     margin-left: 10px;
     border-right:black 3px solid;
     user-select: none;
-
+    height: 100%;
 
 
 }
@@ -423,7 +451,7 @@ img{
     display: inline-block;
     margin-left: 10px;
     user-select: none;
-
+    height: 100%;
 
 
 
@@ -454,6 +482,8 @@ img{
 .vendidos {
     display: flex;
     align-items: center;
+    align-items: baseline;
+    
 
 }
 
@@ -511,7 +541,7 @@ justify-content: center;
 width: 100%;
 height: 100%;
 
-font-family: "Candal";
+font-family: "garet";
 font-size: 18px;
  /* padding-top: 75px;  */
  opacity: 0;
@@ -526,6 +556,7 @@ font-size: 18px;
 #lkc{
     text-decoration: none;
     color: #000;
+    text-align: center;
 
     display: flex;
     align-items: center;
@@ -551,6 +582,7 @@ font-size: 18px;
 .lkc{
     text-decoration: none;
     color: #000;
+    text-align: center;
 
     display: flex;
     align-items: center;
@@ -616,7 +648,7 @@ font-size: 18px;
 
 .txt{
     font-weight: bold;
-    font-family: "Candal";
+    font-family: "garet";
 }
 
 .bntFim{
@@ -625,7 +657,7 @@ font-size: 18px;
     color: black;
     font-weight: bold;
     font-size: 19px;
-    font-family: "Candal";
+    font-family: "garet";
     text-align: center;
     text-decoration: none;
     width: 190px;

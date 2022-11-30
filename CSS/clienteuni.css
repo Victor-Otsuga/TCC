@@ -1,11 +1,9 @@
 @font-face {
-    font-family: candal;
-    src: url(../fonts/Candal-Regular.ttf);
+    font-family: garet;
+    src: url(../fonts/garet-Regular.ttf);
  
   }
 
-    @font-face{   font-family: chenla;
-        src: url(../fonts/Chenla-Regular.ttf);}
 
 .clienteex{
     width: 80vw;
@@ -22,7 +20,7 @@
     color: #000;
     padding-left: 15px;
     padding-top: 30px;
-        font-family: 'Candal';
+        font-family: 'garet';
         font-style: normal;
         font-size: 25px;
         transition: all .2s ease-in-out;
@@ -41,7 +39,7 @@
         user-select: none;
         text-decoration: none;
         color: #000;
-        font-family: 'Candal';
+        font-family: 'garet';
      font-style: italic;
      font-size: 15px;
     
@@ -113,7 +111,7 @@
         color: black;
         font-weight: bold;
         font-size: 19px;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: center;
         text-decoration: none;
         width: 250px;
@@ -142,7 +140,7 @@
         color: black;
         font-weight: bold;
         font-size: 19px;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: center;
         text-decoration: none;
         width: auto;
@@ -162,7 +160,7 @@
         justify-content: space-between;
         flex-flow: row wrap;
         padding: 15px;
-        font-family: "Candal";
+        font-family: "garet";
         font-size: 25px;
         background-color: #CABE82;
         color: #000;

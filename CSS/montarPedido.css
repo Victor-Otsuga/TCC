@@ -1,3 +1,9 @@
+@font-face {
+    font-family: garet;
+    src: url(../fonts/garet-Regular.ttf);
+  }
+
+
 .headerPedido {
     position: sticky;
     top: 0;
@@ -5,7 +11,7 @@
     justify-content: space-between;
     flex-flow: row wrap;
     padding: 0px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 25px;
     background-color: #CABE82;
     color: #000;
@@ -102,7 +108,7 @@ t{
 
 
     font-size: 20px;
-    font-family: 'Candal';
+    font-family: 'garet';
  
     display: flex;
 
@@ -163,7 +169,7 @@ padding-right: 20px;
 
 
     font-size: 20px;
-    font-family: 'Candal';
+    font-family: 'garet';
     display: flex;
 
     
@@ -260,7 +266,7 @@ height: 50px;
 background-color: #CABE82;
     bottom: 0;
 font-size: 25px;
-    font-family: Candal;
+    font-family: garet;
     
 }
 
@@ -290,7 +296,7 @@ position: fixed;
     color: black;
     font-weight: bold;
     font-size: 19px;
-    font-family: "Candal";
+    font-family: "garet";
     text-align: center;
     text-decoration: none;
     width: 250px;

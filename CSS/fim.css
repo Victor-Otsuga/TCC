@@ -1,7 +1,8 @@
 @font-face {
-    font-family: chenla;
-    src: url(../fonts/Chenla-Regular.ttf);
+    font-family: garet;
+    src: url(../fonts/garet-Regular.ttf);
   }
+
 
 .pedidoex{
     width: 75vw;
@@ -36,7 +37,7 @@
         margin-top: 20px;
         margin-left: 60px;
         font-weight: 400;
-        font-family: "Candal";
+        font-family: "garet";
         height: min-content;
 
         text-decoration: underline;
@@ -47,7 +48,7 @@
         margin-top: 20px;
     
         width: auto;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: left;
 
    
@@ -58,7 +59,7 @@
         margin-top: 20px;
     
         width: auto;
-        font-family: "Candal";
+        font-family: "garet";
         text-align: center;
 
    
@@ -67,14 +68,14 @@
     .idbottom{
         margin-top: 100%;
         width: auto;
-        font-family: "Candal";
+        font-family: "garet";
  
     }
 
     .vendabottom{
         margin-top: 53%;
         width: auto;
-        font-family: "Candal";
+        font-family: "garet";
 
     }
 
@@ -82,7 +83,7 @@
         display: block;
    align-self: flex-end;
         width: auto;
-        font-family: "Candal";
+        font-family: "garet";
 
     }
     
@@ -125,7 +126,7 @@
     .conteudo{
     padding-top: 10px;
         width: fit-content;
-        font-family: "Candal";
+        font-family: "garet";
         position: relative;
    
         font-size: 20px;
@@ -140,13 +141,13 @@
             width: auto;
             font-size: 15px;
             font-style: bold;
-            font-family: "Chenla";
+            font-family: "garet";
             position: relative;
         }
      .conteudo3{
         padding-top: 10px;
         width: auto;    
-        font-family: "Candal";
+        font-family: "garet";
         position: relative;
         font-size: 20px;
         margin-top: 2.25px;
@@ -193,7 +194,7 @@ width: 100%;
     color: black;
     font-weight: bold;
     font-size: 19px;
-    font-family: "Candal";
+    font-family: "garet";
     text-align: center;
     text-decoration: none;
     width: 250px;

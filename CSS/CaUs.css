@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: garet;
+    src: url(../fonts/garet-Regular.ttf);
+  }
+
 * {
     margin: 0px;
     padding: 0px;
@@ -16,7 +22,7 @@
 
     display: flex;
     align-items: center;
-    font-family: "Candal";
+    font-family: "garet";
     width: 98%;
     margin-left: 20px;
     margin-top: 10px;
@@ -88,7 +94,7 @@ body {
 #conteudo {
 
     width: 500px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 15px;
     height: 90%;
     display: grid;
@@ -105,7 +111,7 @@ body {
 #conteudo2 {
 
     width: 500px;
-    font-family: "Candal";
+    font-family: "garet";
     font-size: 15px;
     height: 90%;
     display: grid;
@@ -162,7 +168,7 @@ body {
     position: relative;
     margin-top: 30px;
 
-    font-family: "Candal";
+    font-family: "garet";
     
 }
 
@@ -258,9 +264,14 @@ input[type="file"] {
     position: relative;
     margin-top: 10px;
 
-    font-family: "Candal";
+    font-family: "garet";
 
 }
+
+#confc:hover {
+    background-color: #a6a378;
+}
+
 
 .homeCad{
     width: 70px;
