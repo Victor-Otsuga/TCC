@@ -100,10 +100,12 @@ $qtn =0 ;
     <input class="carQtd"  value=<?php echo $linhas_car["preco_uni"];?> type="hidden" name="qtnfunc" id="valor<?php echo $linhas_car["id_prod"];?>">  </input>
 
     <input class="carQtd"  value=0 type="hidden" name="dife" id="diferenca<?php echo $linhas_car["id_prod"];?>">  </input>
-
-    <input class="carQtd"  value=<?php echo $linhas_car["preco_pacote"];?>  name="tmnpct" type="hidden" id="ppct<?php echo $linhas_car["id_prod"];?>">  </input>
     
-    <input class="carQtd"  value=<?php echo $linhas_car["tamanho_pacote"];?>  name="ppct" type="hidden" id="tpct<?php echo $linhas_car["id_prod"];?>">  </input>
+    <input class="carQtd"  value=0 type="hidden" name="desc" id="desconto<?php echo $linhas_car["id_prod"];?>">  </input>
+
+    <input class="carQtd"  value=<?php echo $linhas_car["preco_pacote"];?> null name="tmnpct" type="hidden" id="ppct<?php echo $linhas_car["id_prod"];?>">  </input>
+    
+    <input class="carQtd"  value=<?php echo $linhas_car["tamanho_pacote"];?> null name="ppct" type="hidden" id="tpct<?php echo $linhas_car["id_prod"];?>">  </input>
 
     <button class="carBtn" onclick="maisum(id)" id="<?php echo $linhas_car["id_prod"];?>">+</button>
 
