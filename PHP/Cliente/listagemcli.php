@@ -64,8 +64,8 @@ include('listaclipedfunc.php');
             <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="clienteespecf.php?id=<?php echo $linhas_cli["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome:<?php echo $linhas_cli["nome_cli"]; ?></span> </p>
-                    <p class="INFO"><span class="font">id:<?php echo $linhas_cli["id_cli"]; ?></span> </p>
+                    <p class="INFO"><span class="font">Nome: <?php echo $linhas_cli["nome_cli"]; ?></span> </p>
+                    <p class="INFOid"><span class="font">iD: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
                 </div>

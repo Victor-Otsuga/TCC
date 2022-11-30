@@ -25,14 +25,13 @@ include('listaclipedfunc.php');
 
 
     <div id="abapes" onclick="fechaconf2()">
-    <a href="../Grafico/grafico.php" onclick="fechaconf2()" class="link">
+    <a class="link">
         <div  class="vendidos" style=" margin-right:350px;">
             <h1 id="titulo">Selecionar Cliente</h1>
-            
         </div>
         </a>
         <form action="clienteespecf.php" id="pesf" method="POST">
-            <input type="text" placeholder="" name="pes" id="pes2">
+            <input type="text" placeholder="" name="pes" id="pes22">
             <button type="submit" id="env" name="env" value="scr"><img src="../../IMG/lupa.png" alt=""></button>
         </form>
        
@@ -41,8 +40,8 @@ include('listaclipedfunc.php');
     <!--lista-->
 
     <script>
-        $("#pes2").keyup(function() {
-            var pes = $("#pes2").val();
+        $("#pes22").keyup(function() {
+            var pes = $("#pes22").val();
             $.post('listagemcli2.php', {
                 pes: pes
             }, function(data) {
@@ -67,8 +66,8 @@ include('listaclipedfunc.php');
             <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome:<?php echo $linhas_cli["nome_cli"]; ?></span> </p>
-                    <p class="INFO"><span class="font">id:<?php echo $linhas_cli["id_cli"]; ?></span> </p>
+                    <p class="INFO"><span class="font">Nome: <?php echo $linhas_cli["nome_cli"]; ?></span> </p>
+                    <p class="INFOid"><span class="font">iD: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
                 </div>

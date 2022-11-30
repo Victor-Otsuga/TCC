@@ -24,16 +24,13 @@ $mail = new PHPMailer(true);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../CSS/Login.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/erro.css">
     <title>Recuperar senha</title>
 </head>
 <body id="lateral">
 
 <!-- <div class="header-recup"><img src="../../IMG/perigo.png" class="img-recup"> <p class="errorecup">Usuário não encontrado.</p></div> -->
 
-    <div id="bg">
-    <div id="login-container">
-        <img src="../../IMG/trevoice.png" alt="">
 
 <?php
 
@@ -114,16 +111,36 @@ if(!empty($dados['SendRecupSenha'])){
               echo $alervazio2;
 
            }catch (Exception $e) {
-                echo "<p class='errorecup'> Email não enviado. Erro: {$mail->ErrorInfo}</p>";
+            $erro_envio = <<<EMAIL
+            <script type="text/javascript">
+            window.location.href = '../../index.html';
+            alert("E-mail não enviado.");
+            </script>
+            EMAIL;
+            
+              echo $erro_envio;
 
            }
         }else{
-        echo "<p class='errorecup'> Tente novamente</p>";
+            $tentar = <<<TENTE
+            <script type="text/javascript">
+            window.location.href = '../../index.html';
+            alert("Tente novamente.");
+            </script>
+            TENTE;
+            
+              echo $tentar;
         }
 
     }else{
-        ?>  <script>  function deuerro(){ document.getElementById("deuerro").style.display = "flex"} deuerro() </script>     <?php
-
+        $semusu = <<<SEMUSU
+            <script type="text/javascript">
+            window.location.href = '../../index.html';
+            alert("Usuário não encontrado.");
+            </script>
+            SEMUSU;
+            
+              echo $semusu;
         }
     }
 
@@ -132,6 +149,12 @@ if(!empty($dados['SendRecupSenha'])){
          unset ($_SESSION['msg_rec']);
      }
 ?>
+
+<div class="img-erro">
+    <img src="../../IMG/trevoice.png" alt="">
+</div>
+    <div id="bg">
+    <div id="recuperar">
 
         <form action="" method="POST">
         <?php
@@ -142,22 +165,15 @@ if(!empty($dados['SendRecupSenha'])){
         <label>E-mail</label>
         <input name="email" value="<?php echo $usuario;?>" autocomplete="off">
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-       <input  type="submit" name="SendRecupSenha" value="Recuperar">
 
-       <a href="../../index.html" style="text-decoration:none" id="forgotpass">voltar</a>
+       <input  type="submit" name="SendRecupSenha" value="Recuperar">
+       
+       <a href="../../index.html" style="text-decoration:none" id="forgotpass">Voltar</a>
     </form>
     </div>
+    </div>
+   
 
-    <?php
-
-
-
-?>
-</div>
 
  <script src="../../JAVASCRIPT/controle.js"></script>
 </body>

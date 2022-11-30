@@ -57,8 +57,8 @@ include ('../conexao.php');
 
         <a href="../Grafico/grafico.php" class="link">
         <div  class="vendidos">
-            <h1 id="titulo">Mais vendidos</h1>
-            <img src="../../IMG/grafico.png" class="icones" alt="" id="graf">
+        <img src="../../IMG/grafico.png" class="icones" alt="" id="graf">
+            <h1 id="titulo2">Mais vendidos</h1>
         </div>
         </a>
 

@@ -37,6 +37,6 @@ if ($num > 0) {
 
 }
 else {
-echo "Nenhum registro localizado.";
+    echo "<div class='no-result' id='pes-his'> Nenhum registro encontrado.</div>";
 }
 

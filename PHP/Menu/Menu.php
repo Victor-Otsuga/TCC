@@ -65,8 +65,9 @@ include('../Cliente/listaclipedfunc.php');
 
         <a href="../Grafico/grafico.php" class="link">
             <div class="vendidos">
-                <h1 id="titulo">Mais vendidos</h1>
+               
                 <img src="../../IMG/grafico.png" class="icones" alt="" id="graf">
+                <h1 id="titulo3">Mais vendidos</h1>
             </div>
         </a>
 
@@ -97,22 +98,22 @@ include('../Cliente/listaclipedfunc.php');
 
             <a class="teste2" href="../Venda/pedido.php?id_ven=<?php echo $linhas_ped["id_venda"]; ?>">
                 <div class="sectionone">
-                    <u class="info">ID: <?php echo $linhas_ped["id_venda"]; ?> </u> <br>
-                    <u class="info">Ope: <?php echo $linhas_ped["nome_oper"]; ?> </u>
+                    <u class="info">ID da Venda: <?php echo $linhas_ped["id_venda"]; ?> </u> <br>
+                    <u class="info">Operador: <?php echo $linhas_ped["nome_oper"]; ?> </u>
 
                 </div>
                 <div class="vertical"></div>
 
                 <div class="sectiontwo">
-                    <u class="info">Quandidade de itens:<?php 
+                    <u class="info">Quandidade de itens: <?php 
                     echo $linhas_ped["quant_produtos"]; 
-                    ?> </u>
-                    <u class="info">Clientes:<?php echo $linhas_ped["nome_cli"]; ?></u>
+                    ?> </u><br>
+                    <u class="info">Cliente: <?php echo $linhas_ped["nome_cli"]; ?></u>
                 </div>
                 <div class="vertical"></div>
                 <div class="sectionthree">
-                    <u class="info">data:<?php echo $linhas_ped["datas"]; ?> </u>
-                    <u class="info">total:<?php echo $linhas_ped["total_venda"]; ?> </u>
+                    <u class="info">Data: <?php echo $linhas_ped["datas"]; ?> </u><br>
+                    <u class="info">Total: <?php echo $linhas_ped["total_venda"]; ?> </u>
                 </div>
             </a>
 
@@ -189,7 +190,7 @@ include('../Cliente/listaclipedfunc.php');
             <div id="linksconf">
                 <img src="../../IMG/conf.png">
 
-                <a href="../Operador/editarope.php" id="lkc">Editar Usuário</a>
+                <a href="../Operador/editarope.php" class="lkc" id="lkc">Editar Usuário</a>
                 <a href="../Operador/Cadastroope.php" class="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="../Cliente/cadcli2.php" class="lkc">Cadastro de Cliente</a>
 

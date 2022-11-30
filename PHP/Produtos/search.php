@@ -21,7 +21,6 @@ if ($rowCount > 0) {
 	<table  class="table" id="table">
 	<thead>
 		<tr>
-			<th scope="col">ID</th>
 			<th scope="col">Sabor</th>
 			<th scope="col">Tipo</th>
 			<th scope="col">Tamanho</th>
@@ -33,9 +32,10 @@ if ($rowCount > 0) {
 		</thead>';
 
 	foreach($result as $row) {
+		$row["id_prod"];
 		$data .= '<tbody>
 			<tr>
-				<td>'.$row["id_prod"].'</td>
+				
 				<td>'.$row["sabor"].'</td>
 				<td>'.$row["tipo"].'</td>
 				<td>'.$row["tamanho_uni"].'</td>
@@ -52,7 +52,7 @@ if ($rowCount > 0) {
   </div>';
 }
 else {
-	$data = "Nenhum registro localizado.";
+	$data =  "<div class='no-result'> Nenhum registro encontrado.</div>";
 }
 
 echo $data;
