@@ -33,12 +33,33 @@ if ($rowCount > 0) {
 
 	foreach($result as $row) {
 		$row["id_prod"];
+
+        if($row["tipo"] == 1){
+			$tipo = "Massa";
+		}
+
+		if($row["tipo"] == 2){
+			$tipo = "Picolé";
+		}
+
+		if($row["tipo"] == 3){
+			$tipo = "Diversos";
+		}
+
+		if($row["tamanho_uni"] == 1){
+			$tamanho = "1L";
+		}
+
+		if($row["tamanho_uni"] == 2){
+			$tamanho = "5L";
+		}
+
 		$data .= '<tbody>
 			<tr>
 				
 				<td>'.$row["sabor"].'</td>
-				<td>'.$row["tipo"].'</td>
-				<td>'.$row["tamanho_uni"].'</td>
+				<td>'.$tipo.'</td>
+				<td>'.$tamanho.'</td>
 				<td>'.$row["preco_uni"].'</td>
 				<td>'.$row["preco_pacote"].'</td>
 				<td>'.$row["tamanho_pacote"].'</td>
