@@ -104,7 +104,7 @@ require_once '../conexao.php';
                         </div>
 
                         <input type="hidden" name="id" value="<?php echo $id ?>">
-                        <input type="submit" name="update" id="update" value="Confirmar">
+                        <input type="submit" class="confirmar" name="update" id="update" value="Confirmar">
 
                     </form>
                 </div>
