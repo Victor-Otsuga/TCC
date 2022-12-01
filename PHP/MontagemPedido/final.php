@@ -27,7 +27,7 @@ header ("Location: ../cliente/selecionarcliente.php");
     <title>Pedido</title>
 </head>
 
-<body>
+<body onload="mudarValor()">
 
 
     <!--Conteúdo do Site-->
@@ -79,9 +79,9 @@ header ("Location: ../cliente/selecionarcliente.php");
                         <tr>
                         <th scope="col">ID</th>
                             <th scope="col">Produto</th>
-                            <th scope="col">Tipo</th>
+                            <th scope="col">Tamanho</th>
                             <th scope="col">Quantidade</th>
-                            <th scope="col">Preço Unidade</th>
+                            <th scope="col">Preço do Pacote</th>
                             <th scope="col">Preço Total</th>
                         </tr>
     <?php
@@ -90,25 +90,36 @@ header ("Location: ../cliente/selecionarcliente.php");
     $query="SELECT * FROM produtos WHERE id_prod in ($select)";
     $resultadototal = $pdo->prepare($query);
     $resultadototal->execute();
-    $qnt = 10;
+    $qnt = 0;
     $precofinal = 0;
+
     
-    while ($linhas_car = $resultadototal->fetch(PDO::FETCH_ASSOC)){ ?>
+    while ($linhas_car = $resultadototal->fetch(PDO::FETCH_ASSOC)){ 
+        
+        $tam = $linhas_car["tamanho_uni"];
+
+        if ($tam == 1){
+            $tam = "1 Litro";
+        }else if ($tam == 2){
+            $tam = "5 Litros";
+        }else{
+            $tam = "Indefinido";
+        }
+        ?>
                         
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row"> <?php echo $linhas_car["id_prod"];?></th>
                             <td><?php echo utf8_encode($linhas_car["sabor"]);?></td>
-                            <td><?php echo $linhas_car["tamanho_pacote"];?></td>
-                            <td><?php echo  $qnt;?></td>
-                            <td><?php echo $linhas_car["preco_uni"];?></td>
-                            <td><?php echo  $qnt * $linhas_car["preco_uni"];?></td>
+                            <td><?php echo $tam; ?></td>
+                            <td id="qtnfin<?php echo  $linhas_car["id_prod"];?>"><?php echo  $qnt;?></td>
+                            <td id="precofin<?php echo  $linhas_car["id_prod"];?>" ><?php echo $linhas_car["preco_pacote"];?></td>
+                            <td id="valorfin<?php echo  $linhas_car["id_prod"];?>" ><?php echo  $qnt;?></td>
                         </tr>
 
                         
                         <?php  
-                $precofinal += ($linhas_car["preco_uni"] * $qnt);
 
      }; 
 
@@ -120,7 +131,7 @@ header ("Location: ../cliente/selecionarcliente.php");
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td> <?php echo $precofinal   ?> </td>
+                            <td id="precoAbsoluto"> 0 </td>
                         </tr>
 
                     </tbody>

@@ -21,7 +21,7 @@ include('listaclipedfunc.php');
     <title>listagem de Clientes</title>
 </head>
 
-<body>
+<body onload="limpando()">
 
 
     <div id="abapes" onclick="fechaconf2()">
@@ -130,4 +130,5 @@ include('listaclipedfunc.php');
 
         <script src="../../JAVASCRIPT/controle.js"></script>
         <script src="../../JAVASCRIPT/addcliente.js"></script>
+        <script src="../../JAVASCRIPT/controlepdf.js"></script>
 </body>
