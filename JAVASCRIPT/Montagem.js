@@ -25,23 +25,40 @@ if (verify ==1){
         valor = document.getElementById("qtn".concat(verify)).value
         preco = document.getElementById("ppct".concat(verify)).value
 
+        if(localStorage.getItem('qtn'.concat(verify))== 0 || localStorage.getItem('qtn'.concat(verify)) == null ){
+                localStorage.setItem('qtn'.concat(verify), 1)
+        }
+
+
         document.getElementById("qtn".concat(verify)).value = localStorage.getItem('qtn'.concat(verify));
 
-        if (document.getElementById("qtn".concat(verify)).value == ""){
+        
+        if (document.getElementById("qtn".concat(verify)).value == "" && document.getElementById("qtn".concat(verify)).value == null){
                 document.getElementById("qtn".concat(verify)).value = 1
-                localStorage.setItem("qtn", verify);
+                
+                localStorage.setItem("qtn", 1);
         }
         
         if (valor == null || "" || NaN){
         add = 0
         }else{
+                
+
+
         valor = localStorage.getItem("qtn".concat(verify));
         
+        
+
+
         add = (valor * preco)
        
-
+        console.log(valor)
+        console.log(preco)
         
         total = total + add
+
+        console.log(total)
+        
         
         }
 
@@ -56,7 +73,8 @@ if (verify ==200){
         
         total = parseFloat(total).toFixed(2)
         localStorage.setItem("totalv", total);
-        
+
+        document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total)
 }
      
 }

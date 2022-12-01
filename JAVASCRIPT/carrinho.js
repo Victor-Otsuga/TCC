@@ -80,6 +80,9 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
 
   localStorage.setItem("qtn".concat(id), qtn);
 
+
+  
+
   document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.toFixed(2))
 
  }
@@ -108,6 +111,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
 
   localStorage.setItem("totalv", total);
 
+  document.getElementById("qtn".concat(id)).value = qtn
 
   document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.toFixed(2))
 }
@@ -187,6 +191,9 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
    localStorage.setItem("qtn".concat(id), qtn);
 
    localStorage.setItem("totalv", total);
+
+   document.getElementById("qtn".concat(id)).value = qtn
+   
 
    document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.toFixed(2))
  }
