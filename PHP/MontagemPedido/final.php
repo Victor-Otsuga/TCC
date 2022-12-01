@@ -99,7 +99,7 @@ header ("Location: ../cliente/selecionarcliente.php");
                     <tbody>
                         <tr>
                             <th scope="row"> <?php echo $linhas_car["id_prod"];?></th>
-                            <td><?php echo $linhas_car["sabor"];?></td>
+                            <td><?php echo utf8_encode($linhas_car["sabor"]);?></td>
                             <td><?php echo $linhas_car["tamanho_pacote"];?></td>
                             <td><?php echo  $qnt;?></td>
                             <td><?php echo $linhas_car["preco_uni"];?></td>

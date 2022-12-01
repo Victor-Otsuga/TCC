@@ -5,6 +5,8 @@ include('../Produtos/listaprodfunc.php');
 include('carrinho.php');
 $precofinal= 0;
 $qtn =0 ;
+
+
 ?>
 
 
@@ -76,6 +78,7 @@ $qtn =0 ;
         
         if(isset($_GET['id_prod']))
 {
+   
 
     array_push ($_SESSION['carrinho'], ($_GET['id_prod']));
 
@@ -91,7 +94,7 @@ $qtn =0 ;
     <div class="itemCar" id="cartxt">
     <t>
         <?php 
-    echo $linhas_car["sabor"];
+    echo utf8_encode($linhas_car["sabor"]);
      ?>
     </t>
     <t id="<?php echo $linhas_car["id_prod"];?>"  >
@@ -151,7 +154,9 @@ $qtn =0 ;
             <?php while ($linhas_prod = $resultado1->fetch(PDO::FETCH_ASSOC)) {   $id=$linhas_prod["id_prod"]; ?>
 
                 <div class="itemTab" id="tabelatxt"> 
-                    <t  > <?php echo $linhas_prod["sabor"];   ?></t>
+                    <t  > <?php 
+
+                    echo utf8_encode($linhas_prod["sabor"]);    ?></t>
                     
 
 
@@ -161,7 +166,7 @@ $qtn =0 ;
                             echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button>  </t></a></div>';
                         }
                         else if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">5L</button></t></div>';
+                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">5L</button>  </t></a></div>';
                         }
                         else if ($linhas_prod["tamanho_uni"] == 3) {
                             echo '<t><button value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">1L</button> <button  class="carBtn">5L</button> </t></div>';
@@ -171,14 +176,14 @@ $qtn =0 ;
 
                     if ($linhas_prod["preco_pacote"] <> NULL) {
                         if ($linhas_prod["tamanho_uni"] == 1) {
-                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button> <button  class="carBtn">P</button> </t></a></div>';
+                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">1L</button>  </t></a></div>';
                         }
 
                         if ($linhas_prod["tamanho_uni"] == 2) {
-                            echo '<t><button id="carBtn" class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<a onclick="adicionou(id)" class="txtdeco" href="montarpedido.php?id_prod=',$id,'"><button id="carBtn" class="carBtn">5L</button>  </t></a></div>';
                         }
                         if ($linhas_prod["tamanho_uni"] == 3) {
-                            echo '<t><button"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button> <button  class="carBtn">P</button> </t></div>';
+                            echo '<t><button"id="carBtn" class="carBtn">1L</button> <button  class="carBtn">5L</button>  </t></div>';
                         }
                     };
                     ?> <?php
