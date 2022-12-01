@@ -24,7 +24,7 @@ if ($num > 0) {
             <a href="clienteespecf.php?id=<?php echo $row["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
                     <p class="INFO"><span class="font">Nome: <?php echo $row["nome_cli"];?></span> </p>
-                    <p class="INFO"><span class="font">id: <?php echo $row["id_cli"];?></span> </p>
+                    <p class="INFO"><span class="font">ID: <?php echo $row["id_cli"];?></span> </p>
 
 
 
@@ -40,7 +40,7 @@ if ($num > 0) {
     <?php
     
 } else {
-    echo "<div class='no-result' id='pes-cli'> Nenhum registro encontrado.</div>";
+    echo "<div class='pai-result'><div class='no-result2'> Nenhum registro encontrado.</div></div>";
 }
 ?>
 </div>

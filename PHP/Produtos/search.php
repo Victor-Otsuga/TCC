@@ -52,7 +52,7 @@ if ($rowCount > 0) {
   </div>';
 }
 else {
-	$data =  "<div class='no-result'> Nenhum registro encontrado.</div>";
+	$data =  "<div class='pai-result'><div class='no-result1'> Nenhum registro encontrado.</div></div>";
 }
 
 echo $data;

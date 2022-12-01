@@ -50,46 +50,47 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
 
 <body >
 
+<script> function alertdele(){
+alert("Deseja deletar esse cliente?")
+}</script>
+
     <!--Menu Horizontal-->
     <div id="headerclihis">
 
-        <a href="../Grafico/grafico.php" class="link">
+      
         <div  class="vendidos">
             <h1 class="headerhis"><?php echo $linhas_cli["nome_cli"];?></h1>
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
-        </a>
+      
   
         <div id="bntliscli">
            
             <a id="bnt" href="../Venda/histcli.php?id=<?php echo $linhas_cli["id_cli"]; ?>" > 
-                <div >pedidos do cliente</div>
+                <div >Pedidos do Cliente</div>
             </a>
-    
-        </div>
-        <div id="bntliscli2" >
-        <a id="bnt2" href="DeletarCliente.php?id=<?php echo $linhas_cli["id_cli"]; ?>"> 
-                <div>Deletar</div>
-            </a> 
             <a id="bnt2" href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>"> 
                 <div>Montar Pedido</div>
             </a>
+            <a id="bnt2" onclick="alertdele()" href="DeletarCliente.php?id=<?php echo $linhas_cli["id_cli"]; ?>"> 
+                <div>Deletar</div>
+            </a> 
     
         </div>
    
     </div>
     <!--Conteúdo do Site-->
-    <div class="scroll">      
+      
       
     <div id="lista">
        
  
-  <a class="clienteex" href="histcli.php">
-        <p class="INFO  ">apelido:<span class="font"><?php echo $linhas_cli["apelido_cli"];?> </span> </p> 
-        <p class="INFO  ">email:<span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
-        <p class="INFO  ">telefone:<span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
-        <p class="INFO  ">cpf:<span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
-        <p class="INFO  ">endereco:<span class="font"><?php echo $linhas_cli["endereco_cli"];?> </span> </p>
+  <a class="clienteex">
+        <p class="INFO  ">Apelido: <span class="font"><?php echo $linhas_cli["apelido_cli"];?> </span> </p> 
+        <p class="INFO  ">Email: <span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
+        <p class="INFO  ">Telefone: <span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
+        <p class="INFO  ">CPF: <span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
+        <p class="INFO  ">Endereço: <span class="font"><?php echo $linhas_cli["endereco_cli"];?> </span> </p>
         </a>
   
 <?php  ?>  

@@ -68,10 +68,7 @@ If ($_SESSION['nivel_session'] != 1){
                 </div>
                 
                 <div id="number"> 
-                <a class="imglink" href="..\Cliente\cadcli2.php">
-                <img src="../../IMG/1Vazio.png" alt="" id="nummargin"></a>
-                
-                <img src="../../IMG/2cheio.png" alt="">
+              
                 </div>
                 <input  type="submit" value="Confirmar" class="input2">
               

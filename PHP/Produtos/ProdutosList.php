@@ -20,7 +20,7 @@ include ('../conexao.php');
     <title>Menu</title>
 </head>
 
-<body >
+<body>
 
 <!-- Funçao do carrinho de compra -->
 
@@ -74,7 +74,7 @@ include ('../conexao.php');
             <h1 id="teste" >Lista de Produtos</h1>
 
         <form action="" id="pesf">
-            <input type="text" name="buscar" id="pes">
+            <input type="text" name="buscar" value="<?php if(isset($_POST['buscar'])) echo $_POST['buscar']  ?>" id="pes" autocomplete="off">
             <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>
@@ -84,7 +84,6 @@ include ('../conexao.php');
         <div>
 			<div id="resultado"></div>
 		</div>
-
 
         
                 <div id="bntliscli">
@@ -147,7 +146,8 @@ include ('../conexao.php');
             <div id="linksconf" >
                 <img src="../../IMG/conf.png" >
 
-                <a href="../Operador/editarope.php" id="lkc">Editar Usuário</a>
+
+                <a href="../Operador/editarope.php" id="lkc" class="sidebtn">Editar Usuário</a>
                 <a href="../Operador/Cadastroope.php" id="lkc" class="sidebtn">Cadastrar Operador</a>
                 <a href="../Cliente/cadcli2.php" id="lkc">Cadastro de Cliente</a>
 
@@ -168,6 +168,7 @@ include ('../conexao.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     
             <script src="../../JAVASCRIPT/controle.js"></script>
+
 </body>
 
 <script type="text/javascript">

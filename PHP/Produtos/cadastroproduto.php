@@ -81,7 +81,7 @@ if ($_SESSION['nivel_session'] != 1) {
                         </div>
 
                        
-                        <input type="submit" value="Confirmar">
+                        <input type="submit" class="confirmar" value="Confirmar">
 
                     </form>
                 </div>

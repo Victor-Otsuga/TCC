@@ -33,10 +33,10 @@ If ($_SESSION['nivel_session'] != 1){
 
 
                 <div class="headcad">
-                    <a class="seta">
+                 
 
-                        <img onclick="goBack()" src="../../IMG/imgseta.png" alt="">
-                    </a>
+                        <img class="seta" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
+                    
 
                     <h1 id="titulo2">Cadastro de Cliente</h1>
                     <a href="../Menu/menu.php"><img src="../../IMG/casinha.png" class="homeCad" alt=""></a>
@@ -69,14 +69,10 @@ If ($_SESSION['nivel_session'] != 1){
                         <label class="labelcad">Apelido (Não obrigatório)</label>
                         <input type="text" name="apelido_cli" autocomplete="off" class="input">
 
-
+                       
                         <div id="number2">
 
-                            <img src="../../IMG/1cheio.png" alt="" id="nummargin">
-
-                            <a href="../Operador/Cadastroope.php">
-                                <img src="../../IMG/2Vazio.png" alt="">
-                            </a>
+                         
                         </div>
                         <input type="submit" value="Confirmar" id="confc">
                     </form>

@@ -23,19 +23,20 @@ include('listaclipedfunc.php');
 
 <body onload="limpando()">
 
-
+<div class="pai-header">
     <div id="abapes" onclick="fechaconf2()">
     <a class="link">
         <div  class="vendidos" style=" margin-right:350px;">
             <h1 id="titulo">Selecionar Cliente</h1>
-        </div>
+        
         </a>
         <form action="clienteespecf.php" id="pesf" method="POST">
-            <input type="text" placeholder="" name="pes" id="pes22">
+            <input type="text" placeholder="" name="pes" id="pes22" autocomplete="off">
             <button type="submit" id="env" name="env" value="scr"><img src="../../IMG/lupa.png" alt=""></button>
         </form>
-       
+        </div>
     </div>
+</div>
 
     <!--lista-->
 

@@ -26,7 +26,7 @@ include('listaclipedfunc.php');
     <!--aba da pesquisa-->
     <div id="abapes" onclick="fechaconf2()">
         <form action="clienteespecf.php" id="pesf" method="POST">
-            <input type="text" placeholder="" name="pes" id="pes2">
+            <input type="text" placeholder="" name="pes" id="pes2" autocomplete="off">
             <button type="submit" id="env" name="env" value="scr"><img src="../../IMG/lupa.png" alt=""></button>
         </form>
     </div>
@@ -65,7 +65,7 @@ include('listaclipedfunc.php');
             <a href="clienteespecf.php?id=<?php echo $linhas_cli["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
                     <p class="INFO"><span class="font">Nome: <?php echo $linhas_cli["nome_cli"]; ?></span> </p>
-                    <p class="INFOid"><span class="font">iD: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
+                    <p class="INFOid"><span class="font">ID: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
                 </div>
