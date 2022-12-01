@@ -26,11 +26,21 @@
     user-select: none;
     cursor: pointer;
     margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.seta1 {
+    user-select: none;
+    cursor: pointer;
+    width: 40px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 
 a.link{
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     color: black;
     
@@ -103,6 +113,7 @@ label,
 #menuho:hover .sidebtn {
     width: 240px;
     transition: width 1s;
+    
 }
 
 #menuho:hover .MP {
@@ -287,6 +298,7 @@ padding: 1px;
     background-color: #CABE82;
     color: #000;
     z-index: 5;
+    height: 76px;
     box-shadow: 0px 5px 10px #82805e;
     width: auto;
     /* margin-left: 285px; */
@@ -443,6 +455,7 @@ th{
 
 img{
     user-select: none;
+    
 }
 
 
@@ -482,7 +495,6 @@ img{
 .vendidos {
     display: flex;
     align-items: center;
-    align-items: baseline;
     
 
 }
@@ -560,7 +572,7 @@ font-size: 18px;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background: #A6A378;
     border: 3px solid #000000;
     border-radius: 15px;

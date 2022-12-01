@@ -259,6 +259,29 @@ input[type="radio"] {
     margin-bottom: 7px;
     margin-top: 7px;
     border-radius: 60px;
+    
+}
+
+#confc {
+ 
+    text-align: center;
+
+    font-weight: bold;
+    border: 3px solid #000;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #CABE82;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    margin-top: 10px;
+
+    font-family: "garet";
+
+}
+
+#confc:hover {
+    background-color: #a6a378;
 }
 
 #ajuste{
@@ -308,5 +331,6 @@ input[type="file"] {
     height: 100%;
     object-fit: cover; 
     object-position: center;
+    cursor: pointer;
  
 }
