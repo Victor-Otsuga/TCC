@@ -76,12 +76,12 @@ require_once '../conexao.php';
                         <label>Preço Unidade</label>
                         <input name="preco_uni" autocomplete="off" class="input" value="<?php echo $preco_uni ?>">
 
-                        <label>Possui Pacote?</label>
+                        
 
 
                         <div class="rdiv">
-                            <label for="pacote" class="radio">Sim <input type="radio" class="input" id="tpct" name="tempct"   oninput=selectpct1() value="1" <?php echo $preco_pac != NULL ? 'checked' : ''?>></label>
-                            <label for="pacote" class="radio">Não <input type="radio" class="input" id="tpct2"  name="tempct"  oninput=selectpct0() value="2" <?php echo $preco_pac == NULL ? 'checked' : ''?>></label>
+                            <input type="hidden" class="input" id="tpct" name="tempct"   oninput=selectpct1() value="1" <?php echo $preco_pac != NULL ? 'checked' : ''?>>
+                            <input type="hidden" class="input" id="tpct2"  name="tempct"  oninput=selectpct0() value="2" <?php echo $preco_pac == NULL ? 'checked' : ''?>>
                         </div>
                        
 
@@ -95,10 +95,10 @@ require_once '../conexao.php';
                         </div>
 
                         <div id="semassa">
-                        <label>Tamanho Unidade</label>
+                        
                         <div class="rdiv">
-                            <label for="tamanho_uni" class="radio">1 Litro <input type="radio" class="input" name="litros" value="1" <?php echo $tamanho_uni == '1' ? 'checked' : ''?>> </label>
-                            <label for="tamanho_uni" class="radio">5 Litros <input type="radio" class="input" name="litros" value="2" <?php echo $tamanho_uni == '2' ? 'checked' : ''?>></label>
+                           <input type="hidden" class="input" name="litros" value="1" <?php echo $tamanho_uni == '1' ? 'checked' : ''?>> </label>
+                           <input type="hidden" class="input" name="litros" value="2" <?php echo $tamanho_uni == '2' ? 'checked' : ''?>></label>
                             
                         </div>
                         </div>

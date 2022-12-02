@@ -2,11 +2,7 @@
 
 include('../verificarLogin.php');
 
-if ($_SESSION['nivel_session'] != 1) {
-    session_destroy();
-    header('location: ../../index.html');
-    exit;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +42,7 @@ if ($_SESSION['nivel_session'] != 1) {
 
                         <label>Tipo</label>
                         <div class="rdiv" >
-                            <label for="tipo_sorv" class="radio">Massa <input  onclick="selectmassa()" type="radio" class="input" name="tiposvt" value="1"> </label>
+                            <label for="tipo_sorv" class="radio">Massa <input  onclick="selectmassa()"  onclick=selectpct1() type="radio" class="input" name="tiposvt" value="1"> </label>
                             <label for="tipo_sorv" class="radio">Picolé <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="2"></label>
                             <label for="tipo_sorv" class="radio">Diversos <input onclick="selectpicole()" type="radio" class="input" name="tiposvt" value="3"></label>
                         </div>
@@ -57,10 +53,10 @@ if ($_SESSION['nivel_session'] != 1) {
                         <label>Preço Unidade</label>
                         <input name="preco_uni" autocomplete="off" class="input">
 
-                        <label>Possui Pacote?</label>
+                        
                         <div class="rdiv">
-                            <label for="pacote" class="radio">Sim <input type="radio" class="input" name="tempct" onclick=selectpct1() value="1"> </label>
-                            <label for="pacote" class="radio">Não <input type="radio" class="input" name="tempct" onclick=selectpct0() value="2"></label>
+                            <input type="hidden" checked class="input" name="tempct" onclick=selectpct1() value="1">
+                          
                         </div>
 
                         <div id="sepct">
