@@ -93,9 +93,16 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
    convert = document.getElementById("qtn".concat(id)).value
    qtn = parseInt(convert)
    qtn -= 1
-     if (qtn < 0) {
+     if (qtn <= 0) {
        qtn = 0
-   } else {
+        document.getElementById(id).setAttribute("hidden", "hidden");
+       document.getElementById("sabor".concat(id)).setAttribute("hidden", "hidden");
+       document.getElementById("qtn".concat(id)).type = "hidden" 
+       document.getElementById("qtn".concat(id)).name = "deletado" 
+       document.getElementById(id).name = "deletado"
+
+       document.getElementById("cartxt".concat(id)).style.display= "none"
+   }
 
 
   document.getElementById("qtn".concat(id)).value = qtn
@@ -114,7 +121,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
   document.getElementById("qtn".concat(id)).value = qtn
 
   document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.toFixed(2))
-}
+
 }
 
 
@@ -173,7 +180,16 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
     
     
     
-    
+    if (qtn <= 0) {
+      qtn = 0
+       document.getElementById(id).setAttribute("hidden", "hidden");
+      document.getElementById("sabor".concat(id)).setAttribute("hidden", "hidden");
+      document.getElementById("qtn".concat(id)).type = "hidden" 
+      document.getElementById("qtn".concat(id)).name = "deletado" 
+      document.getElementById(id).name = "deletado"
+
+      document.getElementById("cartxt".concat(id)).style.display= "none"
+  }
   
     
  
