@@ -91,19 +91,19 @@ $qtn =0 ;
     
     while ($linhas_car = $resultadototal->fetch(PDO::FETCH_ASSOC)){ ?>
      <!-- a variavel id passa pelo o link ao invés de um form -->
-    <div class="itemCar" id="cartxt">
-    <t>
+    <div class="itemCar" id="cartxt<?php echo $linhas_car["id_prod"];?>">
+    <t id="sabor<?php echo $linhas_car["id_prod"];?>" >
         <?php 
     echo utf8_encode($linhas_car["sabor"]);
      ?>
     </t>
-    <t id="<?php echo $linhas_car["id_prod"];?>"  >
+    <t  id="<?php echo $linhas_car["id_prod"];?>"  >
 
    
     
-    <button  onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
+    <button onclick="menosum(id)" class="carBtn"  id="<?php echo $linhas_car["id_prod"];?>">-</button>
 
-    <input value="1" name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>"  onchange="mudouPreco(id)" onfocus="salvarPreco(id)" class="carQtd" >  </input > 
+    <input value="1"  name="qtnfunc" id="qtn<?php echo $linhas_car["id_prod"];?>"  onchange="mudouPreco(id)" onfocus="salvarPreco(id)" class="carQtd" >  </input > 
 
     <input id="<?php echo $linhas_car["id_prod"];?>" value="10" class="carQtd" type="hidden" >  </input > 
 
