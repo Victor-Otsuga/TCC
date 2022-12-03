@@ -72,7 +72,7 @@ include('../Cliente/listaclipedfunc.php');
         </a>
 
         <div id="config">
-            <a><img src="../../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
+           
             <img src="../../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
         </div>
 
@@ -99,7 +99,7 @@ include('../Cliente/listaclipedfunc.php');
             <a class="teste2" href="../Venda/pedido.php?id_ven=<?php echo $linhas_ped["id_venda"]; ?>">
                 <div class="sectionone">
                     <u class="info">ID da Venda: <?php echo $linhas_ped["id_venda"]; ?> </u> <br>
-                    <u class="info">Operador: <?php echo $linhas_ped["nome_oper"]; ?> </u>
+                    <u class="info">Operador: <?php echo utf8_encode($linhas_ped["nome_oper"]); ?> </u>
 
                 </div>
                 <div class="vertical"></div>
@@ -108,7 +108,7 @@ include('../Cliente/listaclipedfunc.php');
                     <u class="info">Quandidade de itens: <?php 
                     echo $linhas_ped["quant_produtos"]; 
                     ?> </u><br>
-                    <u class="info">Cliente: <?php echo $linhas_ped["nome_cli"]; ?></u>
+                    <u class="info">Cliente: <?php echo utf8_encode($linhas_ped["nome_cli"]); ?></u>
                 </div>
                 <div class="vertical"></div>
                 <div class="sectionthree">
@@ -140,7 +140,7 @@ include('../Cliente/listaclipedfunc.php');
             <h1 id="nome"> <?php
 
                                     $nome_oper = $_SESSION['nome_session'];
-                                    echo $nome_oper ?></h1>
+                                    echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

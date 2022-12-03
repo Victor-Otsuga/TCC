@@ -23,7 +23,7 @@ if ($num > 0) {
          <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="clienteespecf.php?id=<?php echo $row["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome: <?php echo $row["nome_cli"];?></span> </p>
+                    <p class="INFO"><span class="font">Nome: <?php echo utf8_encode($row["nome_cli"]);?></span> </p>
                     <p class="INFO"><span class="font">ID: <?php echo $row["id_cli"];?></span> </p>
 
 

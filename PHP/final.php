@@ -200,7 +200,7 @@ if (empty($select)) {
             <h1 id="nome"> <?php
 
                             $nome_oper = $_SESSION['nome_session'];
-                            echo $nome_oper ?></h1>
+                            echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

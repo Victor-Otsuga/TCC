@@ -60,7 +60,7 @@ alert("Deseja deletar esse cliente?")
     <img class="seta2" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
       
         <div  class="vendidos2">
-            <h1 class="headerhis"><?php echo $linhas_cli["nome_cli"];?></h1>
+            <h1 class="headerhis"><?php echo utf8_encode($linhas_cli["nome_cli"]);?></h1>
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
       
@@ -88,11 +88,11 @@ alert("Deseja deletar esse cliente?")
        
  
   <a class="clienteex">
-        <p class="INFO  ">Apelido: <span class="font"><?php echo $linhas_cli["apelido_cli"];?> </span> </p> 
+        <p class="INFO  ">Apelido: <span class="font"><?php echo utf8_encode($linhas_cli["apelido_cli"]);?> </span> </p> 
         <p class="INFO  ">Email: <span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
         <p class="INFO  ">Telefone: <span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
         <p class="INFO  ">CPF: <span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
-        <p class="INFO  ">Endereço: <span class="font"><?php echo $linhas_cli["endereco_cli"];?> </span> </p>
+        <p class="INFO  ">Endereço: <span class="font"><?php echo utf8_encode($linhas_cli["endereco_cli"]);?> </span> </p>
         </a>
   
 <?php  ?>  
@@ -120,7 +120,7 @@ alert("Deseja deletar esse cliente?")
             <h1 id="nome"> <?php
 
                                     $nome_oper = $_SESSION['nome_session'];
-                                    echo $nome_oper ?></h1>
+                                    echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

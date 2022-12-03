@@ -55,10 +55,14 @@ if ($rowCount > 0) {
 			$tamanho = "5L";
 		}
 
+		if($row["tamanho_uni"]== null){
+			$tamanho = "Não definido";
+		}
+
 		$data .= '<tbody>
 			<tr>
 				
-				<td>'.$row["sabor"].'</td>
+				<td>'.utf8_encode($row ["sabor"]).'</td>
 				<td>'.$tipo.'</td>
 				<td>'.$tamanho.'</td>
 				<td>'.$row["preco_uni"].'</td>

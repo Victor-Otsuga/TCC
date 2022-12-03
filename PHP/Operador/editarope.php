@@ -61,7 +61,7 @@ $id_oper = $_SESSION['id_session'];
                 <label></label><label></label>
 
               <label class="label">Nome do Funcionário:</label>
-              <input name="nome" autocomplete="off" class="input" value="<?php echo $nome_oper ?>" required>
+              <input name="nome" autocomplete="off" class="input" value="<?php echo utf8_encode($nome_oper) ?>" required>
 
               <label class="label">E-mail:</label>
               <input name="email" type="email"  autocomplete="off" class="input" value="<?php echo $email ?>" required>
@@ -112,7 +112,7 @@ $id_oper = $_SESSION['id_session'];
             <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

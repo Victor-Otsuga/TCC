@@ -39,7 +39,7 @@ $linhas_ped = $query->fetch(PDO::FETCH_ASSOC);
             <div class="headerpedido">   
             
                 <p>Cliente:&nbsp;&nbsp;
-                    &nbsp;<?php echo $linhas_ped["nome_cli"];?> - <?php echo $linhas_ped["id_cli"];?> </p>
+                    &nbsp;<?php echo utf8_encode($linhas_ped["nome_cli"]);?> - <?php echo $linhas_ped["id_cli"];?> </p>
             </div>
               <div class="headerpedido">   
                 
@@ -70,7 +70,7 @@ $linhas_ped = $query->fetch(PDO::FETCH_ASSOC);
                     while ($linhas_ped2 = $query2->fetch(PDO::FETCH_ASSOC)) {  ?>
                         <tr>
                             <th scope="row"><?php echo $linhas_ped2["id_prod"];?></th>
-                            <td><?php echo $linhas_ped2["sabor"];?></td>
+                            <td><?php echo utf8_encode($linhas_ped2["sabor"]);?></td>
                             <td><?php echo $linhas_ped2["quant_produtos_uni"];?></td>
                             <td>R$10,00</td>
                             <td> R$100,00</td>
@@ -129,7 +129,7 @@ if($check == 1){
             <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

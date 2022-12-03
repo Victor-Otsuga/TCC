@@ -198,11 +198,9 @@ $qtn =0 ;
                         <div class="itemTab" id="tabelatxt">
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
-                        <?php if ($linhas_prod["preco_pacote"] == NULL) {
+                        <?php 
                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'" onclick="adicionou(id)"><button  value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">+</button></a></div>';
-                        }else{
-                            echo '<t><button  value="', $id, '"id="carBtn" class="carBtn" onclick="adicionou(id)">+</button> <button  class="carBtn" onclick="adicionou(id)">P</button> </t></div>';
-                        }
+                        
                     };
 
                             
@@ -222,11 +220,9 @@ $qtn =0 ;
                         <div class="itemTab" id="tabelatxt">
                         <t class="sabor"><?php echo $linhas_prod["sabor"]; ?></t>
 
-                        <?php if ($linhas_prod["preco_pacote"] == NULL) {
-                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'" onclick="adicionou(id)"><button id="carBtn" class="carBtn" onclick="adicionou(id)">1L</button> </t></a></div>';
-                        }else{
-                            echo '<t><button   value="', $id, '"class="carBtn" onclick="adicionou(id)">+</button> <button  class="carBtn" onclick="adicionou(id)">P</button> </t></div>';
-                        }
+                        <?php 
+                         echo '<a class="txtdeco" href="montarpedido.php?id_prod=',$id,'" onclick="adicionou(id)"><button id="carBtn" class="carBtn" onclick="adicionou(id)">+</button> </t></a></div>';
+                       
                     };
                     ?>
 
@@ -261,7 +257,7 @@ $qtn =0 ;
                     <h1 id="nome"> <?php
 
                                             $nome_oper = $_SESSION['nome_session'];
-                                            echo $nome_oper ?></h1>
+                                            echo utf8_encode($nome_oper) ?></h1>
 
                 </div>
 

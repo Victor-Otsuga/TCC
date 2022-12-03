@@ -68,7 +68,7 @@ alert("Deseja deletar esse produto?")
         </a>
 
         <div id="config">
-            <a ><img src="../../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
+
             <img src="../../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
         </div>
 
@@ -79,7 +79,7 @@ alert("Deseja deletar esse produto?")
             <h1 id="teste" >Lista de Produtos</h1>
 
         <form action="" id="pesf">
-            <input type="text" name="buscar" value="<?php if(isset($_POST['buscar'])) echo $_POST['buscar']  ?>" id="pes" autocomplete="off">
+            <input type="text" name="buscar" id="pes" autocomplete="off">
             <button type="submit" id="env" name="env" value="scr"><img src="../IMG/lupa.png" alt=""></button>
         </form>
     </div>
@@ -116,7 +116,7 @@ alert("Deseja deletar esse produto?")
             <h1 id="nome"> <?php
 
                 $nome_oper = $_SESSION['nome_session'];
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

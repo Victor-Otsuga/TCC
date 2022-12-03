@@ -67,7 +67,7 @@ include('listaclipedfunc.php');
             <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>">
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome: <?php echo $linhas_cli["nome_cli"]; ?></span> </p>
+                    <p class="INFO"><span class="font">Nome: <?php echo utf8_encode($linhas_cli["nome_cli"]); ?></span> </p>
                     <p class="INFOid"><span class="font">iD: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
@@ -95,7 +95,7 @@ include('listaclipedfunc.php');
             <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

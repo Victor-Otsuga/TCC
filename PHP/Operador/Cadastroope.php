@@ -2,11 +2,7 @@
 
 include ('../verificarLogin.php');
   
-If ($_SESSION['nivel_session'] != 1){
-  session_destroy();
-  header('location: ../../index.html');
-  exit;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +90,7 @@ If ($_SESSION['nivel_session'] != 1){
             <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

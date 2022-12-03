@@ -82,7 +82,7 @@ include('../Cliente/listaclipedfunc.php');
 
 
         <div id="config">
-            <a><img src="../../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
+           
             <img src="../../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
         </div>
 
@@ -105,7 +105,7 @@ while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
     <a class="teste2" href="pedido.php?id_ven=<?php echo $linhas_his["id_venda"]; ?>">
         <div class="sectionone">
             <u class="info">ID: <?php echo $linhas_his["id_venda"]; ?> </u> <br>
-            <u class="info">Operador: <?php echo $linhas_his["nome_oper"]; ?> </u>
+            <u class="info">Operador: <?php echo utf8_encode($linhas_his["nome_oper"]); ?> </u>
 
         </div>
         <div class="vertical"></div>
@@ -113,7 +113,7 @@ while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
         <div class="sectiontwo">
             <u class="info">Quandidade de itens: <?php echo $linhas_his["quant_produtos"]; 
             ?> </u> <br>
-            <u class="info">Clientes: <?php echo $linhas_his["nome_cli"]; ?></u>
+            <u class="info">Clientes: <?php echo utf8_encode($linhas_his["nome_cli"]); ?></u>
         </div>
         <div class="vertical"></div>
         <div class="sectionthree">
@@ -142,10 +142,10 @@ while ($linhas_his = $resulthis->fetch(PDO::FETCH_ASSOC)) {  ?>
         
         ?>
             
-            <h1 id="nome">Operador: <?php
+            <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper); ?></h1>
 
         </div>
 

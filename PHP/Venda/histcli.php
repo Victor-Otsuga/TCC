@@ -66,7 +66,7 @@ include ('../conexao.php');
          $resulthistitulo = $pdo->prepare($selecthistitulo);
          $resulthistitulo->execute(); 
          $titulo = $resulthistitulo->fetch(PDO::FETCH_ASSOC);
-         echo $titulo["nome_cli"];
+         echo utf8_encode($titulo["nome_cli"]);
          ?> 
 
 
@@ -74,7 +74,7 @@ include ('../conexao.php');
 
 
         <div id="config">
-            <a><img src="../../IMG/carrinho.png" class="icones" onclick="abrecar()" id="carrinho"></a>
+    
             <img src="../../IMG/conf.png" class="icones" onclick="abreconf()" id="conf">
         </div>
 
@@ -100,7 +100,7 @@ while ($linhas_hiscli = $resulthiscli->fetch(PDO::FETCH_ASSOC)) {  ?>
     <a class="teste2" href="pedido.php?id_ven=<?php echo $linhas_hiscli["id_venda"]; ?>">
         <div class="sectionone">
             <u class="info">ID: <?php echo $linhas_hiscli["id_venda"]; ?> </u> <br>
-            <u class="info">Operador: <?php echo $linhas_hiscli["nome_oper"]; ?> </u>
+            <u class="info">Operador: <?php echo utf8_encode($linhas_hiscli["nome_oper"]); ?> </u>
 
         </div>
         <div class="vertical"></div>
@@ -109,7 +109,7 @@ while ($linhas_hiscli = $resulthiscli->fetch(PDO::FETCH_ASSOC)) {  ?>
             <u class="info">Quandidade de itens: <?php 
             echo $linhas_hiscli["quant_produtos"]; 
             ?> </u> <br>
-            <u class="info">Clientes: <?php echo $linhas_hiscli["nome_cli"]; ?></u>
+            <u class="info">Clientes: <?php echo utf8_encode($linhas_hiscli["nome_cli"]); ?></u>
         </div>
         <div class="vertical"></div>
         <div class="sectionthree">
@@ -143,7 +143,7 @@ else{ header('location: ../Menu/Menu.php');
             <h1 id="nome"> <?php
                
                 $nome_oper = $_SESSION['nome_session'];           
-                echo $nome_oper ?></h1>
+                echo utf8_encode($nome_oper) ?></h1>
 
         </div>
 

@@ -17,7 +17,7 @@ require_once '../conexao.php';
     if($rowCount > 0){
 
     while($linhas_prod = $query->fetch(PDO::FETCH_ASSOC)){
-        $sabor = $linhas_prod['sabor'];
+        $sabor = utf8_encode($linhas_prod['sabor']);
         $tipo = $linhas_prod['tipo'];
         $preco_uni= $linhas_prod['preco_uni'];
         $preco_pac = $linhas_prod['preco_pacote'];
@@ -128,7 +128,7 @@ require_once '../conexao.php';
                     <h1 id="nome"> <?php
 
                                             $nome_oper = $_SESSION['nome_session'];
-                                            echo $nome_oper ?></h1>
+                                            echo utf8_encode($nome_oper) ?></h1>
 
                 </div>
 
