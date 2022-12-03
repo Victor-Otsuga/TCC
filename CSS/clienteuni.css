@@ -82,11 +82,11 @@
 #bntliscli{
     text-align: right;
     height: auto;
-    margin-left: 730px;
-    position: fixed;
-    top: 0;
-    margin-top: 15px;
-    width: fit-content;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   
     
     }
     /* #bntliscli2{
