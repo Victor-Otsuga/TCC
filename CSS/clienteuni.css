@@ -82,7 +82,7 @@
 #bntliscli{
     text-align: right;
     height: auto;
-    margin-left: 50%;
+    margin-left: 730px;
     position: fixed;
     top: 0;
     margin-top: 15px;
@@ -154,10 +154,11 @@
     #headerclihis {
         position: sticky;
         top: 0;
+        height: 76px;
         display: flex;
         justify-content: space-between;
         flex-flow: row wrap;
-        padding: 15px;
+        padding: 10px;
         font-family: "garet";
         font-size: 25px;
         background-color: #CABE82;
@@ -167,7 +168,7 @@
         width: auto;
         /* margin-left: 285px; */
         padding-left: 190px;
-    
+        align-items: center;
     }
 
     .sectionone{
