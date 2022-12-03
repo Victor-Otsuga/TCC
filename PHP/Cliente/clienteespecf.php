@@ -56,6 +56,7 @@ alert("Deseja deletar esse cliente?")
 
     <!--Menu Horizontal-->
     <div id="headerclihis">
+        <div class="justify">
     <img class="seta2" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
       
         <div  class="vendidos2">
@@ -63,7 +64,8 @@ alert("Deseja deletar esse cliente?")
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
       
-  
+        </div>
+
         <div id="bntliscli">
            
             <a id="bnt" href="../Venda/histcli.php?id=<?php echo $linhas_cli["id_cli"]; ?>" > 
