@@ -22,6 +22,11 @@ include ('../conexao.php');
 
 <body>
 
+<script> function alertdele(){
+alert("Deseja deletar esse produto?")
+}</script>
+
+
 <!-- Funçao do carrinho de compra -->
 
 

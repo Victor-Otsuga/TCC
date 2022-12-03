@@ -28,6 +28,7 @@ if ($rowCount > 0) {
 			<th scope="col">Preço do pacote</th>
 			<th scope="col">Tamanho do pacote</th>
 			<th scope="col">Editar</th>
+			<th scope="col">Deletar</th>
 		</tr>
 		</thead>';
 
@@ -64,7 +65,7 @@ if ($rowCount > 0) {
 				<td>'.$row["preco_pacote"].'</td>
 				<td>'.$row["tamanho_pacote"].'</td>
 				<td><a href="editarprod.php?id='.$row["id_prod"].'"><Button class="btn">Editar</Button></a></td>
-				
+				<td><a href="deletar_prod.php?id='.$row["id_prod"].'"><Button onclick="alertdele()" class="btn">Deletar</Button></a></td>
 			</tr>
 		';
 	}
