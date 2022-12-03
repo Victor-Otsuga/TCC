@@ -1,16 +1,16 @@
  function download(){
     const item = document.querySelector(".tabelafinal");
     var opt = {
-        margin:       1,
+        margin:       0.2,
         filename:     'myfile.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait', size: 0.4 }
+        
       };
       // New Promise-based usage:
       html2pdf().set(opt).from(item).save();
-      html2pdf().set(opt).from(item).print();
-
+  
 
 var verify = 0
   var valor = 0
