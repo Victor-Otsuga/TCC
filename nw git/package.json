@@ -1,0 +1,34 @@
+{
+    "name": "trevo-ice",
+    "main": "http://localhost/TCC-main",
+    "nodejs": true,
+    "title": "false",
+    "node-remote": [
+        "http://localhost:8080/"
+    ],
+    "window": {
+        
+    
+        "width": 2000,
+        "height": 1500,
+        "min_width": 1366,
+        "min_height": 768,
+        "toolbar": false,
+        "frame": true,
+        "show": true,
+        "icon":"ICN.png",
+        "fullscreen": false,
+        
+        "position": "center"
+    },
+    "devDependencies": {
+        "nwjs-builder-phoenix": "^1.15.0"
+    },
+    "build": {
+        "nwVersion": "0.70.1"
+    },
+    "scripts": {
+        "dist": "build --tasks win-x86,win-x64 --mirror https://dl.nwjs.io/ .",
+        "start": "run --x86 --mirror https://dl.nwjs.io/ ."
+    }
+}
