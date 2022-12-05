@@ -19,33 +19,41 @@ if (verify ==1){
         preco = 0
         
 }
-     identificador = document.getElementById("qtn".concat(verify))
 
-     if (identificador != null){
-        valor = document.getElementById("qtn".concat(verify)).value
+     identificador = localStorage.getItem("qtn".concat(verify))
+
+     if (identificador > 0){
+
+
+
+        valor = localStorage.getItem("qtn".concat(verify))
         preco = document.getElementById("ppct".concat(verify)).value
+        sabor = document.getElementById("sabor".concat(verify)).value
+        
 
-        if(localStorage.getItem('qtn'.concat(verify))== 0 || localStorage.getItem('qtn'.concat(verify)) == null ){
-                localStorage.setItem('qtn'.concat(verify), 1)
-        }
-
-
-        document.getElementById("qtn".concat(verify)).value = localStorage.getItem('qtn'.concat(verify));
+        let novoItem = `
+        <div class="itemCar"  id="item${verify}">
+      <div>
+      ${sabor}
+      </div>
+      
+        <div>
+        <button onclick="menosum(id)" class="carBtn" id="${verify}">-</button>
+        <input value="${valor}"  name="qtnfunc" id="qtn${verify}"  onchange="mudouPreco(id)" onfocus="salvarPreco(id)" class="carQtd" >  </input > 
+        <button class="carBtn" onclick="maisum(id)" id="${verify}">+</button>
+        </div>
+        </div>
+        `
+      
+        document.getElementById("carlist").innerHTML += novoItem;
+        
+       
 
         
-        if (document.getElementById("qtn".concat(verify)).value == "" && document.getElementById("qtn".concat(verify)).value == null){
-                document.getElementById("qtn".concat(verify)).value = 1
-                
-                localStorage.setItem("qtn", 1);
-        }
         
-        if (valor == null || "" || NaN){
-        add = 0
-        }else{
                 
 
 
-        valor = localStorage.getItem("qtn".concat(verify));
         
         
 
@@ -63,9 +71,7 @@ if (verify ==1){
         }
 
 
-     }else{
-        add= 0
-     }
+     
 
         verify+=1    
        

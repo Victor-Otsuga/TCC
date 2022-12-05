@@ -36,6 +36,8 @@ var precotemp = 0
 var descontoAnterior = 0
 var precoAtual = 0
 var valorPct = 0
+var tamanho = 0
+var sabor = 0
 
 convert = localStorage.getItem('totalv');
 total = parseFloat(convert)
@@ -95,13 +97,24 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
    qtn -= 1
      if (qtn <= 0) {
        qtn = 0
-        document.getElementById(id).setAttribute("hidden", "hidden");
-       document.getElementById("sabor".concat(id)).setAttribute("hidden", "hidden");
-       document.getElementById("qtn".concat(id)).type = "hidden" 
-       document.getElementById("qtn".concat(id)).name = "deletado" 
-       document.getElementById(id).name = "deletado"
+        
+       document.getElementById('item'.concat(id)).remove()
+       localStorage.setItem("qtn".concat(id), qtn);
 
-       document.getElementById("cartxt".concat(id)).style.display= "none"
+       precopct = document.getElementById("ppct".concat(id)).value 
+       total =  localStorage.getItem("totalv");
+       total = parseInt(total)
+       precopct=parseFloat(precopct)
+     
+     
+       total = total - precopct
+     
+       localStorage.setItem("totalv", total);
+     
+     
+     
+       document.getElementById("valorTotal").textContent ="Total: R$ ".concat(total.toFixed(2))
+     
    }
 
 
@@ -142,7 +155,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
 
    document.getElementById("diferenca".concat(id)).value = diferenca
 
-   console.log(qtn)
+
 
  }
 
@@ -173,23 +186,12 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
     precoAtual = (prepct * qtn)
     precoAtual = precoAtual - desconto
 
-    console.log(qtn)
+  
     total = parseInt(total)
 
     total += precoAtual
     
-    
-    
-    if (qtn <= 0) {
-      qtn = 0
-       document.getElementById(id).setAttribute("hidden", "hidden");
-      document.getElementById("sabor".concat(id)).setAttribute("hidden", "hidden");
-      document.getElementById("qtn".concat(id)).type = "hidden" 
-      document.getElementById("qtn".concat(id)).name = "deletado" 
-      document.getElementById(id).name = "deletado"
-
-      document.getElementById("cartxt".concat(id)).style.display= "none"
-  }
+  
   
     
  
@@ -203,7 +205,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
      total = 0
    }
 
-   console.log(diferenca)
+   
    localStorage.setItem("qtn".concat(id), qtn);
 
    localStorage.setItem("totalv", total);
@@ -212,16 +214,101 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
    
 
    document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.toFixed(2))
+
+   if (qtn <1){
+    document.getElementById('item'.concat(id)).remove()
+   }
  }
 
 
 
 
 
+ function adicionou(id){
+  
+ sabor = document.getElementById("sabor".concat(id)).value
+  
 
 
 
 
+
+
+um = 1
+conf = 0
+precopct= 0
+
+
+conf = localStorage.getItem("qtn".concat(id))
+if (conf > 0){
+
+    conf = parseInt(conf) + 1
+    
+    localStorage.setItem("qtn".concat(id), parseInt(conf)); 
+
+    console.log(conf)
+
+    document.getElementById("qtn".concat(id)).value = conf
+
+    precopct = document.getElementById("ppct".concat(id)).value 
+  total =  localStorage.getItem("totalv");
+  total = parseInt(total)
+  precopct=parseFloat(precopct)
+
+
+  total = total + precopct
+
+  localStorage.setItem("totalv", total);
+
+
+
+  document.getElementById("valorTotal").textContent ="Total: R$ ".concat(total.toFixed(2))
+
+  
+}else{
+  let novoItem = `
+  <div class="itemCar" id="item${id}">
+<div>
+${sabor}
+</div>
+
+  <div>
+  <button onclick="menosum(id)" class="carBtn" id="${id}">-</button>
+  <input value="1"  name="qtnfunc" id="qtn${id}"  onchange="mudouPreco(id)" onfocus="salvarPreco(id)" class="carQtd" >  </input > 
+  <button class="carBtn" onclick="maisum(id)" id="${id}">+</button>
+  </div>
+  </div>
+  `
+  document.getElementById('carlist').innerHTML += novoItem;
+  sabor = document.getElementById("sabor".concat(id)).value 
+  tamanho =  document.getElementById("tmnu".concat(id)).value 
+  precopct = document.getElementById("ppct".concat(id)).value 
+  total =  localStorage.getItem("totalv");
+  total = parseInt(total)
+  precopct=parseFloat(precopct)
+
+
+  localStorage.setItem("ppct".concat(id), precopct) ;
+  
+  localStorage.setItem("tmnu".concat(id), tamanho) ;
+
+  localStorage.setItem("sabor".concat(id), sabor) ;
+
+  total = total + precopct
+
+  localStorage.setItem("totalv", total);
+
+
+
+  document.getElementById("valorTotal").textContent ="Total: R$ ".concat(total.toFixed(2))
+
+  
+  localStorage.setItem("qtn".concat(id), 1) ;
+  
+ }
+
+
+ }
 
       
 
@@ -459,6 +546,4 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
 
 
 // }
-
-
 
