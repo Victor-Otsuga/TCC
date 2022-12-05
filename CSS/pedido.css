@@ -45,7 +45,7 @@
         font-family: "garet";
         height: min-content;
 
-        text-decoration: underline;
+       
         position: relative;
     }
     
@@ -166,6 +166,8 @@
 display: flex;
 height: fit-content;
 width: 100%;
+text-decoration: none;
+align-items: center;
 }
 
 
