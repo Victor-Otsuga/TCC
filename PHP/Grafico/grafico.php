@@ -65,7 +65,7 @@ include ('../conexao.php');
     
     // echo '\''.$ar.'\'';
 
-    echo '<input type="hidden"  id="top'.$contador.'" value="'.$sabor.'"></input>';
+    echo '<input type="hidden"  id="top'.$contador.'" value="'.utf8_encode($sabor).'"></input>';
     echo '<input type="hidden"  id="quant'.$contador.'" value="'.$quant2.'"></input>';
     }
     echo '<input type="hidden"  id="contador" value="'.$contador.'"></input>';
@@ -145,7 +145,7 @@ while (verificando < contador){
       const data = {
         labels: [ top1,top2,top3,top4,top5,top6,top7,top8,top9,top10],
         datasets: [{
-          label: 'Vendas esse mês',
+          label: 'Mais vendidos',
           data: [quant1, quant2, quant3, quant4, quant5, quant6, quant7, quant8, quant9, quant10],
           backgroundColor: [
             'rgba(255, 26, 104, 0.5)',

@@ -34,7 +34,7 @@ $linhas_ped = $query->fetch(PDO::FETCH_ASSOC);
         <div class="pedidoex">
           <div class="headerp">
             <a href="../Menu/menu.php"id="seta" > 
-            <img src="../../IMG/imgseta.png" alt="">
+            <img class="seta2" style="margin-left: 10px;" src="../../IMG/imgseta.png" alt="">
             </a>
             <div class="headerpedido">   
             

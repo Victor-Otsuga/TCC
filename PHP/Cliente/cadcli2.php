@@ -40,7 +40,7 @@ include ('../verificarLogin.php');
                     
                     <form action="cadcli.php" method="POST" id="form2">
 
-
+                    <div class="central">
                     <div id="conteudo2">
 
                         <label class="labelcad">Nome da Empresa</label>
@@ -73,7 +73,8 @@ include ('../verificarLogin.php');
                     </form>
 
 
-
+                    </div>
+                    </div>
 
 
 

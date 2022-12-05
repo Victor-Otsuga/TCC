@@ -29,6 +29,8 @@ if (empty($select)) {
 
 <body onload="mudarValor()">
 
+
+
     <!--Conteúdo do Site-->
 
     <div style="margin-left: 250px;" id="teste">
@@ -60,16 +62,16 @@ if (empty($select)) {
                         &nbsp; <?php
                                 echo $cli_final["nome_cli"];
                                 ?>- <?php
-            echo $cli_final["id_cli"];
-            ?></p>
+                                    echo $cli_final["id_cli"];
+                                    ?></p>
                 </div>
 
 
                 <div class="headerpedido">
 
                     <p>Telefone: <?php
-                                echo $cli_final["contato_cli"];
-                                ?>
+                                    echo $cli_final["contato_cli"];
+                                    ?>
                 </div>
 
                 <div class="headerpedido">
@@ -90,64 +92,7 @@ if (empty($select)) {
 
 
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Produto</th>
-                            <th scope="col">Tamanho</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Preço do Pacote</th>
-                            <th scope="col">Preço Total</th>
-                        </tr>
-                        <?php
-
-                        // echo $select;
-                        $query = "SELECT * FROM produtos WHERE id_prod in ($select)";
-                        $resultadototal = $pdo->prepare($query);
-                        $resultadototal->execute();
-                        $qnt = 0;
-                        $precofinal = 0;
-
-                        while ($linhas_car = $resultadototal->fetch(PDO::FETCH_ASSOC)) {
-
-                            $tam = $linhas_car["tamanho_uni"];
-
-                            if ($tam == 1) {
-                                $tam = "1 Litro";
-                            } else if ($tam == 2) {
-                                $tam = "5 Litros";
-                            } else {
-                                $tam = "Indefinido";
-                            }
-                        ?>
-
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row"> <?php echo $linhas_car["id_prod"]; ?></th>
-                            <td><?php echo $linhas_car["sabor"]; ?></td>
-                            <td><?php echo $tam; ?></td>
-                            <td id="qtnfin<?php echo  $linhas_car["id_prod"]; ?>"><?php echo  $qnt; ?></td>
-                            <td id="precofin<?php echo  $linhas_car["id_prod"]; ?>"><?php echo $linhas_car["preco_pacote"]; ?></td>
-                            <td id="valorfin<?php echo  $linhas_car["id_prod"]; ?>"><?php echo  $qnt; ?></td>
-                        </tr>
-
-
-                    <?php
-                            $precofinal += ($linhas_car["preco_uni"] * $qnt);
-                        };
-
-                    ?>
-
-                    <tr>
-                        <th scope="row">Preço Final</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td id="precoAbsoluto"> 0 </td>
-                    </tr>
+                
 
                     </tbody>
                 </table>

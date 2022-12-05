@@ -51,7 +51,7 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
 <body >
 
 <script> function alertdele(){
-alert("Deseja deletar esse cliente?")
+alert("O cliente foi deletado")
 }</script>
 
     <!--Menu Horizontal-->

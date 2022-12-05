@@ -66,9 +66,10 @@ include('listaclipedfunc.php');
         while ($linhas_cli = $result->fetch(PDO::FETCH_ASSOC)) {  ?>
             <!-- a variavel id passa pelo o link ao invés de um form -->
             <a href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>">
+            <?php  $_SESSION['id_climont'] = $linhas_cli["id_cli"]; ?>
                 <div class="clienteex" type="submit">
                     <p class="INFO"><span class="font">Nome: <?php echo utf8_encode($linhas_cli["nome_cli"]); ?></span> </p>
-                    <p class="INFOid"><span class="font">iD: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
+                    <p class="INFOid"><span class="font">ID: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
                 </div>

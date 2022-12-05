@@ -23,7 +23,7 @@ include ('../conexao.php');
 <body>
 
 <script> function alertdele(){
-alert("Deseja deletar esse produto?")
+alert("O produto foi deletado")
 }</script>
 
 
