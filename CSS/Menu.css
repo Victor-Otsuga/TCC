@@ -120,8 +120,9 @@ label,
 #menuho:hover .sidebtn {
     width: 240px;
     transition: width 1s;
-    
 }
+
+
 
 #menuho:hover .MP {
 
@@ -139,6 +140,12 @@ label,
 
 }
 
+#menuho:hover #operador {
+
+    width: 200px;
+
+}
+
 #menuho:hover #sairadjustment {
     display: inline-block;
 }
@@ -149,7 +156,7 @@ label,
     font-size: 18px;
     width: 40%;
     opacity: 1;
-    margin-left: 10px;
+
 
     transition-property: opacity;
     transition-delay: .7s;
@@ -198,8 +205,8 @@ label,
     transition-duration: 1s;
     transition-timing-function: linear;
 
-
     margin-bottom: 10px;
+   
 }
 
 
@@ -274,6 +281,7 @@ padding: 1px;
     transition-duration: 1s;
     transition-timing-function: linear;
     user-select: none;
+    object-fit: cover; 
 }
 
 #nome {
@@ -682,6 +690,7 @@ font-size: 18px;
 }
 
 .bntFim{
+    user-select: none;
     cursor: pointer;
     display: inline-block;
     color: black;
@@ -690,13 +699,14 @@ font-size: 18px;
     font-family: "garet";
     text-align: center;
     text-decoration: none;
-    width: 190px;
+    width: 240px;
     height: 50px;
-
+    padding-top: 10px;
     background-color: #CABE82;
-    border: 3px solid #000000; 
-     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25); 
+    color: #000;
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 4px rgb(0 0 0 / 25%);
     border-radius: 15px;
-    
 }
+
 

@@ -76,6 +76,25 @@
         border-radius: 10px;
     }
 
+    .bnt2{
+        cursor: pointer;
+        display: inline-block;
+        color: black;
+        font-weight: bold;
+        font-size: 19px;
+        font-family: "garet";
+        text-align: center;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        padding-top: 5px;
+        background-color: #CABE82;
+        color: #000;
+        border: 2px solid #000000;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
     #headerclihis {
         position: sticky;
         top: 0;

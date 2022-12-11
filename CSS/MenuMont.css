@@ -124,7 +124,7 @@ label,
     width: 40%;
     opacity: 1;
 text-align: left;
-margin-left: 10px;
+
 
     transition-property: opacity;
     transition-delay: .7s;
@@ -173,12 +173,15 @@ margin-left: 10px;
     transition-duration: 1s;
     transition-timing-function: linear;
 
-
     margin-bottom: 10px;
 }
 
 
+#menuho:hover #operador {
 
+    width: 200px;
+
+}
 
 
 .logo {

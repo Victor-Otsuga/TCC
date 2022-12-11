@@ -175,17 +175,9 @@ sup {
     top: -.5em
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects
-}
 
-a:hover {
-    color: #0056b3;
-   
-}
+
+
 
 a:not([href]):not([tabindex]) {
     color: inherit;
@@ -2416,7 +2408,7 @@ textarea.form-control {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
+   
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -2426,11 +2418,22 @@ textarea.form-control {
     user-select: none;
     border: 1px solid transparent;
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: 19px;
     line-height: 1.5;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #000;
+    background-color: #CABE82;
+    width: auto;
+   
     border-radius: .25rem;
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 4px rgb(0 0 0 / 25%);
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
+
+
+
 
 @media screen and (prefers-reduced-motion:reduce) {
     .btn {
