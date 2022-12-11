@@ -49,9 +49,10 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
 </head>
 
 <body >
-
-<script> function alertdele(){
-alert("O cliente foi deletado")
+<script> function alertdele(id){
+    if (confirm("Deseja deletar este cliente?")) {
+        location.href = 'DeletarCliente.php?id='.concat(id);
+}
 }</script>
 
     <!--Menu Horizontal-->
@@ -60,7 +61,7 @@ alert("O cliente foi deletado")
     <img class="seta2" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
       
         <div  class="vendidos2">
-            <h1 class="headerhis"><?php echo utf8_encode($linhas_cli["nome_cli"]);?></h1>
+            <h1 class="headerhis"><?php echo$linhas_cli[ utf8_encode("nome_cli")];?></h1>
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
       
@@ -74,7 +75,7 @@ alert("O cliente foi deletado")
             <a id="bnt2" href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>"> 
                 <div>Montar Pedido</div>
             </a>
-            <a id="bnt2" onclick="alertdele()" href="DeletarCliente.php?id=<?php echo $linhas_cli["id_cli"]; ?>"> 
+            <a class="bnt2" onclick="alertdele(id)" id="<?php echo $linhas_cli["id_cli"]; ?>"> 
                 <div>Deletar</div>
             </a> 
     
@@ -88,11 +89,11 @@ alert("O cliente foi deletado")
        
  
   <a class="clienteex">
-        <p class="INFO  ">Apelido: <span class="font"><?php echo utf8_encode($linhas_cli["apelido_cli"]);?> </span> </p> 
+        <p class="INFO  ">Apelido: <span class="font"><?php echo $linhas_cli[utf8_encode("apelido_cli")];?> </span> </p> 
         <p class="INFO  ">Email: <span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
         <p class="INFO  ">Telefone: <span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
         <p class="INFO  ">CPF: <span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
-        <p class="INFO  ">Endereço: <span class="font"><?php echo utf8_encode($linhas_cli["endereco_cli"]);?> </span> </p>
+        <p class="INFO  ">Endereço: <span class="font"><?php echo $linhas_cli[utf8_encode("endereco_cli")];?> </span> </p>
         </a>
   
 <?php  ?>  
@@ -119,8 +120,8 @@ alert("O cliente foi deletado")
 
             <h1 id="nome"> <?php
 
-                                    $nome_oper = $_SESSION['nome_session'];
-                                    echo utf8_encode($nome_oper) ?></h1>
+                                    $nome_oper = $_SESSION[utf8_encode('nome_session')];
+                                    echo $nome_oper ?></h1>
 
         </div>
 

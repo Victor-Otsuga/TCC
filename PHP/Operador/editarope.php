@@ -63,7 +63,7 @@ if ($rowCount > 0) {
                             <label></label><label></label>
 
                             <label class="label">Nome do Funcionário:</label>
-                            <input name="nome" autocomplete="off" class="input" value="<?php echo utf8_encode($nome_oper) ?>" required>
+                            <input name="nome" autocomplete="off" class="input" value="<?php echo $nome_oper ?>" required>
 
                             <label class="label">E-mail:</label>
                             <input name="email" type="email" autocomplete="off" class="input" value="<?php echo $email ?>" required>
@@ -114,8 +114,8 @@ if ($rowCount > 0) {
 
                 <h1 id="nome"> <?php
 
-                                $nome_oper = $_SESSION['nome_session'];
-                                echo utf8_encode($nome_oper) ?></h1>
+                                $nome_oper = $_SESSION[utf8_encode('nome_session')];
+                                echo $nome_oper ?></h1>
 
             </div>
 
@@ -126,14 +126,14 @@ if ($rowCount > 0) {
             <a class="sidebtn" href="../Cliente/selecionarcliente.php"> <img class="imgbtn" src="../../IMG/MP.png">
                 <div class="MP"> Montar Pedido</div>
             </a>
-            <a class="sidebtn" href="../grafico.php"> <img class="imgbtn" src="../../IMG/historico.png">
+            <a class="sidebtn" href="../Venda/historico.php"> <img class="imgbtn" src="../../IMG/historico.png">
                 <div href="#" class="MP">Histórico de Vendas</div>
             </a>
-            <a class="sidebtn" href="../ProdutosList.php"> <img class="imgbtn" src="../../IMG/LP.png">
+            <a class="sidebtn" href="../Produtos/ProdutosList.php"> <img class="imgbtn" src="../../IMG/LP.png">
                 <div href="#" class="MP">Lista de Produtos</div>
             </a>
             </a>
-            <a class="sidebtn" href="../listagemcli.php"> <img class="imgbtn" src="../../IMG/LC.png">
+            <a class="sidebtn" href="../Cliente/listagemcli.php"> <img class="imgbtn" src="../../IMG/LC.png">
                 <div href="#" class="MP">Lista de
                     Clientes</div>
             </a>

@@ -22,8 +22,10 @@ include ('../conexao.php');
 
 <body>
 
-<script> function alertdele(){
-alert("O produto foi deletado")
+<script> function alertdele(id){
+    if (confirm("Deseja deletar este produto?")) {
+        location.href = 'deletar_prod.php?id='.concat(id);
+}
 }</script>
 
 
@@ -115,8 +117,8 @@ alert("O produto foi deletado")
 
             <h1 id="nome"> <?php
 
-                $nome_oper = $_SESSION['nome_session'];
-                echo utf8_encode($nome_oper) ?></h1>
+                $nome_oper = $_SESSION[utf8_encode('nome_session')];
+                echo $nome_oper ?></h1>
 
         </div>
 

@@ -39,7 +39,7 @@ $linhas_ped = $query->fetch(PDO::FETCH_ASSOC);
             <div class="headerpedido">   
             
                 <p>Cliente:&nbsp;&nbsp;
-                    &nbsp;<?php echo utf8_encode($linhas_ped["nome_cli"]);?> - <?php echo $linhas_ped["id_cli"];?> </p>
+                    &nbsp;<?php echo $linhas_ped[utf8_encode("nome_cli")];?> - <?php echo $linhas_ped["id_cli"];?> </p>
             </div>
               <div class="headerpedido">   
                 
@@ -70,15 +70,20 @@ $linhas_ped = $query->fetch(PDO::FETCH_ASSOC);
                     while ($linhas_ped2 = $query2->fetch(PDO::FETCH_ASSOC)) {  ?>
                         <tr>
                             <th scope="row"><?php echo $linhas_ped2["id_prod"];?></th>
-                            <td><?php echo utf8_encode($linhas_ped2["sabor"]);?></td>
+                            <td><?php echo $linhas_ped2[utf8_encode("sabor")];?></td>
                             <td><?php echo $linhas_ped2["quant_produtos_uni"];?></td>
-                            <td>R$10,00</td>
-                            <td> R$100,00</td>
-                        </tr>
+                            <td><?php echo $linhas_ped2["preco_pacote"];?></td>
+                           
 
                         <?php  }; ?>
 
-                        
+                        <td><?php
+                          $query3  = $pdo->prepare("SELECT * FROM venda WHERE id_venda= $id;");
+                          // $query  -> bindParam(':id_ven', $id);
+                          $query3 ->execute();
+                        $linhas_ped3 = $query3->fetch(PDO::FETCH_ASSOC) ;
+                        echo $linhas_ped3["total_venda"];?></td>
+                        </tr>
 
                         <div id="bntliscli">
 <?php
@@ -128,8 +133,8 @@ if($check == 1){
             
             <h1 id="nome"> <?php
                
-                $nome_oper = $_SESSION['nome_session'];           
-                echo utf8_encode($nome_oper) ?></h1>
+                $nome_oper = $_SESSION[utf8_encode('nome_session')];           
+                echo $nome_oper ?></h1>
 
         </div>
 

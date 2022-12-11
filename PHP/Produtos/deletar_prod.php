@@ -3,6 +3,8 @@
 require_once '../conexao.php';
 include ('../verificarLogin.php');
 
+
+
 if(isset($_GET['id'])) 
 {
 $id = $_GET['id'];

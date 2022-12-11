@@ -100,8 +100,8 @@ include('../verificarLogin.php');
 
                     <h1 id="nome"> <?php
 
-                                            $nome_oper = $_SESSION['nome_session'];
-                                            echo utf8_encode($nome_oper) ?></h1>
+                                            $nome_oper = $_SESSION[utf8_encode('nome_session')];
+                                            echo $nome_oper ?></h1>
 
                 </div>
 

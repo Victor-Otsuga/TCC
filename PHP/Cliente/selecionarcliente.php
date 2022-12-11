@@ -68,7 +68,7 @@ include('listaclipedfunc.php');
             <a href="../MontagemPedido/MontarPedido.php?id_cli=<?php echo $linhas_cli["id_cli"]; ?>">
             <?php  $_SESSION['id_climont'] = $linhas_cli["id_cli"]; ?>
                 <div class="clienteex" type="submit">
-                    <p class="INFO"><span class="font">Nome: <?php echo utf8_encode($linhas_cli["nome_cli"]); ?></span> </p>
+                    <p class="INFO"><span class="font">Nome: <?php echo $linhas_cli[utf8_encode("nome_cli")]; ?></span> </p>
                     <p class="INFOid"><span class="font">ID: <?php echo $linhas_cli["id_cli"]; ?></span> </p>
 
 
@@ -95,8 +95,8 @@ include('listaclipedfunc.php');
             
             <h1 id="nome"> <?php
                
-                $nome_oper = $_SESSION['nome_session'];           
-                echo utf8_encode($nome_oper) ?></h1>
+                $nome_oper = $_SESSION[utf8_encode('nome_session')];           
+                echo $nome_oper ?></h1>
 
         </div>
 

@@ -1,7 +1,21 @@
 <?php
 include('../verificarLogin.php');
 include('../conexao.php');
+if(empty ($_SESSION['carrinho'])){
+    header ("Location: ../cliente/selecionarcliente.php");
+} 
+else{
 
+$_SESSION['carrinho'] = array_unique($_SESSION['carrinho']);
+$select = implode(',', $_SESSION['carrinho'] );
+$id_opecadas = $_SESSION['id_session'];
+
+
+}
+if(empty ($select) ){ 
+
+header ("Location: ../cliente/selecionarcliente.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +31,15 @@ include('../conexao.php');
     <title>Pedido</title>
 </head>
 
-<body onload="mudarValor()">
+<?php
+if(array_key_exists('precototal', $_POST)) {
+    header("Location:../Menu/menu.php");
+    $corpo2 = "<body onload='mudarValor()'>";
+    echo $corpo2 ;
+ }
+else{ $corpo = "<body onload='mudarValor();download();  '>";
+echo $corpo ; }
+?>
 
     <!--Conteúdo do Site-->
 
@@ -30,6 +52,7 @@ include('../conexao.php');
     </div>
     <?php
     $date = date('d-m-y');
+    $date2 = date('y-m-d');
 
     $selectfim = $_SESSION['id_climont'];
     // echo $select;
@@ -49,6 +72,7 @@ include('../conexao.php');
                     <p class="txt">Cliente:&nbsp;
                         &nbsp; <?php
                                 echo $cli_final["nome_cli"];
+                                $cli = $cli_final["id_cli"];
                                 ?> - <?php
                                     echo $cli_final["id_cli"];
                                     ?></p>
@@ -101,18 +125,103 @@ include('../conexao.php');
 
 
     </div>
+<?php
+    $query2="SELECT * FROM produtos WHERE id_prod in ($select)";
+    $resultadototal2 = $pdo->prepare($query2);
+    $resultadototal2->execute();
+    $qtns = array();
+    if ($num = 0){
+        header ("Location: ../cliente/selecionarcliente.php");
+    }
+    $num = $resultadototal2->rowCount();
+    while ($linhas_car = $resultadototal2->fetch(PDO::FETCH_ASSOC)){ 
+        $id_p=$linhas_car["id_prod"];
+  
+
+                    $tableconten = '
+                       <form method = "POST">
+                        <input type="hidden"  id="qnt'.$id_p.'" name="quantidade'.$id_p.'">
+                      ';
+                        echo $tableconten;
+                        // print_r(array_slice($_POST,0, 1, 2));
+                    }; 
+                    if(array_key_exists('precototal', $_POST)) {
+    $precofinal1 = $_POST['precototal'];
+
+    $insert_venda = "INSERT INTO venda (datas, total_venda, quant_produtos, pend, id_cli, id_oper, id_venda)
+ VALUES ('$date2', $precofinal1, $num, '1',  $cli, $id_opecadas ,  default)";
+
+    $stmt_venda = $pdo->prepare($insert_venda);
+    $stmt_venda->execute();
+
+    $select_venda = "SELECT MAX(id_venda) FROM venda;";
+
+    $s_venda = $pdo->prepare($select_venda);
+    $s_venda->execute();
+
+    $linha_id = $s_venda->fetch(PDO::FETCH_ASSOC);
+    $id_ven = $linha_id;
 
 
 
+    $query="SELECT * FROM produtos WHERE id_prod in ($select)";
+    $resultadototal3 = $pdo->prepare($query);
+    $resultadototal3->execute();
+                        
+                        while ($linhas_car = $resultadototal3->fetch(PDO::FETCH_ASSOC)){ 
 
-    <div id="bntliscli">
 
-        <button style="width: 250px;" class="bntFim" onclick="download()">
-            Finalizar pedido
-        </button>
+                            $id_p=$linhas_car["id_prod"];
+                            $qtns = $_POST['quantidade'.$id_p];
+                            $selectfins = implode($id_ven);
+                            $arrayids =array($linhas_car["id_prod"]);
+                            $selectfim = implode($arrayids);
+                            $insert_venda2 = "INSERT INTO vendaprod (quant_produtos_uni, id_prod, id_venda, id_pedido)
+                            VALUES (?,?,?, default)";
+                            $stmt_venda2 = $pdo->prepare($insert_venda2);
 
-    </div>
 
+                                    if ($qtns > 0){
+                                        $stmt_venda2->execute(array($qtns , $selectfim  ,$selectfins));
+                                            }
+                            
+                        
+                        }
+//  
+}
+    else{ $button='<form method = "POST">
+       <div id="bntliscli">
+        <input type="hidden" id="precototal"  name="precototal">
+            <button style="width: 250px;" class="bntFim" onclick="download()">
+                Finalizar pedido
+            </button>
+
+        </div>';
+    echo $button;}
+    ?>
+    <script>
+
+var total = 0; 
+total = localStorage.getItem('totalv');
+document.getElementById("precototal").value = total</script>
+        
+
+<script>  
+  var verify = 1
+  var qtn = 1
+  var id = 1
+  while (verify < 200) {
+
+qnt2 =   localStorage.getItem("qtn".concat(id), qtn);
+if (qnt2 != 0 ){
+document.getElementById("qnt".concat(verify)).value = qnt2;
+}
+verify+=1
+id+=1
+qtn+=1
+}
+
+</script>
 
 
 
@@ -133,8 +242,8 @@ include('../conexao.php');
 
             <h1 id="nome"> <?php
 
-                            $nome_oper = $_SESSION['nome_session'];
-                            echo utf8_encode($nome_oper) ?></h1>
+                            $nome_oper = $_SESSION[utf8_encode('nome_session')];
+                            echo $nome_oper ?></h1>
 
         </div>
 

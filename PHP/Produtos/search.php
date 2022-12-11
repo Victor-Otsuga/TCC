@@ -62,14 +62,14 @@ if ($rowCount > 0) {
 		$data .= '<tbody>
 			<tr>
 				
-				<td>'.utf8_encode($row ["sabor"]).'</td>
+				<td>'.$row [utf8_encode("sabor")].'</td>
 				<td>'.$tipo.'</td>
 				<td>'.$tamanho.'</td>
 				<td>'.$row["preco_uni"].'</td>
 				<td>'.$row["preco_pacote"].'</td>
 				<td>'.$row["tamanho_pacote"].'</td>
 				<td><a href="editarprod.php?id='.$row["id_prod"].'"><Button class="btn">Editar</Button></a></td>
-				<td><a href="deletar_prod.php?id='.$row["id_prod"].'"><Button onclick="alertdele()" class="btn">Deletar</Button></a></td>
+				<td><Button onclick="alertdele(id)" id="'.$row["id_prod"].'" class="btn">Deletar</Button></td>
 			</tr>
 		';
 	}

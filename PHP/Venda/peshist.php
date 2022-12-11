@@ -4,7 +4,7 @@ include('../conexao.php');
 
 $pes =  $_POST['pes2'];
 
-$query = $pdo->prepare("SELECT * FROM venda INNER JOIN operador ON venda.id_oper = operador.id_oper INNER JOIN cliente ON venda.id_cli = cliente.id_cli WHERE pend = '2' AND datas LIKE '%$pes%' OR operador.nome_oper LIKE '%$pes%'  ORDER BY datas");
+$query = $pdo->prepare("SELECT * FROM venda INNER JOIN operador ON venda.id_oper = operador.id_oper INNER JOIN cliente ON venda.id_cli = cliente.id_cli WHERE pend = '2' AND datas LIKE '%$pes%' OR operador.nome_oper LIKE '%$pes%' AND pend = '2' ORDER BY id_venda desc");
 $query->execute(array($pes));
 
 
@@ -15,7 +15,7 @@ if ($num > 0) {
         <a class="teste2" href="pedido.php?id_ven=<?php echo $linhas_his["id_venda"]; ?>">
             <div class="sectionone">
                 <u class="info">ID: <?php echo $linhas_his["id_venda"]; ?> </u> <br>
-                <u class="info">Operador: <?php echo utf8_encode($linhas_his["nome_oper"]); ?> </u>
+                <u class="info">Operador: <?php echo $linhas_his[utf8_encode("nome_oper")]; ?> </u>
             </div>
 
             <div class="vertical"></div>

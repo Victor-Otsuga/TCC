@@ -53,10 +53,10 @@ include ('../verificarLogin.php');
                         <input type="text" name="contato_cli" autocomplete="off" class="input" required>
 
                         <label class="labelcad">E-mail</label>
-                        <input type="text" name="email_cli" autocomplete="off" class="input" required>
+                        <input type="text" name="email_cli" autocomplete="off" class="input">
 
                         <label class="labelcad">CPF</label>
-                        <input type="text" name="cpf_cli" autocomplete="off" type="number" class="input" required>
+                        <input type="text" name="cpf_cli" autocomplete="off" type="number" class="input">
 
                         <label class="labelcad">CNPJ</label>
                         <input type="text" name="cnpj_cli" autocomplete="off" type="number" class="input" required>
@@ -99,8 +99,8 @@ include ('../verificarLogin.php');
             
             <h1 id="nome"> <?php
                
-                $nome_oper = $_SESSION['nome_session'];           
-                echo utf8_encode($nome_oper) ?></h1>
+                $nome_oper = $_SESSION[utf8_encode('nome_session')];           
+                echo $nome_oper ?></h1>
 
         </div>
 
