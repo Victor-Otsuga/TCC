@@ -65,9 +65,12 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
   document.getElementById("qtn".concat(id)).value = qtn
 
   convert = document.getElementById("ppct".concat(id)).value
+
+
   valorPct = parseFloat(convert)
   
-
+  console.log(total)
+  console.log(valorPct)
 
 
   total = total + valorPct
@@ -102,6 +105,9 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
        localStorage.setItem("qtn".concat(id), qtn);
 
        precopct = document.getElementById("ppct".concat(id)).value 
+
+      
+
        total =  localStorage.getItem("totalv");
        total = parseInt(total)
        precopct=parseFloat(precopct)
@@ -121,6 +127,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
   document.getElementById("qtn".concat(id)).value = qtn
  
   valorPct = document.getElementById("ppct".concat(id)).value
+ 
   total -= valorPct
   
   if (total < 0) {
@@ -164,6 +171,7 @@ document.getElementById("valorTotal").textContent = "Total: R$ ".concat(total.to
    var id = id.replace(/[^0-9]/g, '')
    diferenca = document.getElementById("diferenca".concat(id)).value
    prepct = document.getElementById("ppct".concat(id)).value
+   
 
    convert = document.getElementById("qtn".concat(id)).value
    if (convert == "") {
@@ -251,9 +259,12 @@ if (conf > 0){
     document.getElementById("qtn".concat(id)).value = conf
 
     precopct = document.getElementById("ppct".concat(id)).value 
+   
   total =  localStorage.getItem("totalv");
   total = parseInt(total)
   precopct=parseFloat(precopct)
+
+
 
 
   total = total + precopct
@@ -283,6 +294,7 @@ ${sabor}
   sabor = document.getElementById("sabor".concat(id)).value 
   tamanho =  document.getElementById("tmnu".concat(id)).value 
   precopct = document.getElementById("ppct".concat(id)).value 
+ 
   total =  localStorage.getItem("totalv");
   total = parseInt(total)
   precopct=parseFloat(precopct)

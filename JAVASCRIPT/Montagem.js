@@ -28,6 +28,9 @@ if (verify ==1){
 
         valor = localStorage.getItem("qtn".concat(verify))
         preco = document.getElementById("ppct".concat(verify)).value
+
+        
+
         sabor = document.getElementById("sabor".concat(verify)).value
         
 
