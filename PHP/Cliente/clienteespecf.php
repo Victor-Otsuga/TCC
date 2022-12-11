@@ -61,7 +61,7 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
     <img class="seta2" onclick="goBack()" src="../../IMG/imgseta.png" alt="">
       
         <div  class="vendidos2">
-            <h1 class="headerhis"><?php echo$linhas_cli[ utf8_encode("nome_cli")];?></h1>
+            <h1 class="headerhis"><?php echo $linhas_cli[utf8_encode("nome_cli")];?></h1>
             <h1 class="headerhis">ID: <?php echo $linhas_cli["id_cli"];?></h1>
         </div>
       
@@ -89,8 +89,8 @@ $linhas_cli = $query->fetch(PDO::FETCH_ASSOC); ?>
        
  
   <a class="clienteex">
-        <p class="INFO  ">Apelido: <span class="font"><?php echo $linhas_cli[utf8_encode("apelido_cli")];?> </span> </p> 
-        <p class="INFO  ">Email: <span class="font"><?php echo $linhas_cli["email_cli"];?> </span> </p>
+        <p class="INFO  ">Apelido: <span class="font"><?php echo utf8_encode($linhas_cli["apelido_cli"]);?> </span> </p> 
+        <p class="INFO  ">Email: <span class="font"><?php echo utf8_encode($linhas_cli["email_cli"]);?> </span> </p>
         <p class="INFO  ">Telefone: <span class="font"><?php echo $linhas_cli["contato_cli"];?></span> </p>
         <p class="INFO  ">CPF: <span class="font"><?php echo $linhas_cli["cpf"];?></span> </p>
         <p class="INFO  ">Endereço: <span class="font"><?php echo $linhas_cli[utf8_encode("endereco_cli")];?> </span> </p>
